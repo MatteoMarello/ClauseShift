@@ -183,15 +183,16 @@ effect. The conclusion for methodology: top-1 occlusion is dominated by the sent
 label most radically and under-reports the use of conditions; a behavioural test against a known counterfactual
 label is more informative when, as here, such labels can be derived.
 
-### 5.7 Ablations (provisional: seed 0 only; further seeds running)
+### 5.7 Ablations
 
-**Operator hold-out.** Trained on all pairs except `xref_redirect` and `date_cross` (4,200 items, seed 0), the model
-reaches flip-pair accuracy 0.04 [0.00, 0.08] on the held-out cross-reference edits, against 0.84–0.86 for the paired
-and unpaired models that saw them, while held-out date edits transfer: 0.81 [0.73, 0.90] (paired/unpaired with
-date pairs: 0.62–0.67), presumably from the structurally similar threshold edits. Sensitivity to an exemption that
-names the case's category (exception_add, 0.95) therefore does not carry over to the same exemption stated in a
-separate article and attached by reference: resolving "Article 1" is a distinct skill that had to be seen in
-training.
+**Operator hold-out (three seeds).** Trained on all pairs except `xref_redirect` and `date_cross` (4,200 items), the
+models reach flip-pair accuracy 0.042 [0.018, 0.071] on the held-out cross-reference edits, against 0.84–0.86 for the
+paired and unpaired models that saw them. Held-out date edits transfer: 0.808 [0.734, 0.880] (paired/unpaired models
+trained with date pairs: 0.62–0.67), presumably from the structurally similar threshold edits (0.78 in the hold-out
+models). The hold-out models are not size-matched with the other conditions (4,200 vs. 2,400 items), which explains
+their higher overall flip-pair accuracy (0.822 ± 0.008). Sensitivity to an exemption that names the case's category
+(exception_add, 0.97) therefore does not carry over to the same exemption stated in a separate article and attached
+by reference: resolving "Article 1" is a distinct skill that had to be seen in training.
 
 **No NLI pre-training.** Starting from `microsoft/deberta-v3-xsmall` (seed 0), flip-pair accuracy is 0.591 (paired)
 and 0.530 (unpaired), against about 0.80 from the NLI checkpoint. Thresholds and dates stay at 0.00–0.05, i.e.
