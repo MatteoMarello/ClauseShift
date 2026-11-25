@@ -77,7 +77,8 @@ for s in systems:
     L.append(f"| {s} | {ece(probs, gold):.3f} | {np.mean([max(p.values()) for p in probs]):.3f} | {acc:.3f} |")
 
 # Examples: flip pairs the best fine-tuned group gets wrong on one side
-ft = [s for s in systems if s.startswith("ft_") and "_paired_" in s]
+ft = [s for s in systems if s.startswith("ft_nli-deberta-v3-xsmall_paired_")] or \
+     [s for s in systems if s.startswith("ft_") and "_paired_" in s]
 if ft:
     s = sorted(ft)[0]
     P = load_predictions(s, "test")
