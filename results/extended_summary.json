@@ -1528,6 +1528,134 @@
     }
    },
    "header_free_control_correct": 0.9704797047970479
+  },
+  "zeroshot_DeBERTa-v3-base-mnli-fever-anli": {
+   "hit_at_1": {
+    "point": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 300
+   },
+   "random": 0.5269603174603175,
+   "top_is_obligation": 0.9233333333333333,
+   "strict_hit_at_1": {
+    "point": 0.10952380952380952,
+    "lo": 0.07142857142857142,
+    "hi": 0.1523809523809524,
+    "n": 210
+   },
+   "strict_random": 0.3264852607709751,
+   "counterfactual_removal": {
+    "obligation": {
+     "agreement": 0.8981818181818182,
+     "n": 275
+    },
+    "non_decisive": {
+     "agreement": 0.9432314410480349,
+     "n": 687
+    },
+    "decisive": {
+     "agreement": 0.71875,
+     "n": 32
+    }
+   },
+   "header_free_control_correct": 0.96
+  },
+  "zeroshot_nli-deberta-v3-base": {
+   "hit_at_1": {
+    "point": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 300
+   },
+   "random": 0.5063809523809524,
+   "top_is_obligation": 0.9833333333333333,
+   "strict_hit_at_1": {
+    "point": 0.026737967914438502,
+    "lo": 0.0053475935828877,
+    "hi": 0.0481283422459893,
+    "n": 187
+   },
+   "strict_random": 0.3221161191749427,
+   "counterfactual_removal": {
+    "obligation": {
+     "agreement": 0.7240143369175627,
+     "n": 279
+    },
+    "non_decisive": {
+     "agreement": 0.9561527581329562,
+     "n": 707
+    },
+    "decisive": {
+     "agreement": 0.25,
+     "n": 4
+    }
+   },
+   "header_free_control_correct": 0.942652329749104
+  },
+  "zeroshot_nli-deberta-v3-xsmall": {
+   "hit_at_1": {
+    "point": 0.9933333333333333,
+    "lo": 0.9833333333333333,
+    "hi": 1.0,
+    "n": 300
+   },
+   "random": 0.5200396825396826,
+   "top_is_obligation": 0.93,
+   "strict_hit_at_1": {
+    "point": 0.09405940594059406,
+    "lo": 0.059282178217821786,
+    "hi": 0.13861386138613863,
+    "n": 202
+   },
+   "strict_random": 0.3283828382838284,
+   "counterfactual_removal": {
+    "obligation": {
+     "agreement": 0.6843971631205674,
+     "n": 282
+    },
+    "non_decisive": {
+     "agreement": 0.9861878453038674,
+     "n": 724
+    },
+    "decisive": {
+     "agreement": 0.16666666666666666,
+     "n": 18
+    }
+   },
+   "header_free_control_correct": 0.9929078014184397
+  },
+  "zeroshot_roberta-large-mnli": {
+   "hit_at_1": {
+    "point": 0.97,
+    "lo": 0.95,
+    "hi": 0.9866666666666667,
+    "n": 300
+   },
+   "random": 0.5293095238095238,
+   "top_is_obligation": 0.89,
+   "strict_hit_at_1": {
+    "point": 0.11267605633802817,
+    "lo": 0.07511737089201878,
+    "hi": 0.15492957746478872,
+    "n": 213
+   },
+   "strict_random": 0.33351218421640966,
+   "counterfactual_removal": {
+    "obligation": {
+     "agreement": 0.7018181818181818,
+     "n": 275
+    },
+    "non_decisive": {
+     "agreement": 0.952247191011236,
+     "n": 712
+    },
+    "decisive": {
+     "agreement": 0.0,
+     "n": 23
+    }
+   },
+   "header_free_control_correct": 0.9963636363636363
   }
  }
 }

@@ -201,6 +201,10 @@ Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in 
 | ft_nli-deberta-v3-xsmall_unpaired_s0 | 1.000 [1.000, 1.000] | 0.502 | 0.940 | 0.084 [0.051, 0.121] (n=214) | 0.307 |
 | ft_nli-deberta-v3-xsmall_unpaired_s1 | 0.997 [0.990, 1.000] | 0.502 | 0.930 | 0.089 [0.053, 0.129] (n=225) | 0.283 |
 | ft_nli-deberta-v3-xsmall_unpaired_s2 | 0.997 [0.990, 1.000] | 0.509 | 0.923 | 0.099 [0.063, 0.140] (n=222) | 0.296 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 1.000 [1.000, 1.000] | 0.527 | 0.923 | 0.110 [0.071, 0.152] (n=210) | 0.326 |
+| zeroshot_nli-deberta-v3-base | 1.000 [1.000, 1.000] | 0.506 | 0.983 | 0.027 [0.005, 0.048] (n=187) | 0.322 |
+| zeroshot_nli-deberta-v3-xsmall | 0.993 [0.983, 1.000] | 0.520 | 0.930 | 0.094 [0.059, 0.139] (n=202) | 0.328 |
+| zeroshot_roberta-large-mnli | 0.970 [0.950, 0.987] | 0.529 | 0.890 | 0.113 [0.075, 0.155] (n=213) | 0.334 |
 
 **Counterfactual removal test.** For each sampled item and each sentence, the expected label after deleting that sentence is derived from the rule specification (`clauseshift.evidence`, validated against the generator on 706 pairs). Removals are grouped as: the obligation sentence (expected: insufficient), a *decisive* condition (expected: the label changes), and a *non-decisive* sentence (expected: unchanged). Items with a cross-reference are excluded: removal variants drop the article headers, so "Article k" cannot be resolved. The header-free full document (no sentence removed) is the format control.
 
@@ -212,4 +216,8 @@ Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in 
 | ft_nli-deberta-v3-xsmall_unpaired_s0 | 269 | 0.985 | 0.989 (n=269) | 0.877 (n=73) | 0.948 (n=670) |
 | ft_nli-deberta-v3-xsmall_unpaired_s1 | 273 | 0.949 | 0.996 (n=273) | 0.824 (n=102) | 0.918 (n=646) |
 | ft_nli-deberta-v3-xsmall_unpaired_s2 | 271 | 0.970 | 0.993 (n=271) | 0.866 (n=82) | 0.950 (n=658) |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 275 | 0.960 | 0.898 (n=275) | 0.719 (n=32) | 0.943 (n=687) |
+| zeroshot_nli-deberta-v3-base | 279 | 0.943 | 0.724 (n=279) | 0.250 (n=4) | 0.956 (n=707) |
+| zeroshot_nli-deberta-v3-xsmall | 282 | 0.993 | 0.684 (n=282) | 0.167 (n=18) | 0.986 (n=724) |
+| zeroshot_roberta-large-mnli | 275 | 0.996 | 0.702 (n=275) | 0.000 (n=23) | 0.952 (n=712) |
 

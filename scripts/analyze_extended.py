@@ -665,7 +665,7 @@ if h3:
 # Fig 6: evidence
 if ev_res and any("counterfactual_removal" in v for v in ev_res.values()):
     us = [s for s in ev_res if "counterfactual_removal" in ev_res[s]]
-    us = sorted(us, key=lambda s: (not s.startswith("zeroshot"), s))
+    us = sorted(us, key=lambda s: (_order(re.sub(r"_s\d+$", "", s)), s))
     cats = [("obligation", "obligation removed\n→ insufficient"), ("decisive", "decisive condition removed\n→ label changes"),
             ("non_decisive", "other sentence removed\n→ label kept")]
     fig, ax = plt.subplots(figsize=(6.8, 0.42 * len(us) + 1.4))
@@ -673,6 +673,9 @@ if ev_res and any("counterfactual_removal" in v for v in ev_res.values()):
         for j, (t, _) in enumerate(cats):
             v = ev_res[s]["counterfactual_removal"].get(t, {}).get("agreement", np.nan)
             ax.barh(y + (j - 1) * 0.26, v, height=0.24, color=[GRAY, BLUE, AQUA][j], label=cats[j][1] if y == 0 else None)
+            if t == "decisive":
+                n = ev_res[s]["counterfactual_removal"].get(t, {}).get("n", 0)
+                ax.text(v + 0.01, y, f"{v:.2f} (n={n})", va="center", fontsize=6, color=INK2)
     def single(s: str) -> str:
         if not s.startswith("ft_"):
             return label(s)
@@ -681,7 +684,7 @@ if ev_res and any("counterfactual_removal" in v for v in ev_res.values()):
         return f"FT xsmall ({init}), {m.group(2).replace('_', ' ')}, seed {m.group(3)}"
     ax.set_yticks(range(len(us)), [single(s) for s in us], fontsize=7)
     ax.invert_yaxis()
-    ax.set_xlim(0, 1)
+    ax.set_xlim(0, 1.08)
     ax.grid(axis="y", visible=False)
     ax.set_xlabel("share of sentence removals where the prediction matches the specification")
     ax.legend(loc="lower center", ncol=3, frameon=False, bbox_to_anchor=(0.45, 1.0), fontsize=7)

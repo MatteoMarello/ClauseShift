@@ -162,7 +162,27 @@ accuracy. The dev family (vehicles) is harder than the two test families for the
 conflates family difficulty with distribution shift. With one dev family and two test families, family difficulty
 cannot be separated from shift; this is a design limitation, not evidence that the models are robust to shift.
 
-### 5.6 Ablations
+### 5.6 Evidence sensitivity (registered metric and exploratory tests)
+
+The registered occlusion hit@1 is 0.97–1.00 for all four zero-shot models and all six fine-tuned runs, although
+their flip-pair accuracy ranges from 0.07 to 0.82. The metric does not discriminate because the obligation
+sentence belongs to every decided item's evidence set, and removing it always leaves the document silent on the
+claim: in 87–98% of the sampled items it is the top sentence. Ignoring the obligation, the strict hit@1 (0.03–0.16)
+is below the rate of a randomly chosen sentence (0.28–0.33) for every model. Read naively, this would suggest that
+no model uses the conditions.
+
+The counterfactual removal test contradicts that reading (Figure 6). On the same samples, excluding items with a
+cross-reference, removing the decisive condition yields the label the specification predicts in 80–88% of cases for
+the fine-tuned runs, against 0.00–0.72 for the zero-shot models (on only 4–32 decisive removals per zero-shot model,
+because zero-shot models are rarely correct on items whose label depends on a condition). Removing the obligation
+yields `insufficient` in 96–100% of cases after fine-tuning and 68–90% zero-shot; removing a non-decisive sentence
+keeps the label in 90–99% of cases. The header-free control (no sentence removed, article headers dropped) keeps
+91.5–99.6% of these correct answers, so the format change of the removal variants has a measurable but small
+effect. The conclusion for methodology: top-1 occlusion is dominated by the sentence whose removal changes the
+label most radically and under-reports the use of conditions; a behavioural test against a known counterfactual
+label is more informative when, as here, such labels can be derived.
+
+### 5.7 Ablations
 
 Operator hold-out and the no-NLI-pre-training ablation: runs in progress; completed from
 `results/EXTENDED_ANALYSIS.md` when the queue finishes.

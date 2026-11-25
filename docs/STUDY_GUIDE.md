@@ -231,13 +231,43 @@ behavioural test of whether the model's dependence on each sentence is the depen
 
 ---
 
-## 8. Results
+## 8. Results and how to defend them
 
-See `docs/REPORT.md` §5 for the full account. The findings to be able to state precisely, with intervals, are in
-`results/EXTENDED_ANALYSIS.md`: H1–H5 verdicts, the format comparison, the paired-vs-unpaired difference with
-per-seed values, and the evidence-sensitivity table.
+Numbers below are test-set values from `results/EXTENDED_ANALYSIS.md` (95% bootstrap intervals over pairs).
 
----
+**Zero-shot (RQ1, RQ2).** Flip-pair accuracy 0.07–0.30; item accuracy on the same pairs is 0.32–0.36 higher (H1
+supported for all four models). Most failures are *insensitive*: the same answer on both sides of 61–77% of flip
+pairs. Thresholds and dates ≤ 0.04, cross-references ≤ 0.11, negation up to 0.88 (H2 supported for the three
+DeBERTa models; RoBERTa scores 0 on negation, so H2 cannot hold for it). Every zero-shot model is wrong on all 41
+exact-boundary items.
+- *Defence*: "Isn't this just label-semantics mismatch?" Partly, which is why the facts-in-premise control was
+  run. It removes RoBERTa's never-entailed anomaly (+0.155 flip-pair accuracy) but leaves thresholds, dates and
+  cross-references unsolved in both formats.
+
+**Fine-tuning (RQ3).** Flip-pair accuracy ≈ 0.80 after 2,400 training items from other families. Paired − unpaired:
++0.021 [+0.006, +0.036], H3 supported by the registered rule.
+- *Defence of the nuance*: the interval treats the three training runs as fixed. Per-seed differences are −0.002,
+  +0.039, +0.026; a t-interval over seeds is [−0.032, +0.073]. The honest summary is "a small positive effect
+  that is consistent across test families but not robust to training-run variance with three seeds". This sits
+  between Huang et al. (2020, no gain at equal size) and the positive CAD results: with edit diversity controlled by
+  design, the contrast signal helps a little, mostly on the hardest operators (scope restriction +0.125).
+- *Why paired might help*: a pair is a direct contrastive signal: identical hypothesis, one clause changed,
+  different label. The gradient on such a pair pushes the representation of exactly the changed clause.
+- *Why it might not help much*: unpaired training sees twice as many distinct cases and documents; with
+  synthetic templates the model may learn the clause semantics from diversity alone.
+
+**Shift (RQ4).** H4 not supported: reserved templates cost ≈ 4 points (also after stratifying by operator), but
+test accuracy exceeds dev accuracy because the dev family is harder. Lesson: with one dev family, "dev → test drop"
+measures family difficulty as much as shift; a leave-one-family-out design would separate them.
+
+**Evidence.** The registered hit@1 is 0.97–1.00 for *every* neural model, including zero-shot models that ignore
+most edits, so it does not discriminate between them. In 87–98% of the sampled items the top sentence is the
+obligation, and the strict hit@1 (ignoring the obligation) is *below* the random-sentence rate for every model. The
+counterfactual removal test does discriminate: when the decisive condition is removed, the fine-tuned models
+produce the label the specification predicts in 80–88% of cases, the zero-shot models in 0–72% (on 4–32 removals,
+so those estimates are noisy). Lesson: top-1 occlusion is dominated by the sentence whose removal changes the label most
+radically (to "insufficient"), so it under-reports the use of conditions; a behavioural test with a known
+counterfactual label is more informative.
 
 ## 9. Limitations to state before being asked
 
