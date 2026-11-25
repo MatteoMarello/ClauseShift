@@ -1,2 +1,4 @@
 epoch 0 step 50/450 loss 1.5231 107s
 epoch 0 step 100/450 loss 0.8319 199s
+epoch 0 step 150/450 loss 0.6650 298s
+{"epoch": 0, "train_loss": 1.0066774743795395, "dev_macro_f1": 0.6562579092506351, "seconds": 322.1}
