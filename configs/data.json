@@ -1,0 +1,5 @@
+{
+  "seed": 20261125,
+  "pairs_per_operator": {"train": 30, "dev": 30, "test": 40},
+  "note": "Families per split are fixed in src/clauseshift/domains.py (SPLIT_FAMILIES). Reserved templates appear only in test."
+}

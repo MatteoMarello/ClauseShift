@@ -1,0 +1,126 @@
+{
+  "config": {
+    "seed": 20261125,
+    "pairs_per_operator": {
+      "train": 30,
+      "dev": 30,
+      "test": 40
+    },
+    "note": "Families per split are fixed in src/clauseshift/domains.py (SPLIT_FAMILIES). Reserved templates appear only in test."
+  },
+  "stats": {
+    "within_split_duplicate_items": {
+      "train": 0,
+      "dev": 0,
+      "test": 0
+    },
+    "test_entity_names_seen_in_train": 0,
+    "test_items_with_reserved_template": 1709,
+    "train": {
+      "items": 4800,
+      "pairs": 2400,
+      "labels": {
+        "contradicted": 2050,
+        "entailed": 2050,
+        "insufficient": 700
+      },
+      "operators": {
+        "exception_add": 150,
+        "xref_redirect": 150,
+        "negation": 150,
+        "threshold_cross": 150,
+        "date_cross": 150,
+        "scope_restrict": 150,
+        "condition_unknown": 300,
+        "topic_swap": 300,
+        "exception_near_miss": 150,
+        "threshold_near_miss": 150,
+        "scope_near_miss": 150,
+        "paraphrase": 150,
+        "reorder": 150,
+        "distractor_add": 150
+      },
+      "families": [
+        "food_safety",
+        "housing",
+        "library",
+        "procurement",
+        "travel"
+      ]
+    },
+    "dev": {
+      "items": 960,
+      "pairs": 480,
+      "labels": {
+        "contradicted": 406,
+        "entailed": 420,
+        "insufficient": 134
+      },
+      "operators": {
+        "exception_add": 30,
+        "xref_redirect": 30,
+        "negation": 30,
+        "threshold_cross": 30,
+        "date_cross": 30,
+        "scope_restrict": 30,
+        "condition_unknown": 60,
+        "topic_swap": 60,
+        "exception_near_miss": 30,
+        "threshold_near_miss": 30,
+        "scope_near_miss": 30,
+        "paraphrase": 30,
+        "reorder": 30,
+        "distractor_add": 30
+      },
+      "families": [
+        "vehicles"
+      ]
+    },
+    "test": {
+      "items": 2560,
+      "pairs": 1280,
+      "labels": {
+        "entailed": 1073,
+        "contradicted": 1125,
+        "insufficient": 362
+      },
+      "operators": {
+        "exception_add": 80,
+        "xref_redirect": 80,
+        "negation": 80,
+        "threshold_cross": 80,
+        "date_cross": 80,
+        "scope_restrict": 80,
+        "condition_unknown": 160,
+        "topic_swap": 160,
+        "exception_near_miss": 80,
+        "threshold_near_miss": 80,
+        "scope_near_miss": 80,
+        "paraphrase": 80,
+        "reorder": 80,
+        "distractor_add": 80
+      },
+      "families": [
+        "enrollment",
+        "research_funding"
+      ]
+    }
+  },
+  "files": {
+    "train": {
+      "path": "train.jsonl",
+      "sha256_content": "4a1af5b5ba2b0020fa2a5e09b911ac111794cf9fdd25c0255c04419be459dea8",
+      "items": 4800
+    },
+    "dev": {
+      "path": "dev.jsonl",
+      "sha256_content": "df546e846fe77a9b343126c709e4661cf92cf37efe7bff7a4c6b739bbd69987c",
+      "items": 960
+    },
+    "test": {
+      "path": "test.jsonl",
+      "sha256_content": "bcaf3c285455c81362d2cea9903bb368c97656f609e34135bff0d95ec84c848e",
+      "items": 2560
+    }
+  }
+}

@@ -1,0 +1,13 @@
+[project]
+name = "clauseshift"
+version = "0.1.0"
+description = "Counterfactual evaluation of evidence-grounded inference over rule-like documents"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
