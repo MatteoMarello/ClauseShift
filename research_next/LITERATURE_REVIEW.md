@@ -40,6 +40,7 @@ Every entry in `RELATED_WORK_MATRIX.md` carries one of these tags.
 | Teney, Abbasnejad & van den Hengel, gradient supervision from counterfactual pairs (ECCV 2020) | [ABS] |
 | Kazemi et al., BoardgameQA (NeurIPS 2023 D&B) | [ABS] |
 | Holzenberger, Blair-Stanek & Van Durme, SARA statutory reasoning (2020) | [ABS] |
+| UNMASK (arXiv 2608.09209, 2026); "Catching Shortcuts" (ACL 2025); TruthfulQA leakage audit (arXiv 2609.13003, 2026); shortcut-learning analysis (Findings EMNLP 2024) | [ABS] (search summaries only; identified late, must be read) |
 | McCoy et al. HANS; Gardner et al. contrast sets; Kaushik et al. CAD; ContractNLI; LegalBench; ConditionalQA; RuleTaker; CheckList; ERASER; Poliak et al.; Gururangan et al. | [PRIOR] |
 
 Not found despite searching: a paper that evaluates whether models resolve legal cross-references separately from
