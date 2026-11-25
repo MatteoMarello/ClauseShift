@@ -88,8 +88,8 @@ train/dev. `scripts/verify_integrity.py` regenerates the data in memory and comp
 **Likely questions.**
 - *Are the labels correct?* They are correct if the templates express the spec faithfully. Unit tests check
   hand-written cases, and `tests/test_evidence.py` checks that deleting the added sentence of single-sentence edits
-  reproduces the other side's label (706 pairs). Human agreement has **not** been measured: a blind sample of 112
-  items is prepared in `review/` but not annotated.
+  reproduces the other side's label (706 pairs). A [blinded LLM audit](../review/clauseshift_llm_audit.md)
+  matched 112/112 generator labels. The original blinded sheet is available for independent human annotation.
 - *Why double weight for condition_unknown and topic_swap?* They are the only operators that create
   "insufficient" items; without upweighting the class would be too rare for stable macro-F1.
 
@@ -299,7 +299,7 @@ counterfactual label is more informative.
 
 - Synthetic template text, ~100-token documents, few conditions per rule: results describe controlled rule
   language, not real regulations or contracts.
-- Labels are specification-derived; no human agreement yet.
+- Labels are specification-derived. One blinded LLM audit matched 112/112 sampled labels. Human agreement is pending.
 - CPU budget: compact encoders, three seeds, no instruction-tuned LLMs, no hyper-parameter search.
 - Zero-shot numbers mix edit sensitivity with label-semantics mismatch (MNLI neutral ≠ insufficient) and input
   format (tested with facts_in_premise).

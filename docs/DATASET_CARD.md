@@ -43,8 +43,9 @@ real regulation, contract or personal data is used. Released under the repositor
 ## Annotation status
 Labels are **generator-derived**: computed from the rule specification by `gold_label`, not by annotators. They are
 correct only if the templates express the specification faithfully, which unit tests check for a set of hand-written
-cases. A blind, operator-stratified sample of 112 test items (`review/annotation_sheet.csv`) awaits human
-annotation. **Human agreement: not yet measured.**
+cases. A single LLM annotated the blinded, operator-stratified sample of 112 test items (56 pairs) and
+matched every generator label (Cohen's κ = 1.000), with two wording flags. See the [audit](../review/clauseshift_llm_audit.md).
+The original blinded sample is available in `review/annotation_sheet.csv` for independent human annotation.
 
 ## Interpretation conventions (annotation guideline)
 - "Applies only if / only to / only … after" is restrictive: a case that fails the condition is not subject to the
