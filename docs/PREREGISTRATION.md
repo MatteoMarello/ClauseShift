@@ -92,12 +92,14 @@ Recorded on 2026-11-25, before any fine-tuned model was evaluated on test. The s
    learning rates, epochs, batch size, max length, seeds, epoch selection on dev) is unchanged. Hardware and thread
    count are now detected at run time and stored in each `meta.json`. A re-run of a stored zero-shot system on the
    new hardware reproduced its dev predictions exactly (`results/reproduction_check.json`).
-2. **Order and scope of the fine-tuning runs.** One run takes about 25 minutes (paired/unpaired) to 45 minutes
+2. **Order and scope of the fine-tuning runs.** One run took about 20 minutes (paired/unpaired) to 30 minutes
    (operator hold-out) on this hardware. Runs were executed in order of informativeness
    (`scripts/run_cloud_queue.sh`): paired and unpaired, seeds 0–2, interleaved by seed (H3); operator hold-out,
-   seed 0; the no-NLI-pre-training ablation, seed 0 (as registered); operator hold-out, seeds 1–2 last and only if
-   the budget allowed. Any run not completed is listed as such in `CLOUD_RESUME.md` and in the report; no
-   missing run is replaced by an estimate.
+   seed 0; the no-NLI-pre-training ablation, seed 0; operator hold-out, seeds 1–2 last and only if the budget
+   allowed. The model section above specifies three seeds per condition; the original run list
+   (`scripts/run_finetune_queue.sh`) already planned a single seed for the no-NLI ablation. Its seeds 1–2 were
+   not run, so results for that ablation rest on one seed per condition and are reported as indicative only. Any run not completed is listed as such in `CLOUD_RESUME.md` and in
+   the report; no missing run is replaced by an estimate.
 3. **H1 decision rule, made explicit.** "At least 10 points below" is evaluated as: the 95% bootstrap interval
    of (item accuracy on flip pairs − flip-pair accuracy − 0.10) lies above 0.
 4. **H3 inference.** The registered analysis (seed-pooled predictions, pairs from different seeds treated as
