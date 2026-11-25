@@ -1,0 +1,98 @@
+{
+  "annotation_sha256": "32c2c1a1bfc4042428f7a7ce4dbc2ed3532a0e66022470c8a99e7a7c37007f96",
+  "sheet_sha256": "c6bd7f5950952b99d195dfd7cd18a36bd50bcc26f939bdb11a44f3f47c76c2a0",
+  "key_sha256": "a10598137fe61bb950829afc1f47a15eb0f444074384e5a1304f4816e2555964",
+  "rows": 112,
+  "pairs": 56,
+  "matched": 112,
+  "pairs_both_matched": 56,
+  "raw_agreement": 1.0,
+  "expected_agreement": 0.37069515306122447,
+  "cohens_kappa": 1.0,
+  "confusion_matrix_generator_rows_llm_columns": {
+    "entailed": {
+      "entailed": 49,
+      "contradicted": 0,
+      "insufficient": 0
+    },
+    "contradicted": {
+      "entailed": 0,
+      "contradicted": 43,
+      "insufficient": 0
+    },
+    "insufficient": {
+      "entailed": 0,
+      "contradicted": 0,
+      "insufficient": 20
+    }
+  },
+  "by_operator": {
+    "condition_unknown": {
+      "rows": 8,
+      "matched": 8
+    },
+    "date_cross": {
+      "rows": 8,
+      "matched": 8
+    },
+    "distractor_add": {
+      "rows": 8,
+      "matched": 8
+    },
+    "exception_add": {
+      "rows": 8,
+      "matched": 8
+    },
+    "exception_near_miss": {
+      "rows": 8,
+      "matched": 8
+    },
+    "negation": {
+      "rows": 8,
+      "matched": 8
+    },
+    "paraphrase": {
+      "rows": 8,
+      "matched": 8
+    },
+    "reorder": {
+      "rows": 8,
+      "matched": 8
+    },
+    "scope_near_miss": {
+      "rows": 8,
+      "matched": 8
+    },
+    "scope_restrict": {
+      "rows": 8,
+      "matched": 8
+    },
+    "threshold_cross": {
+      "rows": 8,
+      "matched": 8
+    },
+    "threshold_near_miss": {
+      "rows": 8,
+      "matched": 8
+    },
+    "topic_swap": {
+      "rows": 8,
+      "matched": 8
+    },
+    "xref_redirect": {
+      "rows": 8,
+      "matched": 8
+    }
+  },
+  "disagreements": [],
+  "ambiguities": [
+    {
+      "row": 24,
+      "ambiguity": "An open-world reading leaves the negative claim unsettled."
+    },
+    {
+      "row": 78,
+      "ambiguity": "An open-world reading leaves the negative claim unsettled."
+    }
+  ]
+}
