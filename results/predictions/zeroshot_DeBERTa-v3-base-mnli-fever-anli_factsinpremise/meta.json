@@ -1,0 +1,15 @@
+{
+  "model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+  "revision": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb",
+  "license": "mit",
+  "label_mapping": {
+    "0": "entailed",
+    "1": "insufficient",
+    "2": "contradicted"
+  },
+  "max_length": 384,
+  "input_format": "facts_in_premise",
+  "seconds_test": 262.7,
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "torch": "2.5.1+cpu"
+}
