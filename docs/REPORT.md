@@ -119,9 +119,53 @@ gains for the DeBERTa models, while the share of `insufficient` predictions fall
 does not change the operator ranking: threshold and date edits remain at ≤ 0.04 and cross-references at ≤ 0.11 in
 both formats. The zero-shot failure on decisive clauses is therefore not an artefact of where the facts are placed.
 
-### 5.4 Fine-tuning (RQ3, RQ4)
+### 5.4 Fine-tuning and the paired-vs-unpaired comparison (RQ3)
 
-Runs in progress; this section is completed from `results/EXTENDED_ANALYSIS.md` when the queue finishes.
+DeBERTa-v3-xsmall (NLI-initialised) fine-tuned on 2,400 training items, three seeds per condition, epoch selected on
+dev macro-F1 (Figure 5):
+
+| Condition | Dev acc. | Test acc. | Pair acc. | Flip-pair acc. | Invariance |
+|---|---|---|---|---|---|
+| paired (1,200 pairs) | 0.838 | 0.904 ± 0.019 | 0.836 ± 0.025 | 0.815 ± 0.021 | 0.937 ± 0.012 |
+| unpaired (2,400 single sides) | 0.843 | 0.891 ± 0.005 | 0.814 ± 0.008 | 0.795 ± 0.007 | 0.919 ± 0.012 |
+
+(mean ± SD over seeds). Fine-tuning on 2,400 items of five other families raises flip-pair accuracy from 0.129 for
+the same model zero-shot to about 0.80 on unseen families; insensitive flip pairs fall from 75% to 13–15%. The
+fine-tuned models are also well calibrated (ECE 0.013–0.026, against 0.35–0.56 for the zero-shot models).
+
+**H3 (paired > unpaired in flip-pair accuracy).** Seed-averaged difference **+0.021**; registered seed-pooled
+bootstrap [+0.006, +0.036], cluster bootstrap over test pairs [+0.007, +0.035]. By the preregistered rule H3 is
+**supported**. The evidence is weak in two respects. First, the per-seed differences are −0.002, +0.039 and +0.026;
+treating training runs as the random unit gives a 95% t-interval of [−0.032, +0.073] (df = 2), which includes 0.
+The registered rule treats seeds as fixed, so its interval reflects test-set sampling only. Second, the effect is
+small relative to the gain from fine-tuning itself (+0.67 to +0.69), and paired training is more seed-dependent (SD 0.021
+vs. 0.007). The direction is consistent across both test families (enrollment +0.027 [+0.009, +0.045];
+research_funding +0.015 [−0.007, +0.038]) and the per-operator differences are largest on the hardest edits
+(scope restriction +0.125 [+0.067, +0.187]; thresholds +0.054 and dates +0.046, both intervals including 0). These
+per-operator comparisons are descriptive and uncorrected for multiplicity.
+
+**H2 after fine-tuning.** Negation is solved (1.00) and the H2 ordering still holds for both conditions: thresholds
+(0.46–0.51), dates (0.62–0.67) and scope restriction (0.54–0.67) remain the hardest edits; exceptions (0.92–0.94)
+and cross-references (0.84–0.86) are largely learned. On the exact-boundary side of threshold and date pairs,
+accuracy varies between 0.39 and 0.83 across runs, against 0.76–0.84 on the other items of these operators.
+
+### 5.5 Shift (RQ4)
+
+| Condition | Dev − test accuracy | Seen − reserved templates (raw) | Seen − reserved (operator-stratified) |
+|---|---|---|---|
+| paired | −0.066 [−0.091, −0.042] | +0.042 [+0.022, +0.061] | +0.038 [+0.019, +0.056] |
+| unpaired | −0.047 [−0.074, −0.022] | +0.041 [+0.019, +0.062] | +0.037 [+0.015, +0.057] |
+
+**H4 is not supported.** Its second half holds: test items with a reserved template are about 4 points harder, also
+after stratifying by operator. Its first half fails in the opposite direction: test accuracy is *higher* than dev
+accuracy. The dev family (vehicles) is harder than the two test families for these models, so "dev → test"
+conflates family difficulty with distribution shift. With one dev family and two test families, family difficulty
+cannot be separated from shift; this is a design limitation, not evidence that the models are robust to shift.
+
+### 5.6 Ablations
+
+Operator hold-out and the no-NLI-pre-training ablation: runs in progress; completed from
+`results/EXTENDED_ANALYSIS.md` when the queue finishes.
 
 ## 6. Discussion
 

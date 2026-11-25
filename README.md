@@ -8,10 +8,10 @@ edit (an exemption, a numeric threshold, a date cutoff, a cross-reference, a neg
 hypothesis about a case. Gold labels are computed from a rule specification, so the effect of each edit on the
 correct answer is known exactly. A model is credited with a pair only if it answers both sides correctly.
 
-> **Status (2026-11-25).** Data, baselines, zero-shot evaluation (two input formats) and the extended analysis are
-> complete. The preregistered fine-tuning experiments are running on a 4-core CPU; their results are added to this
-> page as each run finishes (see [`CLOUD_RESUME.md`](CLOUD_RESUME.md)). Labels are generator-derived and have not
-> been validated by human annotators.
+> **Status (2026-11-25).** Data, baselines, zero-shot evaluation (two input formats), the preregistered
+> paired-vs-unpaired fine-tuning (3 seeds per condition) and the extended analysis are complete. The ablations are
+> running on a 4-core CPU (see [`CLOUD_RESUME.md`](CLOUD_RESUME.md)). Labels are generator-derived and have not been
+> validated by human annotators.
 
 ## Research questions
 
@@ -64,8 +64,10 @@ Preregistered before any model was run ([`docs/PREREGISTRATION.md`](docs/PREREGI
 | DeBERTa-v3-base MNLI-FEVER-ANLI, zero-shot | 0.531 [0.511, 0.551] | 0.316 [0.291, 0.341] | 0.304 [0.272, 0.337] |
 | RoBERTa-large-MNLI, zero-shot | 0.378 [0.358, 0.397] | 0.150 [0.130, 0.170] | 0.070 [0.053, 0.088] |
 | RoBERTa-large-MNLI, zero-shot, facts in premise | 0.506 [0.487, 0.525] | 0.263 [0.240, 0.288] | 0.225 [0.198, 0.255] |
+| DeBERTa-v3-xsmall fine-tuned, unpaired (3 seeds) | 0.891 ± 0.005 | 0.814 ± 0.008 | 0.795 ± 0.007 |
+| DeBERTa-v3-xsmall fine-tuned, paired (3 seeds) | 0.904 ± 0.019 | 0.836 ± 0.025 | 0.815 ± 0.021 |
 
-95% bootstrap intervals over pairs. Full tables: [`results/RESULTS.md`](results/RESULTS.md) (registered analyses) and
+95% bootstrap intervals over pairs; fine-tuned rows: mean ± SD over seeds. Full tables: [`results/RESULTS.md`](results/RESULTS.md) (registered analyses) and
 [`results/EXTENDED_ANALYSIS.md`](results/EXTENDED_ANALYSIS.md) (decision rules, paired comparisons, exploratory
 analyses).
 
@@ -83,11 +85,23 @@ analyses).
    edits stay at ≤ 0.04 and cross-references at ≤ 0.11.
 4. **H5 holds by construction** (a hypothesis-only model cannot solve a pair whose two sides share the hypothesis);
    the informative number is its item accuracy, 0.415 vs. 0.390 for the majority class.
-5. **Paired vs. unpaired fine-tuning (H3), operator hold-out and shift (H4):** running; results will be reported
-   here with per-seed values.
+5. **Fine-tuning closes most of the gap, except at boundaries.** DeBERTa-v3-xsmall fine-tuned on 2,400 items from
+   other families reaches flip-pair accuracy 0.80–0.82 (zero-shot: 0.13). Thresholds (0.46–0.51), dates
+   (0.62–0.67) and scope restrictions (0.54–0.67) remain the hardest edits.
+6. **Training on complete pairs gives a small, fragile gain (H3 supported by the preregistered rule).** At equal
+   size, paired training improves flip-pair accuracy by +0.021 [+0.006, +0.036] (three seeds; per-seed differences
+   −0.002, +0.039, +0.026). The bootstrap treats seeds as fixed; a seed-level t-interval, [−0.032, +0.073],
+   includes 0. Read with the mixed CAD literature, this is evidence of a small effect, not a robust one.
+7. **H4 is not supported.** Reserved test templates cost about 4 points of accuracy, but test accuracy is *higher*
+   than dev accuracy: the single dev family is harder than the two test families, so family difficulty and shift
+   cannot be separated with this split.
+8. **Ablations (operator hold-out, no NLI pre-training):** running.
 
 <p align="center">
   <img src="results/figures/fig3_flip_accuracy_by_operator.png" width="760" alt="Flip-pair accuracy by edit operator and system">
+</p>
+<p align="center">
+  <img src="results/figures/fig5_h3_paired_vs_unpaired.png" width="620" alt="Paired minus unpaired training: differences with 95% cluster-bootstrap intervals and single-seed values">
 </p>
 <p align="center">
   <img src="results/figures/fig4_flip_failure_decomposition.png" width="640" alt="Decomposition of flip-pair outcomes into solved, insensitive and sensitive-but-wrong">
