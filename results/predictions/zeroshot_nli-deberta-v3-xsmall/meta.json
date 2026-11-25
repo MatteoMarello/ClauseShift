@@ -10,5 +10,17 @@
   "max_length": 384,
   "seconds_test": 112.9,
   "hardware": "CPU, AMD Ryzen 5 4600H, 12 threads",
-  "torch": "2.5.1+cpu"
+  "torch": "2.5.1+cpu",
+  "evidence_test": {
+    "n": 300,
+    "eligible": 716,
+    "hit_at_1": 0.9933333333333333,
+    "top_sentence_role_counts": {
+      "obligation": 279,
+      "exception": 17,
+      "scope": 2,
+      "xref": 2
+    }
+  },
+  "evidence_hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads"
 }
