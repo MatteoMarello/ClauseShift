@@ -6,6 +6,21 @@ from `results/RESULTS.md` and `results/EXTENDED_ANALYSIS.md`; if they disagree, 
 
 ---
 
+## 0. The project in one minute
+
+ClauseShift asks whether NLI models notice the single clause that decides a case. Test items come in minimal pairs:
+two rule documents that differ by one controlled edit, with labels computed from a rule specification. Off-the-shelf
+NLI models solve at most 30% of label-changing pairs and mostly ignore the edit; thresholds, dates and
+cross-references are almost never handled, and this survives a control for input format. Fine-tuning a small
+DeBERTa-v3 on 2,400 synthetic items from other domains reaches about 80%, with numeric boundaries still weakest and
+cross-references unlearnable unless seen in training. Training on complete pairs instead of single sides gives
++2 points, which passes the preregistered test but not a seed-level one, and reverses without NLI pre-training.
+Methodologically, the preregistered occlusion evidence metric turned out to be uninformative (≈ 1.0 for every
+model); a counterfactual removal test with specification-derived labels replaces it. Every hypothesis, deviation
+and negative result is reported.
+
+---
+
 ## 1. The research question in one paragraph
 
 Rule-like documents (eligibility criteria, tender conditions, internal policies) often decide a case through one
@@ -133,7 +148,8 @@ debated for CAD.
 type transfers from other edit types.
 
 **Likely questions.**
-- *Why only xsmall?* CPU-only compute. One run is ~25 minutes on 4 cores; base would be ~4× slower. The
+- *Why only xsmall?* CPU-only compute. One run took ~15–20 minutes on 4 cores; base (hidden size 768 instead of
+  384) would be an estimated ~4× slower. The
   zero-shot results show base models are better, so absolute numbers are a lower bound for the architecture.
 - *Why epoch selection on dev macro-F1, not accuracy?* The "insufficient" class is the minority; macro-F1 does not
   reward ignoring it.
@@ -255,6 +271,16 @@ exact-boundary items.
   different label. The gradient on such a pair pushes the representation of exactly the changed clause.
 - *Why it might not help much*: unpaired training sees twice as many distinct cases and documents; with
   synthetic templates the model may learn the clause semantics from diversity alone.
+
+**Ablations.** Operator hold-out (3 seeds): unseen cross-reference edits 0.04, unseen date edits 0.81. No NLI
+pre-training (3 seeds): flip-pair accuracy 0.43 (paired) and 0.52 (unpaired); thresholds and dates ≤ 0.03.
+- *"One no-NLI run failed. Why not re-run it?"* Re-running only the runs one dislikes is a form of selection. The
+  failure is visible on dev alone (dev macro-F1 0.56 against ≥ 0.75 for every other run), it is reported in the
+  training-diagnostics table, and its effect on the comparison is shown by the per-seed values. A fair remedy would
+  be a pre-specified longer budget or more seeds for every condition, not a replacement of one run.
+- *"Why do cross-references not transfer from exemptions?"* With an inline exemption the case's category and the
+  exempted category are in the same sentence as the rule. A cross-reference requires binding "Article 1" to the
+  first article's obligation, which never occurs in the other operators. The model has to see that binding.
 
 **Shift (RQ4).** H4 not supported: reserved templates cost ≈ 4 points (also after stratifying by operator), but
 test accuracy exceeds dev accuracy because the dev family is harder. Lesson: with one dev family, "dev → test drop"
