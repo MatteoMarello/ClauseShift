@@ -23,6 +23,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | Group | Seeds | Dev acc. | Accuracy | Macro-F1 | Pair accuracy | Flip accuracy | Invariance | Invariant-pair acc. |
 |---|---|---|---|---|---|---|---|---|
 | ft_nli-deberta-v3-xsmall_paired | 1 | 0.819 | 0.882 ± 0.000 | 0.894 ± 0.000 | 0.807 ± 0.000 | 0.796 ± 0.000 | 0.933 ± 0.000 | 0.825 ± 0.000 |
+| ft_nli-deberta-v3-xsmall_unpaired | 1 | 0.867 | 0.896 ± 0.000 | 0.909 ± 0.000 | 0.823 ± 0.000 | 0.799 ± 0.000 | 0.933 ± 0.000 | 0.863 ± 0.000 |
 
 ## Flip accuracy by operator (test)
 
@@ -37,6 +38,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_roberta-large-mnli | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.05 | 0.03 | 1.00 | 0.00 | 0.00 | 0.01 | 0.00 | 0.58 |
 | ft_nli-deberta-v3-xsmall_paired | 0.95 | 0.84 | 1.00 | 0.35 | 0.60 | 0.61 | 0.89 | 0.92 |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.94 | 0.82 | 1.00 | 0.42 | 0.68 | 0.49 | 0.88 | 0.94 |
 
 ## Invariance by operator (test; near-miss and invariant operators)
 
@@ -54,9 +56,18 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_roberta-large-mnli | 0.99 | 1.00 | 0.82 | 0.96 | 1.00 | 0.96 |
 | zeroshot_roberta-large-mnli_factsinpremise | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 0.97 |
 | ft_nli-deberta-v3-xsmall_paired | 0.86 | 0.99 | 0.91 | 0.91 | 0.93 | 1.00 |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.86 | 0.99 | 0.94 | 0.93 | 0.90 | 0.99 |
+
+## H3: paired minus unpaired training (seed-pooled test pairs, paired bootstrap)
+
+- ft_nli-deberta-v3-xsmall flip_accuracy: -0.002 [-0.028, +0.025]
+- ft_nli-deberta-v3-xsmall pair_accuracy: -0.016 [-0.037, +0.006]
+- ft_nli-deberta-v3-xsmall accuracy: -0.014 [-0.028, -0.000]
+- ft_nli-deberta-v3-xsmall invariance: +0.000 [-0.023, +0.025]
 
 ## H4: shift (fine-tuned, mean over seeds)
 
 | Group | Dev acc. (vehicles) | Test acc. | Test, reserved templates | Test, seen templates |
 |---|---|---|---|---|
 | ft_nli-deberta-v3-xsmall_paired | 0.819 | 0.882 | 0.865 | 0.927 |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.867 | 0.896 | 0.888 | 0.919 |

@@ -11,3 +11,6 @@ remote:   https://github.com/MatteoMarello/ClauseShift.git
 2026-11-25T13:57:03Z checkpoint: zero-shot facts_in_premise, roberta-large-mnli
 2026-11-25T13:57:03Z start paired_s0
 2026-11-25T14:14:07Z end paired_s0 rc=0
+2026-11-25T14:14:56Z checkpoint: fine-tuning run paired_s0
+2026-11-25T14:14:56Z start unpaired_s0
+2026-11-25T14:32:29Z end unpaired_s0 rc=0

@@ -27,6 +27,7 @@ Difference = flip-pair accuracy(operator) − flip-pair accuracy(negation). Supp
 | zeroshot_nli-deberta-v3-base | -0.863 [-0.937, -0.780] | -0.863 [-0.937, -0.782] | -0.875 [-0.946, -0.798] | -0.875 [-0.946, -0.798] | yes |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | -0.512 [-0.642, -0.370] | -0.662 [-0.772, -0.542] | -0.738 [-0.833, -0.636] | -0.738 [-0.833, -0.635] | yes |
 | zeroshot_roberta-large-mnli | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | no |
+| ft_nli-deberta-v3-xsmall_paired | -0.050 [-0.106, -0.011] | -0.162 [-0.244, -0.085] | -0.650 [-0.763, -0.543] | -0.400 [-0.513, -0.296] | yes |
 
 ### H3: paired vs. unpaired training (equal size)
 
@@ -36,7 +37,11 @@ Not yet available (fine-tuning runs pending).
 
 Dev and test are independent samples (independent bootstraps). Reserved vs. seen templates is computed within test, raw and stratified by operator (mean of per-operator differences weighted by pair count), because reserved templates are not spread evenly over operators.
 
-Not yet available (fine-tuning runs pending).
+| Group | Dev acc. | Test acc. | Dev − test | Seen − reserved (raw) | Seen − reserved (operator-stratified) |
+|---|---|---|---|---|---|
+| ft_nli-deberta-v3-xsmall_paired | 0.819 | 0.882 | -0.063 [-0.094, -0.035] | +0.062 [+0.036, +0.090] | +0.058 [+0.033, +0.084] |
+
+Reserved-template pairs in test: 924 of 1280.
 
 ### H5: hypothesis-only flip-pair accuracy ≤ 0.05
 
@@ -110,6 +115,7 @@ Flip-pair accuracy by operator:
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | – | 0.539 [0.518, 0.559] | 0.509 [0.485, 0.532] | 0.326 [0.300, 0.352] | 0.320 [0.288, 0.353] | 0.323 [0.290, 0.356] | 0.996 [0.989, 1.000] |
 | zeroshot_roberta-large-mnli | – | 0.378 [0.358, 0.397] | 0.307 [0.292, 0.321] | 0.150 [0.130, 0.170] | 0.070 [0.053, 0.088] | 0.229 [0.202, 0.259] | 0.956 [0.937, 0.973] |
 | zeroshot_roberta-large-mnli_factsinpremise | – | 0.506 [0.487, 0.525] | 0.451 [0.429, 0.473] | 0.263 [0.240, 0.288] | 0.225 [0.198, 0.255] | 0.228 [0.200, 0.257] | 0.994 [0.985, 1.000] |
+| ft_nli-deberta-v3-xsmall_paired | 1 | 0.882 [0.868, 0.896] | 0.894 [0.880, 0.906] | 0.807 [0.784, 0.828] | 0.796 [0.767, 0.823] | 0.835 [0.809, 0.860] | 0.933 [0.909, 0.955] |
 
 ## 5. How flip pairs fail (exploratory)
 
@@ -128,6 +134,7 @@ Each flip pair is either solved (both sides correct), *insensitive* (same predic
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | 0.320 | 0.677 | 0.002 |
 | zeroshot_roberta-large-mnli | 0.070 | 0.771 | 0.159 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.225 | 0.772 | 0.003 |
+| ft_nli-deberta-v3-xsmall_paired | 0.796 | 0.165 | 0.039 |
 
 ## 6. Document complexity by operator (test, exploratory)
 
@@ -152,5 +159,15 @@ Operators differ in how many conditions their documents carry (negation pairs ar
 
 ## 7. Evidence sensitivity (exploratory)
 
-Not yet available.
+Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in the gold evidence set; 300 correctly answered entailed/contradicted test items) next to two reference points: the hit rate of a random sentence, and a strict variant that ignores the obligation sentence (which belongs to every decided item's evidence set).
+
+| System | hit@1 | Random-sentence hit rate | Top sentence = obligation | Strict hit@1 (non-obligation evidence) | Random, strict |
+|---|---|---|---|---|---|
+| ft_nli-deberta-v3-xsmall_paired_s0 | 1.000 [1.000, 1.000] | 0.489 | 0.907 | 0.126 [0.086, 0.171] (n=222) | 0.279 |
+
+**Counterfactual removal test.** For each sampled item and each sentence, the expected label after deleting that sentence is derived from the rule specification (`clauseshift.evidence`, validated against the generator on 706 pairs). Removals are grouped as: the obligation sentence (expected: insufficient), a *decisive* condition (expected: the label changes), and a *non-decisive* sentence (expected: unchanged). Items with a cross-reference are excluded: removal variants drop the article headers, so "Article k" cannot be resolved. The header-free full document (no sentence removed) is the format control.
+
+| System | Items | Header-free control correct | Obligation removed → insufficient | Decisive removed → label changes as expected | Non-decisive removed → label kept |
+|---|---|---|---|---|---|
+| ft_nli-deberta-v3-xsmall_paired_s0 | 272 | 0.915 | 0.982 (n=272) | 0.800 (n=90) | 0.904 (n=679) |
 
