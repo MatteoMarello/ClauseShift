@@ -10,8 +10,9 @@
 #   2  paired vs. unpaired fine-tuning, seeds 0-2, interleaved by seed (H3, preregistered)
 #   3  occlusion evidence for the zero-shot models (preregistered metric)
 #   4  operator hold-out, seed 0 (preregistered with 3 seeds; reduced)
-#   5  no-NLI-pretraining ablation, paired + unpaired, seed 0 (as preregistered)
+#   5  no-NLI-pretraining ablation, paired + unpaired, seed 0
 #   6  operator hold-out, seeds 1-2 (restores the preregistered scope if budget allows)
+#   7  no-NLI-pretraining ablation, seeds 1-2 (restores the preregistered three seeds per condition)
 set -u
 PY=${PY:-python}
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
@@ -85,5 +86,10 @@ ft raw_unpaired_s0 ft_${R}_unpaired_s0 --model microsoft/deberta-v3-xsmall --con
 # 6
 for s in 1 2; do
   ft op_holdout_s$s ft_${M}_op_holdout_s$s --condition op_holdout --seed $s
+done
+# 7
+for s in 1 2; do
+  ft raw_paired_s$s   ft_${R}_paired_s$s   --model microsoft/deberta-v3-xsmall --condition paired   --seed $s --lr 5e-5
+  ft raw_unpaired_s$s ft_${R}_unpaired_s$s --model microsoft/deberta-v3-xsmall --condition unpaired --seed $s --lr 5e-5
 done
 echo "$(date -u +%FT%TZ) queue finished"
