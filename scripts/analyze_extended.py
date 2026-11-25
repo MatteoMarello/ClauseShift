@@ -251,11 +251,28 @@ for prefix in sorted({re.sub(r"_(paired|unpaired|op_holdout|full)$", "", g) for 
         L.append(f"| {k} | {mp[k][0]:.3f} | {mu[k][0]:.3f} | {fmt(d, True)} | "
                  + ", ".join(f"{x:+.3f}" for x in per_seed) + " |")
     verdict = res["flip_accuracy"]["point"] > 0 and res["flip_accuracy"]["lo"] > 0
-    res["supported"] = verdict
+    res["supported_cluster"] = verdict
     res["n_seeds"] = len(common)
-    L += ["", f"Decision (flip accuracy, preregistered rule): **{'supported' if verdict else 'not supported'}**"
-          + ("" if len(common) >= 3 else f" (only {len(common)} of 3 preregistered seeds available: provisional)"),
-          "", "Per-operator flip-pair accuracy difference (paired − unpaired):", "",
+    reg = json.loads(Path("results/summary.json").read_text())["hypotheses"].get(
+        "H3_paired_minus_unpaired", {}).get(prefix, {}).get("flip_accuracy")
+    if reg:
+        res["registered"] = reg
+        res["supported_registered"] = reg["diff"] > 0 and reg["lo"] > 0
+        L += ["", f"Registered analysis (`scripts/analyze.py`, seeds pooled as independent pairs): flip-accuracy "
+              f"difference {reg['diff']:+.3f} [{reg['lo']:+.3f}, {reg['hi']:+.3f}] → "
+              f"**{'supported' if res['supported_registered'] else 'not supported'}**. "
+              f"Cluster bootstrap (above): **{'supported' if verdict else 'not supported'}**."
+              + ("" if len(common) >= 3 else f" Only {len(common)} of 3 preregistered seeds available: provisional.")]
+    fam = np.array([pid.split("-")[0] for pid in base["test"].ids])
+    res["by_family"] = {}
+    L += ["", "By test family (flip-pair accuracy, paired − unpaired): " + "; ".join(
+        f"{f}: " + fmt(res["by_family"].setdefault(f, summarize(
+            np.mean([metrics(tables["test"][f"{gp}_s{s}"].indicators(), W["test"], fam == f)["flip_accuracy"]
+                     for s in common], axis=0) -
+            np.mean([metrics(tables["test"][f"{gu}_s{s}"].indicators(), W["test"], fam == f)["flip_accuracy"]
+                     for s in common], axis=0))), True)
+        for f in sorted(set(fam)))]
+    L += ["", "Per-operator flip-pair accuracy difference (paired − unpaired):", "",
           "| Operator | Paired | Unpaired | Difference |", "|---|---|---|---|"]
     res["by_operator"] = {}
     for op in OPERATORS_FLIP:
@@ -630,7 +647,7 @@ if h3:
                  f"{r['n_seeds']} seed{'s' if r['n_seeds'] > 1 else ''})", fontsize=8.5, color=INK)
     h = [plt.Line2D([], [], color=BLUE, marker="o", lw=1.4, label="mean difference, 95% CI"),
          plt.Line2D([], [], color=ORANGE, marker="o", lw=0, ms=3, label="single seed")]
-    ax.legend(handles=h, loc="lower right", frameon=False, fontsize=7)
+    ax.legend(handles=h, loc="upper center", frameon=False, fontsize=7, ncol=2, bbox_to_anchor=(0.4, -0.09))
     fig.savefig(FIG / "fig5_h3_paired_vs_unpaired.png")
     plt.close(fig)
 
