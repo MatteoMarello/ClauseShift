@@ -1,0 +1,19 @@
+/home/user/clauseshift/.venv/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py:561: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-xsmall and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-xsmall and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+epoch 0 step 50/450 loss 1.0914 75s
+epoch 0 step 100/450 loss 0.9908 154s
+epoch 0 step 150/450 loss 0.5789 233s
+{"epoch": 0, "train_loss": 0.8870022676388423, "dev_macro_f1": 0.7131467787776735, "seconds": 257.3}
+epoch 1 step 200/450 loss 0.4740 334s
+epoch 1 step 250/450 loss 0.4734 412s
+epoch 1 step 300/450 loss 0.4354 490s
+{"epoch": 1, "train_loss": 0.4609265695015589, "dev_macro_f1": 0.7975962181607429, "seconds": 514.5}
+epoch 2 step 350/450 loss 0.4082 595s
+epoch 2 step 400/450 loss 0.4247 676s
+epoch 2 step 450/450 loss 0.3820 754s
+{"epoch": 2, "train_loss": 0.4049779333670934, "dev_macro_f1": 0.7943149563929351, "seconds": 778.6}
+done ft_deberta-v3-xsmall_unpaired_s2 907s
