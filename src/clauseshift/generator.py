@@ -265,19 +265,38 @@ class PairBuilder:
             s.exception_cat = self.other_cat(case.cat)
         return s
 
+    def mix_label(self, s: Spec, case: Case, exclude: set[str]) -> Spec:
+        """With probability 1/3 each: keep 'required', add a failing condition, or add a condition on an
+        attribute the case does not state. Used for near-miss operators, so that their (shared) label is
+        not predictable from the hypothesis alone (design iteration 2, docs/PREREGISTRATION.md)."""
+        r = self.rng.random()
+        lo, hi, step = self.dom["num_range"]
+        if r < 1 / 3:
+            return s
+        if r < 2 / 3:
+            options = [o for o in ("threshold", "exception", "date") if o not in exclude]
+            which = self.rng.choice(options)
+            if which == "threshold":
+                s.threshold = self.rng.randrange(case.num, hi, step)
+            elif which == "exception":
+                s.exception_cat = case.cat
+            else:
+                s.date_cutoff = case.date + dt.timedelta(days=self.rng.randrange(0, 120))
+            return s
+        options = [o for o in ("threshold", "date") if o not in exclude]
+        which = self.rng.choice(options)
+        if which == "threshold":
+            s.threshold = self.num()
+            case.num = None
+        else:
+            s.date_cutoff = self.date()
+            case.date = None
+        return s
+
     def random_background(self, case: Case) -> Spec:
         """Random spec of any label, used for invariance operators."""
-        s = self.satisfied_background(case, set())
-        r = self.rng.random()
-        hi = self.dom["num_range"][1]
-        if r < 0.2:
-            s.threshold = self.rng.randrange(case.num, hi, self.dom["num_range"][2])
-        elif r < 0.35:
-            s.exception_cat = case.cat
-        elif r < 0.45:
-            s.threshold = s.threshold or self.num()
-            case.num = None
-        return s
+        s = self.satisfied_background(case, {"exception"})
+        return self.mix_label(s, case, set())
 
     # -- operators -------------------------------------------------------------------------
     def build(self, op: str) -> tuple[Spec, Spec, Surface, Surface, Case]:
@@ -288,7 +307,7 @@ class PairBuilder:
             a = self.satisfied_background(case, {"exception"})
             b = dataclasses.replace(a, exception_cat=case.cat)
         elif op == "exception_near_miss":
-            a = self.satisfied_background(case, {"exception"})
+            a = self.mix_label(self.satisfied_background(case, {"exception"}), case, {"exception"})
             b = dataclasses.replace(a, exception_cat=self.other_cat(case.cat))
         elif op == "xref_redirect":
             a = self.satisfied_background(case, set())
@@ -301,6 +320,8 @@ class PairBuilder:
             a = self.satisfied_background(case, {"threshold"})
             lo, hi, step = self.dom["num_range"]
             a.threshold = self.rng.randrange(lo, case.num, step)
+            if op == "threshold_near_miss":
+                a = self.mix_label(a, case, {"threshold"})
             if op == "threshold_cross":
                 boundary = self.rng.random() < 0.25          # "more than v" with value == v is not satisfied
                 t_b = case.num if boundary else self.rng.randrange(case.num + step, hi + step, step)
@@ -317,7 +338,7 @@ class PairBuilder:
             a = self.satisfied_background(case, {"scope"})
             b = dataclasses.replace(a, scope_loc=self.other_loc(case.loc))
         elif op == "scope_near_miss":
-            a = self.satisfied_background(case, {"scope"})
+            a = self.mix_label(self.satisfied_background(case, {"scope"}), case, set())
             b = dataclasses.replace(a, scope_loc=case.loc)
         elif op == "condition_unknown":
             which = self.rng.choice(["threshold", "date"])

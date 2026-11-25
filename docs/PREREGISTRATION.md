@@ -84,4 +84,7 @@ from a specification rather than annotated; zero-shot models were trained on MNL
 does not exactly match "insufficient evidence".
 
 ## Changelog
-- 2026-11-25: initial version.
+- 2026-11-25: initial version (data v1, commit 8bed406).
+- 2026-11-25: data v2, before any neural model. The hypothesis-only control exposed a claim-polarity shortcut in
+  near-miss/invariant pairs (v1 dev accuracy 0.604). Near-miss and invariant pairs now have balanced shared labels.
+  See `results/design_iterations/README.md`. Splits, operators, models, metrics and hypotheses are unchanged.

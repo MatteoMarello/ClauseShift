@@ -15,14 +15,14 @@
       "test": 0
     },
     "test_entity_names_seen_in_train": 0,
-    "test_items_with_reserved_template": 1709,
+    "test_items_with_reserved_template": 1774,
     "train": {
       "items": 4800,
       "pairs": 2400,
       "labels": {
-        "contradicted": 2050,
-        "entailed": 2050,
-        "insufficient": 700
+        "contradicted": 1806,
+        "entailed": 1814,
+        "insufficient": 1180
       },
       "operators": {
         "exception_add": 150,
@@ -52,9 +52,9 @@
       "items": 960,
       "pairs": 480,
       "labels": {
-        "contradicted": 406,
-        "entailed": 420,
-        "insufficient": 134
+        "contradicted": 366,
+        "entailed": 346,
+        "insufficient": 248
       },
       "operators": {
         "exception_add": 30,
@@ -80,9 +80,9 @@
       "items": 2560,
       "pairs": 1280,
       "labels": {
-        "entailed": 1073,
-        "contradicted": 1125,
-        "insufficient": 362
+        "entailed": 999,
+        "contradicted": 943,
+        "insufficient": 618
       },
       "operators": {
         "exception_add": 80,
@@ -109,17 +109,17 @@
   "files": {
     "train": {
       "path": "train.jsonl",
-      "sha256_content": "4a1af5b5ba2b0020fa2a5e09b911ac111794cf9fdd25c0255c04419be459dea8",
+      "sha256_content": "693fb2908af4631fed262d79e39930556b18dd8ade672b7056aabebd90b74890",
       "items": 4800
     },
     "dev": {
       "path": "dev.jsonl",
-      "sha256_content": "df546e846fe77a9b343126c709e4661cf92cf37efe7bff7a4c6b739bbd69987c",
+      "sha256_content": "8920fdbeb26629c49eecf03b54acfb2f523f7d5aa5c8024cf4b6df61b108ed83",
       "items": 960
     },
     "test": {
       "path": "test.jsonl",
-      "sha256_content": "bcaf3c285455c81362d2cea9903bb368c97656f609e34135bff0d95ec84c848e",
+      "sha256_content": "102a6cae4b8c555db1bc5e1886a17b2ea5f41d3c9b02d7d86bc447b25fa40769",
       "items": 2560
     }
   }
