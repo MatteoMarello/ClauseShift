@@ -189,7 +189,38 @@ Operator hold-out and the no-NLI-pre-training ablation: runs in progress; comple
 
 ## 6. Discussion
 
-To be written after the results.
+**What the minimal pairs reveal.** Off-the-shelf NLI models answer roughly half of the items on flip pairs correctly
+but solve at most 0.30 of the pairs, and the main failure is not a wrong reaction to the edit but no reaction. The
+edits they handle are those that are lexically salient and close to their training distribution (an explicit "not
+required", an obligation that is simply different); the edits that decide most real eligibility questions — a
+number or date on the wrong side of a cutoff, a cross-reference that moves an exemption to another article — are
+almost never handled. The format control shows that this is not an artefact of where the case facts are placed.
+
+**What fine-tuning changes.** Two thousand four hundred synthetic items from other families are enough for a 22M-
+parameter encoder to solve about 80% of flip pairs in unseen vocabularies, and the counterfactual removal test
+indicates that the fine-tuned models depend on the decisive conditions in the way the rules require. Numeric and
+date comparisons remain the weakest point, and exact boundaries ("more than 50" with the value 50) are handled
+inconsistently across seeds. This suggests that the residual errors are about comparison semantics rather than
+about locating the relevant clause.
+
+**Paired versus unpaired training.** At equal size, complete pairs give a small advantage (+0.021 in flip-pair
+accuracy) that passes the registered decision rule but not a seed-level test, with one of three seeds negative.
+This sits between the null result of Huang et al. (2020) at equal size and the gains reported for
+counterfactually augmented data elsewhere, and is compatible with Joshi & He's (2022) argument that the benefit of
+counterfactual pairs depends on edit diversity: here edit diversity is high by construction for both conditions,
+and unpaired training sees twice as many distinct cases. The gain concentrates on the hardest operators, which is
+where a contrastive signal should matter most, but those per-operator differences are not individually reliable.
+A more decisive test would need more seeds (the seed SD of 0.02 is as large as the effect) and a learning-curve
+design.
+
+**What the evidence analysis teaches about the method.** The registered occlusion metric looked reasonable on paper
+and is uninformative in practice: every model scores ≈ 1.0. This is a property of the metric on documents where one
+sentence (the obligation) is necessary for every decided answer, not a property of the models. Where a specification
+allows the counterfactual label of a shortened document to be computed, a behavioural removal test is the more
+useful evidence measure.
+
+**Shift.** Reserved templates cost about four points, but the registered dev-to-test comparison is confounded by
+family difficulty. A leave-one-family-out design would separate the two.
 
 ## 7. Limitations
 
