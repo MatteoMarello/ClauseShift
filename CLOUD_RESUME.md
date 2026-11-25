@@ -31,7 +31,7 @@ python scripts/analyze.py && python scripts/error_analysis.py
 ```
 To resume a partially completed queue, comment out the runs whose `results/predictions/ft_*/test.jsonl` exists.
 
-## Resume prompt for Claude Code on the web
+## Resume prompt for an AI coding assistant
 > Read CLAUDE.md and CLOUD_RESUME.md. Verify the environment and that `pytest` passes. Run only the experiments
 > marked "not run", in the order given, committing after each completed run (predictions + logs, no weights).
 > Then run analyze.py and error_analysis.py, write docs/REPORT.md §5–6 and the README results section strictly
