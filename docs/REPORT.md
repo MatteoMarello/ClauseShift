@@ -36,7 +36,7 @@ template appears only in test. Train: 4,800 items / 2,400 pairs; dev: 960 / 480;
 
 Shortcut control. A hypothesis-only classifier on the first data version reached 0.60 dev accuracy, because
 near-miss pairs always had the label "required". The generator was changed before any neural model was run
-(`results/design_iterations/`). On v2 the hypothesis-only model reaches 0.43 (majority 0.36), and, by construction,
+(`results/design_iterations/`). On v2 the hypothesis-only model reaches 0.43 dev accuracy (majority 0.36), and, by construction,
 0.00 flip-pair accuracy.
 
 ## 3. Systems
@@ -47,7 +47,8 @@ near-miss pairs always had the label "required". The generator was changed befor
   MNLI-FEVER-ANLI, RoBERTa-large-MNLI. Each is run in the registered *standard* format (premise = document,
   hypothesis = case facts + claim) and, as an exploratory control for format mismatch, in a *facts-in-premise*
   format (premise = document + "Case:" + facts, hypothesis = claim only).
-- Fine-tuned `cross-encoder/nli-deberta-v3-xsmall` (CPU), three seeds per condition:
+- Fine-tuned `cross-encoder/nli-deberta-v3-xsmall` (CPU); three seeds per condition for paired and unpaired, fewer
+  for the ablations where the budget did not allow three (Section 5.7, preregistration deviations):
   - **paired**: 1,200 complete training pairs (2,400 items);
   - **unpaired**: one random side of each of 2,400 training pairs (2,400 items);
   - **operator hold-out**: all training pairs except `xref_redirect` and `date_cross`;
@@ -63,7 +64,7 @@ invariant-pair accuracy. 95% intervals: percentile bootstrap over pairs; model d
 the same resamples; seed groups: mean over seeds with a cluster bootstrap that keeps all seeds of a test pair
 together (the registered seed-pooled bootstrap is also reported). Evidence: occlusion hit@1 on 300 correctly
 answered test items, plus two exploratory measures introduced because hit@1 turned out to be weakly informative
-(Section 5.5): a strict hit@1 ignoring the obligation sentence, and a counterfactual removal test against labels
+(Section 5.6): a strict hit@1 ignoring the obligation sentence, and a counterfactual removal test against labels
 derived from the specification.
 
 ## 5. Results
@@ -104,8 +105,8 @@ comparison cannot go in the predicted direction (Figure 3). On the exact-boundar
 ### 5.3 Input format: a control for the zero-shot setting (exploratory)
 
 In the registered format, the case facts are part of the hypothesis. To an MNLI-trained model these facts are
-unsupported by the premise, which pushes predictions away from `entailment`; RoBERTa-large-MNLI never predicts
-`entailed` (0 of 2,560 items). Moving the facts into the premise (Figure 1, Figure 2):
+unsupported by the premise, which plausibly pushes predictions away from `entailment`; RoBERTa-large-MNLI never
+predicts `entailed` (0 of 2,560 items). Moving the facts into the premise (Figure 1, Figure 2):
 
 | Model | Flip-pair acc., standard → facts in premise | Difference | `entailed` share of predictions |
 |---|---|---|---|
@@ -138,8 +139,8 @@ bootstrap [+0.006, +0.036], cluster bootstrap over test pairs [+0.007, +0.035]. 
 **supported**. The evidence is weak in two respects. First, the per-seed differences are −0.002, +0.039 and +0.026;
 treating training runs as the random unit gives a 95% t-interval of [−0.032, +0.073] (df = 2), which includes 0.
 The registered rule treats seeds as fixed, so its interval reflects test-set sampling only. Second, the effect is
-small relative to the gain from fine-tuning itself (+0.67 to +0.69), and paired training is more seed-dependent (SD 0.021
-vs. 0.007). The direction is consistent across both test families (enrollment +0.027 [+0.009, +0.045];
+small relative to the gain from fine-tuning itself (+0.67 to +0.69), and paired training is more seed-dependent
+(SD 0.021 vs. 0.007). The direction is consistent across both test families (enrollment +0.027 [+0.009, +0.045];
 research_funding +0.015 [−0.007, +0.038]) and the per-operator differences are largest on the hardest edits
 (scope restriction +0.125 [+0.067, +0.187]; thresholds +0.054 and dates +0.046, both intervals including 0). These
 per-operator comparisons are descriptive and uncorrected for multiplicity.
@@ -202,14 +203,14 @@ seeds can differ by 0.04 in this comparison.
 ## 6. Discussion
 
 **What the minimal pairs reveal.** Off-the-shelf NLI models answer roughly half of the items on flip pairs correctly
-but solve at most 0.30 of the pairs (0.32 with the facts in the premise), and the main failure is not a wrong reaction to the edit but no reaction. The
-edits they handle are those that are lexically salient and close to their training distribution (an explicit "not
-required", an obligation that is simply different); the edits that decide most real eligibility questions — a
+but solve at most 0.30 of the pairs (0.32 with the facts in the premise), and the main failure is not a wrong
+reaction to the edit but no reaction. The edits they handle are those that are lexically salient and close to their training distribution (an explicit "not
+required", an obligation that is simply different); the edits that typically decide eligibility questions — a
 number or date on the wrong side of a cutoff, a cross-reference that moves an exemption to another article — are
 almost never handled. The format control shows that this is not an artefact of where the case facts are placed.
 
-**What fine-tuning changes.** Two thousand four hundred synthetic items from other families are enough for an encoder with a
-22M-parameter backbone to solve about 80% of flip pairs in unseen vocabularies, and the counterfactual removal test
+**What fine-tuning changes.** Two thousand four hundred synthetic items from other families are enough for an
+encoder with a 22M-parameter backbone to solve about 80% of flip pairs in unseen vocabularies, and the counterfactual removal test
 indicates that the fine-tuned models depend on the decisive conditions in the way the rules require. Numeric and
 date comparisons remain the weakest point, and exact boundaries ("more than 50" with the value 50) are handled
 inconsistently across seeds. This suggests that the residual errors are about comparison semantics rather than
@@ -245,7 +246,7 @@ family difficulty. A leave-one-family-out design would separate the two.
 - CPU-only compute (a 4-core cloud CPU): compact encoders, at most three seeds, no hyper-parameter search, no
   instruction-tuned LLMs.
 - Occlusion measures sensitivity to removing a sentence, not whether the model reasons faithfully; removal variants
-  also drop the article headers (Section 5.5).
+  also drop the article headers (Section 5.6).
 - Per-operator results are confounded with document complexity: negation documents carry no conditions.
 - Only two test families; family-level conclusions rest on two vocabularies.
 
