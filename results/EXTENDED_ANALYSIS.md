@@ -27,43 +27,43 @@ Difference = flip-pair accuracy(operator) − flip-pair accuracy(negation). Supp
 | zeroshot_nli-deberta-v3-base | -0.863 [-0.937, -0.780] | -0.863 [-0.937, -0.782] | -0.875 [-0.946, -0.798] | -0.875 [-0.946, -0.798] | yes |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | -0.512 [-0.642, -0.370] | -0.662 [-0.772, -0.542] | -0.738 [-0.833, -0.636] | -0.738 [-0.833, -0.635] | yes |
 | zeroshot_roberta-large-mnli | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | no |
-| ft_deberta-v3-xsmall_paired | -0.081 [-0.129, -0.037] | -0.206 [-0.263, -0.153] | -0.481 [-0.506, -0.454] | -0.494 [-0.513, -0.471] | yes |
-| ft_deberta-v3-xsmall_unpaired | -0.231 [-0.318, -0.147] | -0.988 [-1.000, -0.967] | -0.981 [-1.000, -0.957] | -0.994 [-1.000, -0.979] | yes |
+| ft_deberta-v3-xsmall_paired | -0.196 [-0.254, -0.140] | -0.454 [-0.496, -0.412] | -0.646 [-0.666, -0.624] | -0.642 [-0.664, -0.615] | yes |
+| ft_deberta-v3-xsmall_unpaired | -0.217 [-0.300, -0.133] | -0.992 [-1.000, -0.978] | -0.983 [-0.996, -0.965] | -0.996 [-1.000, -0.986] | yes |
 | ft_nli-deberta-v3-xsmall_op_holdout | -0.025 [-0.050, -0.005] | -0.958 [-0.982, -0.929] | -0.217 [-0.293, -0.143] | -0.192 [-0.266, -0.120] | yes |
 | ft_nli-deberta-v3-xsmall_paired | -0.079 [-0.119, -0.046] | -0.138 [-0.187, -0.090] | -0.488 [-0.577, -0.402] | -0.333 [-0.414, -0.256] | yes |
 | ft_nli-deberta-v3-xsmall_unpaired | -0.062 [-0.104, -0.025] | -0.158 [-0.213, -0.105] | -0.542 [-0.626, -0.456] | -0.379 [-0.466, -0.292] | yes |
 
 ### H3: paired vs. unpaired training (equal size)
 
-**ft_deberta-v3-xsmall** (seeds [0, 1]; paired − unpaired, mean over seeds, cluster bootstrap)
+**ft_deberta-v3-xsmall** (seeds [0, 1, 2]; paired − unpaired, mean over seeds, cluster bootstrap)
 
 | Metric | Paired | Unpaired | Difference | Per-seed differences |
 |---|---|---|---|---|
-| flip_accuracy | 0.387 | 0.507 | -0.120 [-0.145, -0.096] | +0.061, -0.301 |
-| pair_accuracy | 0.491 | 0.573 | -0.081 [-0.102, -0.062] | +0.050, -0.212 |
-| accuracy | 0.686 | 0.745 | -0.059 [-0.073, -0.046] | +0.026, -0.143 |
-| macro_f1 | 0.676 | 0.774 | -0.098 [-0.109, -0.087] | +0.022, -0.217 |
-| flip_sensitivity | 0.542 | 0.622 | -0.080 [-0.100, -0.061] | +0.069, -0.229 |
-| invariance | 0.939 | 0.877 | +0.061 [+0.038, +0.083] | +0.017, +0.106 |
+| flip_accuracy | 0.426 | 0.519 | -0.093 [-0.113, -0.074] | +0.061, -0.301, -0.039 |
+| pair_accuracy | 0.520 | 0.579 | -0.059 [-0.075, -0.045] | +0.050, -0.212, -0.016 |
+| accuracy | 0.705 | 0.748 | -0.043 [-0.054, -0.033] | +0.026, -0.143, -0.012 |
+| macro_f1 | 0.706 | 0.778 | -0.071 [-0.080, -0.063] | +0.022, -0.217, -0.019 |
+| flip_sensitivity | 0.554 | 0.621 | -0.067 [-0.083, -0.051] | +0.069, -0.229, -0.040 |
+| invariance | 0.932 | 0.872 | +0.060 [+0.040, +0.079] | +0.017, +0.106, +0.056 |
 
-Seed-level sensitivity (treats training runs as the random unit and ignores test sampling): mean per-seed flip-accuracy difference -0.120, SD 0.256, 95% t-interval [-2.423, +2.183] (df = 1). The pair bootstraps treat seeds as fixed, so they do not include this training-run variance.
+Seed-level sensitivity (treats training runs as the random unit and ignores test sampling): mean per-seed flip-accuracy difference -0.093, SD 0.187, 95% t-interval [-0.558, +0.372] (df = 2). The pair bootstraps treat seeds as fixed, so they do not include this training-run variance.
 
-Registered analysis (`scripts/analyze.py`, seeds pooled as independent pairs): flip-accuracy difference -0.120 [-0.144, -0.096] → **not supported**. Cluster bootstrap (above): **not supported**. Only 2 of 3 preregistered seeds available: provisional.
+Registered analysis (`scripts/analyze.py`, seeds pooled as independent pairs): flip-accuracy difference -0.093 [-0.113, -0.075] → **not supported**. Cluster bootstrap (above): **not supported**.
 
-By test family (flip-pair accuracy, paired − unpaired): enrollment: -0.130 [-0.167, -0.095]; research_funding: -0.110 [-0.145, -0.076]
+By test family (flip-pair accuracy, paired − unpaired): enrollment: -0.093 [-0.124, -0.065]; research_funding: -0.093 [-0.118, -0.068]
 
 Per-operator flip-pair accuracy difference (paired − unpaired):
 
 | Operator | Paired | Unpaired | Difference |
 |---|---|---|---|
-| exception_add | 0.425 | 0.769 | -0.344 [-0.401, -0.283] |
-| xref_redirect | 0.300 | 0.013 | +0.287 [+0.230, +0.341] |
-| negation | 0.506 | 1.000 | -0.494 [-0.500, -0.479] |
-| threshold_cross | 0.025 | 0.019 | +0.006 [-0.021, +0.033] |
-| date_cross | 0.013 | 0.006 | +0.006 [-0.014, +0.027] |
-| scope_restrict | 0.094 | 0.263 | -0.169 [-0.244, -0.099] |
-| condition_unknown | 0.666 | 0.759 | -0.094 [-0.154, -0.030] |
-| topic_swap | 0.588 | 0.741 | -0.153 [-0.210, -0.094] |
+| exception_add | 0.471 | 0.783 | -0.312 [-0.369, -0.257] |
+| xref_redirect | 0.212 | 0.008 | +0.204 [+0.163, +0.243] |
+| negation | 0.667 | 1.000 | -0.333 [-0.345, -0.322] |
+| threshold_cross | 0.021 | 0.017 | +0.004 [-0.018, +0.025] |
+| date_cross | 0.025 | 0.004 | +0.021 [+0.000, +0.047] |
+| scope_restrict | 0.092 | 0.263 | -0.171 [-0.246, -0.103] |
+| condition_unknown | 0.719 | 0.785 | -0.067 [-0.107, -0.024] |
+| topic_swap | 0.669 | 0.773 | -0.104 [-0.147, -0.059] |
 
 **ft_nli-deberta-v3-xsmall** (seeds [0, 1, 2]; paired − unpaired, mean over seeds, cluster bootstrap)
 
@@ -101,8 +101,8 @@ Dev and test are independent samples (independent bootstraps). Reserved vs. seen
 
 | Group | Dev acc. | Test acc. | Dev − test | Seen − reserved (raw) | Seen − reserved (operator-stratified) |
 |---|---|---|---|---|---|
-| ft_deberta-v3-xsmall_paired | 0.708 | 0.686 | +0.022 [-0.005, +0.049] | +0.014 [-0.014, +0.042] | +0.004 [-0.024, +0.031] |
-| ft_deberta-v3-xsmall_unpaired | 0.749 | 0.745 | +0.004 [-0.026, +0.035] | +0.040 [+0.001, +0.075] | +0.020 [-0.015, +0.052] |
+| ft_deberta-v3-xsmall_paired | 0.715 | 0.705 | +0.009 [-0.017, +0.035] | +0.023 [-0.006, +0.049] | +0.010 [-0.016, +0.034] |
+| ft_deberta-v3-xsmall_unpaired | 0.759 | 0.748 | +0.011 [-0.020, +0.041] | +0.038 [+0.001, +0.074] | +0.017 [-0.016, +0.048] |
 | ft_nli-deberta-v3-xsmall_op_holdout | 0.890 | 0.933 | -0.043 [-0.062, -0.023] | +0.013 [-0.007, +0.031] | +0.011 [-0.002, +0.023] |
 | ft_nli-deberta-v3-xsmall_paired | 0.838 | 0.904 | -0.066 [-0.091, -0.042] | +0.042 [+0.022, +0.061] | +0.038 [+0.019, +0.056] |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.843 | 0.891 | -0.047 [-0.074, -0.022] | +0.041 [+0.019, +0.062] | +0.037 [+0.015, +0.057] |
@@ -184,8 +184,8 @@ Flip-pair accuracy by operator:
 | ft_nli-deberta-v3-xsmall_paired | 3 | 0.904 [0.893, 0.914] | 0.914 [0.905, 0.922] | 0.836 [0.819, 0.852] | 0.815 [0.793, 0.836] | 0.868 [0.847, 0.887] | 0.937 [0.921, 0.951] |
 | ft_nli-deberta-v3-xsmall_unpaired | 3 | 0.891 [0.880, 0.902] | 0.903 [0.893, 0.912] | 0.814 [0.796, 0.832] | 0.795 [0.770, 0.817] | 0.848 [0.826, 0.868] | 0.919 [0.902, 0.937] |
 | ft_nli-deberta-v3-xsmall_op_holdout | 3 | 0.933 [0.924, 0.941] | 0.941 [0.933, 0.948] | 0.873 [0.857, 0.889] | 0.822 [0.799, 0.845] | 0.855 [0.832, 0.877] | 0.976 [0.966, 0.985] |
-| ft_deberta-v3-xsmall_paired | 2 | 0.686 [0.673, 0.699] | 0.676 [0.668, 0.685] | 0.491 [0.471, 0.511] | 0.387 [0.365, 0.411] | 0.542 [0.514, 0.572] | 0.939 [0.923, 0.953] |
-| ft_deberta-v3-xsmall_unpaired | 2 | 0.745 [0.729, 0.761] | 0.774 [0.761, 0.787] | 0.573 [0.547, 0.599] | 0.507 [0.475, 0.540] | 0.622 [0.591, 0.656] | 0.877 [0.855, 0.900] |
+| ft_deberta-v3-xsmall_paired | 3 | 0.705 [0.693, 0.718] | 0.706 [0.697, 0.716] | 0.520 [0.500, 0.539] | 0.426 [0.403, 0.451] | 0.554 [0.526, 0.583] | 0.932 [0.917, 0.946] |
+| ft_deberta-v3-xsmall_unpaired | 3 | 0.748 [0.733, 0.765] | 0.778 [0.765, 0.790] | 0.579 [0.554, 0.604] | 0.519 [0.487, 0.552] | 0.621 [0.590, 0.654] | 0.872 [0.851, 0.892] |
 
 ## 4. Operator hold-out (preregistered ablation)
 
@@ -217,8 +217,8 @@ Each flip pair is either solved (both sides correct), *insensitive* (same predic
 | ft_nli-deberta-v3-xsmall_paired | 0.815 | 0.132 | 0.052 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.795 | 0.152 | 0.053 |
 | ft_nli-deberta-v3-xsmall_op_holdout | 0.822 | 0.145 | 0.032 |
-| ft_deberta-v3-xsmall_paired | 0.387 | 0.458 | 0.155 |
-| ft_deberta-v3-xsmall_unpaired | 0.507 | 0.378 | 0.115 |
+| ft_deberta-v3-xsmall_paired | 0.426 | 0.446 | 0.128 |
+| ft_deberta-v3-xsmall_unpaired | 0.519 | 0.379 | 0.102 |
 
 ## 6. Document complexity by operator (test, exploratory)
 
@@ -249,8 +249,10 @@ Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in 
 |---|---|---|---|---|---|
 | ft_deberta-v3-xsmall_paired_s0 | 0.910 [0.877, 0.940] | 0.496 | 0.797 | 0.165 [0.117, 0.214] (n=206) | 0.293 |
 | ft_deberta-v3-xsmall_paired_s1 | 0.947 [0.920, 0.970] | 0.492 | 0.940 | 0.008 [0.000, 0.021] (n=238) | 0.277 |
+| ft_deberta-v3-xsmall_paired_s2 | 0.977 [0.957, 0.993] | 0.491 | 0.937 | 0.061 [0.030, 0.096] (n=197) | 0.293 |
 | ft_deberta-v3-xsmall_unpaired_s0 | 0.917 [0.883, 0.947] | 0.500 | 0.847 | 0.098 [0.061, 0.140] (n=214) | 0.291 |
 | ft_deberta-v3-xsmall_unpaired_s1 | 0.940 [0.910, 0.967] | 0.489 | 0.837 | 0.149 [0.106, 0.197] (n=208) | 0.281 |
+| ft_deberta-v3-xsmall_unpaired_s2 | 0.860 [0.820, 0.900] | 0.499 | 0.733 | 0.182 [0.134, 0.234] (n=209) | 0.292 |
 | ft_nli-deberta-v3-xsmall_op_holdout_s0 | 1.000 [1.000, 1.000] | 0.506 | 0.780 | 0.284 [0.228, 0.349] (n=232) | 0.294 |
 | ft_nli-deberta-v3-xsmall_op_holdout_s1 | 0.997 [0.990, 1.000] | 0.505 | 0.743 | 0.319 [0.261, 0.378] (n=238) | 0.289 |
 | ft_nli-deberta-v3-xsmall_op_holdout_s2 | 0.997 [0.990, 1.000] | 0.513 | 0.750 | 0.320 [0.260, 0.381] (n=231) | 0.300 |
@@ -271,8 +273,10 @@ Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in 
 |---|---|---|---|---|---|
 | ft_deberta-v3-xsmall_paired_s0 | 276 | 0.946 | 0.743 (n=276) | 0.784 (n=74) | 0.884 (n=657) |
 | ft_deberta-v3-xsmall_paired_s1 | 277 | 0.881 | 0.762 (n=277) | 0.079 (n=114) | 0.880 (n=701) |
+| ft_deberta-v3-xsmall_paired_s2 | 275 | 0.953 | 0.833 (n=275) | 0.565 (n=62) | 0.907 (n=676) |
 | ft_deberta-v3-xsmall_unpaired_s0 | 280 | 0.932 | 0.775 (n=280) | 0.732 (n=71) | 0.891 (n=695) |
 | ft_deberta-v3-xsmall_unpaired_s1 | 278 | 0.921 | 0.784 (n=278) | 0.740 (n=96) | 0.862 (n=660) |
+| ft_deberta-v3-xsmall_unpaired_s2 | 280 | 0.986 | 0.611 (n=280) | 0.729 (n=70) | 0.884 (n=673) |
 | ft_nli-deberta-v3-xsmall_op_holdout_s0 | 290 | 0.990 | 0.952 (n=290) | 0.915 (n=106) | 0.953 (n=739) |
 | ft_nli-deberta-v3-xsmall_op_holdout_s1 | 288 | 0.993 | 0.927 (n=288) | 0.913 (n=103) | 0.972 (n=741) |
 | ft_nli-deberta-v3-xsmall_op_holdout_s2 | 288 | 0.993 | 0.944 (n=288) | 0.943 (n=106) | 0.975 (n=716) |
@@ -304,6 +308,8 @@ Epoch selection uses dev macro-F1 only. A run whose best dev macro-F1 stays far 
 | ft_nli-deberta-v3-xsmall_op_holdout_s2 | 4200 | 0.730, 0.897, 0.893 | 1 | 25 |
 | ft_deberta-v3-xsmall_paired_s0 | 2400 | 0.725, 0.800, 0.806 | 2 | 17 |
 | ft_deberta-v3-xsmall_paired_s1 | 2400 | 0.184, 0.496, 0.561 | 2 | 16 |
+| ft_deberta-v3-xsmall_paired_s2 | 2400 | 0.722, 0.672, 0.754 | 2 | 18 |
 | ft_deberta-v3-xsmall_unpaired_s0 | 2400 | 0.766, 0.766, 0.777 | 2 | 14 |
 | ft_deberta-v3-xsmall_unpaired_s1 | 2400 | 0.574, 0.736, 0.767 | 2 | 14 |
+| ft_deberta-v3-xsmall_unpaired_s2 | 2400 | 0.713, 0.798, 0.794 | 1 | 13 |
 

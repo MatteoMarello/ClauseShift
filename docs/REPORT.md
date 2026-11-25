@@ -5,6 +5,22 @@ Every number below is taken from `results/RESULTS.md` (registered analyses, `scr
 `results/EXTENDED_ANALYSIS.md` (decision rules, paired and cluster bootstraps, exploratory analyses,
 `scripts/analyze_extended.py`). Labels are generator-derived; human validation is pending (Section 7).
 
+## Abstract
+
+ClauseShift evaluates three-way inference over short rule-like documents with 1,280 test minimal pairs whose two
+documents differ by one controlled edit and whose gold labels are computed from a rule specification. Four
+off-the-shelf NLI cross-encoders solve at most 0.30 of the label-changing pairs, against item accuracies 0.32–0.36
+higher on the same pairs; most failures are insensitivity to the edit, and threshold, date and cross-reference
+edits are almost never handled. Moving the case facts into the premise removes one model's format artefact but not
+this pattern. A 22M-backbone DeBERTa-v3 model fine-tuned on 2,400 items from other rule families solves about 80%
+of such pairs; numeric and date boundaries remain the weakest point, and a cross-reference edit unseen in training
+is not learned from other edits (0.04). At equal size, training on complete minimal pairs beats training on single
+sides by +0.021 [+0.006, +0.036] flip-pair accuracy from an NLI checkpoint, which meets the preregistered criterion
+but not a seed-level test; without NLI pre-training the sign reverses and the comparison is dominated by
+optimisation instability. The preregistered occlusion evidence metric scores ≈ 1.0 for every model and is shown to
+be uninformative on this data; a counterfactual removal test with specification-derived labels separates the
+models. All labels are generator-derived and not yet human-validated.
+
 ## 1. Motivation
 
 Rule-like documents — tender conditions, eligibility criteria, internal policies — are routinely summarised or
@@ -47,8 +63,7 @@ near-miss pairs always had the label "required". The generator was changed befor
   MNLI-FEVER-ANLI, RoBERTa-large-MNLI. Each is run in the registered *standard* format (premise = document,
   hypothesis = case facts + claim) and, as an exploratory control for format mismatch, in a *facts-in-premise*
   format (premise = document + "Case:" + facts, hypothesis = claim only).
-- Fine-tuned `cross-encoder/nli-deberta-v3-xsmall` (CPU); three seeds per condition for paired and unpaired, fewer
-  for the ablations where the budget did not allow three (Section 5.7, preregistration deviations):
+- Fine-tuned `cross-encoder/nli-deberta-v3-xsmall` (CPU), three seeds per condition (15 runs in total):
   - **paired**: 1,200 complete training pairs (2,400 items);
   - **unpaired**: one random side of each of 2,400 training pairs (2,400 items);
   - **operator hold-out**: all training pairs except `xref_redirect` and `date_cross`;
@@ -194,12 +209,18 @@ their higher overall flip-pair accuracy (0.822 ± 0.008). Sensitivity to an exem
 (exception_add, 0.97) therefore does not carry over to the same exemption stated in a separate article and attached
 by reference: resolving "Article 1" is a distinct skill that had to be seen in training.
 
-**No NLI pre-training.** Starting from `microsoft/deberta-v3-xsmall` (seed 0), flip-pair accuracy is 0.591 (paired)
-and 0.530 (unpaired), against about 0.80 from the NLI checkpoint. Thresholds and dates stay at 0.00–0.05, i.e.
-numeric and date comparison is not learned from 2,400 items without NLI pre-training. The paired-minus-unpaired
-difference is larger than with NLI initialisation, +0.061 [+0.038, +0.085], and concentrated on cross-references
-(0.60 paired vs. 0.01 unpaired). With one seed per condition this is indicative only: Section 5.4 shows that single
-seeds can differ by 0.04 in this comparison.
+**No NLI pre-training (three seeds).** Starting from `microsoft/deberta-v3-xsmall`, flip-pair accuracy is
+0.426 ± 0.215 (paired) and 0.519 ± 0.031 (unpaired), against about 0.80 from the NLI checkpoint. Thresholds and dates
+stay at 0.00–0.03 in both conditions: numeric and date comparison is not learned from 2,400 items without NLI
+pre-training. The paired-minus-unpaired difference is **−0.093** [−0.113, −0.074] (registered rule: not supported),
+with per-seed differences +0.061, −0.301 and −0.039 (seed-level t-interval [−0.558, +0.372]). The large negative seed
+is an optimisation failure visible on dev alone: the paired seed-1 run reaches dev macro-F1 0.184 after one epoch and
+0.561 after three (best dev macro-F1 of all other runs: 0.75–0.92), and on test it labels almost every decided item `contradicted`.
+Paired runs without NLI initialisation are also the least stable overall (SD 0.215 vs. 0.031). One per-operator
+pattern is consistent across the three seeds: paired training raises cross-reference flip-pair accuracy (0.21 vs.
+0.01; +0.204 [+0.163, +0.243]) while lowering most other operators. A possible explanation, not tested here, is that
+a batch containing both sides of a pair (same hypothesis, opposite labels) gives conflicting gradients to a model
+that cannot yet read the clause, which slows the start of training.
 
 ## 6. Discussion
 
@@ -224,8 +245,10 @@ counterfactually augmented data elsewhere, and is compatible with Joshi & He's (
 counterfactual pairs depends on edit diversity: here edit diversity is high by construction for both conditions,
 and unpaired training sees twice as many distinct cases. The gain concentrates on the hardest operators, which is
 where a contrastive signal should matter most, but those per-operator differences are not individually reliable.
-A more decisive test would need more seeds (the seed SD of 0.02 is as large as the effect) and a learning-curve
-design.
+Without NLI pre-training the comparison reverses (−0.093) and is dominated by one non-converged run, so the
+benefit of pairing, if any, depends on the starting point: pairs help a model that already reads entailment and may
+hinder one that does not. A more decisive test would need more seeds (the seed SD of 0.02 is as large as the
+effect), a longer training budget and a learning-curve design.
 
 **What the evidence analysis teaches about the method.** The registered occlusion metric looked reasonable on paper
 and is uninformative in practice: every model scores ≈ 1.0. This is a property of the metric on documents where one
