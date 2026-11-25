@@ -249,6 +249,8 @@ family difficulty. A leave-one-family-out design would separate the two.
 - Occlusion measures sensitivity to removing a sentence, not whether the model reasons faithfully; removal variants
   also drop the article headers (Section 5.6).
 - Per-operator results are confounded with document complexity: negation documents carry no conditions.
+- Training budget: 12 of 15 fine-tuning runs select the last of the three preregistered epochs, so the models are
+  not trained to convergence; results describe the registered recipe, not the best attainable accuracy.
 - Only two test families; family-level conclusions rest on two vocabularies.
 
 ## 8. Reproducibility

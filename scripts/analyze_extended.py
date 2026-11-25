@@ -522,6 +522,23 @@ else:
     L += ["Not yet available.", ""]
 summary["evidence"] = ev_res
 
+# Training diagnostics (from meta.json; dev only)
+ft_runs = [s for s in SYSTEMS if s.startswith("ft_")]
+if ft_runs:
+    L += ["## 8. Training diagnostics (fine-tuned runs; dev macro-F1 per epoch)", "",
+          "Epoch selection uses dev macro-F1 only. A run whose best dev macro-F1 stays far below the others did not "
+          "converge within the preregistered three epochs; such runs are reported, not excluded or re-run.", "",
+          "| Run | Train items | Dev macro-F1 by epoch | Selected epoch | Minutes |", "|---|---|---|---|---|"]
+    diag = {}
+    for s in sorted(ft_runs, key=lambda x: (_order(re.sub(r"_s\d+$", "", x)), x)):
+        meta = json.loads((ROOT / s / "meta.json").read_text())
+        curve = [round(e["dev_macro_f1"], 3) for e in meta["log"]]
+        diag[s] = {"dev_macro_f1": curve, "selected_epoch": meta["selected_epoch"], "train_items": meta["train_items"]}
+        L.append(f"| {s} | {meta['train_items']} | {', '.join(f'{c:.3f}' for c in curve)} | {meta['selected_epoch']} | "
+                 f"{meta['log'][-1]['seconds'] / 60:.0f} |")
+    L.append("")
+    summary["training_diagnostics"] = diag
+
 Path("results/extended_summary.json").write_text(json.dumps(summary, indent=1, default=float), encoding="utf-8")
 Path("results/EXTENDED_ANALYSIS.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 
