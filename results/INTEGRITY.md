@@ -20,6 +20,8 @@
 - PASS: ft_nli-deberta-v3-xsmall_op_holdout_s0/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: ft_nli-deberta-v3-xsmall_op_holdout_s1/dev: 960 items, ids/labels/probabilities/arg-max
 - PASS: ft_nli-deberta-v3-xsmall_op_holdout_s1/test: 2560 items, ids/labels/probabilities/arg-max
+- PASS: ft_nli-deberta-v3-xsmall_op_holdout_s2/dev: 960 items, ids/labels/probabilities/arg-max
+- PASS: ft_nli-deberta-v3-xsmall_op_holdout_s2/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: ft_nli-deberta-v3-xsmall_paired_s0/dev: 960 items, ids/labels/probabilities/arg-max
 - PASS: ft_nli-deberta-v3-xsmall_paired_s0/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: ft_nli-deberta-v3-xsmall_paired_s1/dev: 960 items, ids/labels/probabilities/arg-max
@@ -61,6 +63,7 @@
 - PASS: ft_deberta-v3-xsmall_unpaired_s0: test point estimates reproduced
 - PASS: ft_nli-deberta-v3-xsmall_op_holdout_s0: test point estimates reproduced
 - PASS: ft_nli-deberta-v3-xsmall_op_holdout_s1: test point estimates reproduced
+- PASS: ft_nli-deberta-v3-xsmall_op_holdout_s2: test point estimates reproduced
 - PASS: ft_nli-deberta-v3-xsmall_paired_s0: test point estimates reproduced
 - PASS: ft_nli-deberta-v3-xsmall_paired_s1: test point estimates reproduced
 - PASS: ft_nli-deberta-v3-xsmall_paired_s2: test point estimates reproduced

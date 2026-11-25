@@ -1,0 +1,54 @@
+{
+  "model": "cross-encoder/nli-deberta-v3-xsmall",
+  "revision": "a150876415327c80daeff35ca6f68f5ed8cf5c24",
+  "condition": "op_holdout",
+  "seed": 2,
+  "holdout_operators": [
+    "xref_redirect",
+    "date_cross"
+  ],
+  "train_items": 4200,
+  "train_pairs_complete": 2100,
+  "epochs": 3,
+  "lr": 3e-05,
+  "batch_size": 16,
+  "max_length": 320,
+  "selected_epoch": 1,
+  "selected_dev_macro_f1": 0.8973324186438939,
+  "log": [
+    {
+      "epoch": 0,
+      "train_loss": 0.7292740869658075,
+      "dev_macro_f1": 0.729766770995798,
+      "seconds": 518.0
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.14554312785364998,
+      "dev_macro_f1": 0.8973324186438939,
+      "seconds": 1022.0
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.057377362549225285,
+      "dev_macro_f1": 0.8927321573838637,
+      "seconds": 1492.6
+    }
+  ],
+  "torch": "2.5.1+cpu",
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "smoke_test": false,
+  "evidence_test": {
+    "n": 300,
+    "eligible": 1779,
+    "hit_at_1": 0.9966666666666667,
+    "top_sentence_role_counts": {
+      "obligation": 225,
+      "threshold": 27,
+      "xref": 5,
+      "exception": 12,
+      "date": 23,
+      "scope": 8
+    }
+  }
+}

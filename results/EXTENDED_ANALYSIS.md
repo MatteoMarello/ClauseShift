@@ -29,7 +29,7 @@ Difference = flip-pair accuracy(operator) − flip-pair accuracy(negation). Supp
 | zeroshot_roberta-large-mnli | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | no |
 | ft_deberta-v3-xsmall_paired | -0.162 [-0.250, -0.086] | -0.400 [-0.514, -0.295] | -0.950 [-0.989, -0.900] | -0.975 [-1.000, -0.936] | yes |
 | ft_deberta-v3-xsmall_unpaired | -0.188 [-0.275, -0.103] | -0.988 [-1.000, -0.958] | -0.988 [-1.000, -0.959] | -1.000 [-1.000, -1.000] | yes |
-| ft_nli-deberta-v3-xsmall_op_holdout | -0.050 [-0.106, -0.011] | -0.963 [-1.000, -0.916] | -0.238 [-0.338, -0.147] | -0.188 [-0.274, -0.103] | yes |
+| ft_nli-deberta-v3-xsmall_op_holdout | -0.031 [-0.060, -0.007] | -0.963 [-0.988, -0.931] | -0.219 [-0.304, -0.140] | -0.181 [-0.261, -0.104] | yes |
 | ft_nli-deberta-v3-xsmall_paired | -0.079 [-0.119, -0.046] | -0.138 [-0.187, -0.090] | -0.488 [-0.577, -0.402] | -0.333 [-0.414, -0.256] | yes |
 | ft_nli-deberta-v3-xsmall_unpaired | -0.062 [-0.104, -0.025] | -0.158 [-0.213, -0.105] | -0.542 [-0.626, -0.456] | -0.379 [-0.466, -0.292] | yes |
 
@@ -101,7 +101,7 @@ Dev and test are independent samples (independent bootstraps). Reserved vs. seen
 |---|---|---|---|---|---|
 | ft_deberta-v3-xsmall_paired | 0.787 | 0.778 | +0.009 [-0.025, +0.041] | +0.033 [-0.008, +0.072] | +0.012 [-0.027, +0.049] |
 | ft_deberta-v3-xsmall_unpaired | 0.756 | 0.752 | +0.004 [-0.029, +0.037] | +0.038 [-0.003, +0.077] | +0.015 [-0.023, +0.052] |
-| ft_nli-deberta-v3-xsmall_op_holdout | 0.867 | 0.934 | -0.067 [-0.092, -0.044] | +0.012 [-0.010, +0.032] | +0.010 [-0.008, +0.026] |
+| ft_nli-deberta-v3-xsmall_op_holdout | 0.892 | 0.932 | -0.040 [-0.060, -0.020] | +0.016 [-0.004, +0.036] | +0.014 [+0.001, +0.028] |
 | ft_nli-deberta-v3-xsmall_paired | 0.838 | 0.904 | -0.066 [-0.091, -0.042] | +0.042 [+0.022, +0.061] | +0.038 [+0.019, +0.056] |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.843 | 0.891 | -0.047 [-0.074, -0.022] | +0.041 [+0.019, +0.062] | +0.037 [+0.015, +0.057] |
 
@@ -181,7 +181,7 @@ Flip-pair accuracy by operator:
 | zeroshot_roberta-large-mnli_factsinpremise | – | 0.506 [0.487, 0.525] | 0.451 [0.429, 0.473] | 0.263 [0.240, 0.288] | 0.225 [0.198, 0.255] | 0.228 [0.200, 0.257] | 0.994 [0.985, 1.000] |
 | ft_nli-deberta-v3-xsmall_paired | 3 | 0.904 [0.893, 0.914] | 0.914 [0.905, 0.922] | 0.836 [0.819, 0.852] | 0.815 [0.793, 0.836] | 0.868 [0.847, 0.887] | 0.937 [0.921, 0.951] |
 | ft_nli-deberta-v3-xsmall_unpaired | 3 | 0.891 [0.880, 0.902] | 0.903 [0.893, 0.912] | 0.814 [0.796, 0.832] | 0.795 [0.770, 0.817] | 0.848 [0.826, 0.868] | 0.919 [0.902, 0.937] |
-| ft_nli-deberta-v3-xsmall_op_holdout | 1 | 0.934 [0.924, 0.943] | 0.942 [0.933, 0.950] | 0.874 [0.857, 0.892] | 0.824 [0.798, 0.849] | 0.851 [0.827, 0.876] | 0.975 [0.960, 0.988] |
+| ft_nli-deberta-v3-xsmall_op_holdout | 2 | 0.932 [0.923, 0.941] | 0.940 [0.932, 0.948] | 0.870 [0.854, 0.887] | 0.819 [0.794, 0.843] | 0.856 [0.833, 0.879] | 0.971 [0.958, 0.982] |
 | ft_deberta-v3-xsmall_paired | 1 | 0.778 [0.761, 0.796] | 0.803 [0.788, 0.817] | 0.638 [0.613, 0.664] | 0.591 [0.558, 0.626] | 0.690 [0.658, 0.722] | 0.900 [0.870, 0.926] |
 | ft_deberta-v3-xsmall_unpaired | 1 | 0.752 [0.735, 0.770] | 0.781 [0.767, 0.795] | 0.588 [0.561, 0.616] | 0.530 [0.495, 0.565] | 0.621 [0.589, 0.656] | 0.883 [0.854, 0.912] |
 
@@ -191,7 +191,7 @@ Training uses all training pairs except xref_redirect and date_cross (4,200 item
 
 | Group | Seeds | xref_redirect | date_cross | Other flip operators (mean) |
 |---|---|---|---|---|
-| ft_nli-deberta-v3-xsmall_op_holdout | 1 | 0.037 [0.000, 0.084] | 0.812 [0.726, 0.897] | 0.921 |
+| ft_nli-deberta-v3-xsmall_op_holdout | 2 | 0.037 [0.013, 0.069] | 0.819 [0.739, 0.896] | 0.919 |
 | ft_nli-deberta-v3-xsmall_paired | 3 | 0.862 [0.813, 0.910] | 0.667 [0.586, 0.744] | 0.810 |
 | ft_nli-deberta-v3-xsmall_unpaired | 3 | 0.842 [0.787, 0.895] | 0.621 [0.534, 0.708] | 0.785 |
 
@@ -214,7 +214,7 @@ Each flip pair is either solved (both sides correct), *insensitive* (same predic
 | zeroshot_roberta-large-mnli_factsinpremise | 0.225 | 0.772 | 0.003 |
 | ft_nli-deberta-v3-xsmall_paired | 0.815 | 0.132 | 0.052 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.795 | 0.152 | 0.053 |
-| ft_nli-deberta-v3-xsmall_op_holdout | 0.824 | 0.149 | 0.027 |
+| ft_nli-deberta-v3-xsmall_op_holdout | 0.819 | 0.144 | 0.037 |
 | ft_deberta-v3-xsmall_paired | 0.591 | 0.310 | 0.099 |
 | ft_deberta-v3-xsmall_unpaired | 0.530 | 0.379 | 0.091 |
 
@@ -248,6 +248,7 @@ Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in 
 | ft_deberta-v3-xsmall_paired_s0 | 0.910 [0.877, 0.940] | 0.496 | 0.797 | 0.165 [0.117, 0.214] (n=206) | 0.293 |
 | ft_deberta-v3-xsmall_unpaired_s0 | 0.917 [0.883, 0.947] | 0.500 | 0.847 | 0.098 [0.061, 0.140] (n=214) | 0.291 |
 | ft_nli-deberta-v3-xsmall_op_holdout_s0 | 1.000 [1.000, 1.000] | 0.506 | 0.780 | 0.284 [0.228, 0.349] (n=232) | 0.294 |
+| ft_nli-deberta-v3-xsmall_op_holdout_s1 | 0.997 [0.990, 1.000] | 0.505 | 0.743 | 0.319 [0.261, 0.378] (n=238) | 0.289 |
 | ft_nli-deberta-v3-xsmall_paired_s0 | 1.000 [1.000, 1.000] | 0.489 | 0.907 | 0.126 [0.086, 0.171] (n=222) | 0.279 |
 | ft_nli-deberta-v3-xsmall_paired_s1 | 0.993 [0.983, 1.000] | 0.509 | 0.873 | 0.159 [0.115, 0.207] (n=227) | 0.295 |
 | ft_nli-deberta-v3-xsmall_paired_s2 | 1.000 [1.000, 1.000] | 0.491 | 0.927 | 0.097 [0.062, 0.137] (n=226) | 0.284 |
@@ -266,6 +267,7 @@ Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in 
 | ft_deberta-v3-xsmall_paired_s0 | 276 | 0.946 | 0.743 (n=276) | 0.784 (n=74) | 0.884 (n=657) |
 | ft_deberta-v3-xsmall_unpaired_s0 | 280 | 0.932 | 0.775 (n=280) | 0.732 (n=71) | 0.891 (n=695) |
 | ft_nli-deberta-v3-xsmall_op_holdout_s0 | 290 | 0.990 | 0.952 (n=290) | 0.915 (n=106) | 0.953 (n=739) |
+| ft_nli-deberta-v3-xsmall_op_holdout_s1 | 288 | 0.993 | 0.927 (n=288) | 0.913 (n=103) | 0.972 (n=741) |
 | ft_nli-deberta-v3-xsmall_paired_s0 | 272 | 0.915 | 0.982 (n=272) | 0.800 (n=90) | 0.904 (n=679) |
 | ft_nli-deberta-v3-xsmall_paired_s1 | 273 | 0.960 | 0.956 (n=273) | 0.879 (n=99) | 0.920 (n=662) |
 | ft_nli-deberta-v3-xsmall_paired_s2 | 273 | 0.956 | 0.993 (n=273) | 0.858 (n=106) | 0.953 (n=674) |
