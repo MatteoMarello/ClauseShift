@@ -26,6 +26,22 @@
 | contradicted | 330 | 611 | 2 |
 | insufficient | 208 | 403 | 7 |
 
+**zeroshot_DeBERTa-v3-base-mnli-fever-anli**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 454 | 400 | 145 |
+| contradicted | 172 | 676 | 95 |
+| insufficient | 125 | 263 | 230 |
+
+**zeroshot_nli-deberta-v3-base**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 518 | 400 | 81 |
+| contradicted | 281 | 604 | 58 |
+| insufficient | 170 | 281 | 167 |
+
 **zeroshot_nli-deberta-v3-xsmall**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -33,6 +49,14 @@
 | entailed | 74 | 399 | 526 |
 | contradicted | 13 | 642 | 288 |
 | insufficient | 33 | 279 | 306 |
+
+**zeroshot_roberta-large-mnli**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 0 | 384 | 615 |
+| contradicted | 0 | 638 | 305 |
+| insufficient | 0 | 288 | 330 |
 
 ## Exact-boundary edits (threshold_cross, date_cross)
 
@@ -43,7 +67,10 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | majority | 41 | 0.537 | 0.495 |
 | tfidf_lr_document_hypothesis | 41 | 0.122 | 0.412 |
 | tfidf_lr_hypothesis_only | 41 | 0.195 | 0.545 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 41 | 0.000 | 0.538 |
+| zeroshot_nli-deberta-v3-base | 41 | 0.000 | 0.530 |
 | zeroshot_nli-deberta-v3-xsmall | 41 | 0.000 | 0.323 |
+| zeroshot_roberta-large-mnli | 41 | 0.000 | 0.297 |
 
 ## Calibration (test, 10-bin ECE)
 
@@ -51,4 +78,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 |---|---|---|---|
 | tfidf_lr_document_hypothesis | 0.017 | 0.412 | 0.413 |
 | tfidf_lr_hypothesis_only | 0.038 | 0.453 | 0.415 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.345 | 0.876 | 0.531 |
+| zeroshot_nli-deberta-v3-base | 0.473 | 0.977 | 0.504 |
 | zeroshot_nli-deberta-v3-xsmall | 0.558 | 0.957 | 0.399 |
+| zeroshot_roberta-large-mnli | 0.517 | 0.895 | 0.378 |
