@@ -1,0 +1,13 @@
+epoch 0 step 50/450 loss 1.4601 208s
+epoch 0 step 100/450 loss 0.7997 302s
+epoch 0 step 150/450 loss 0.6331 392s
+{"epoch": 0, "train_loss": 0.9642829010883968, "dev_macro_f1": 0.7255052484090015, "seconds": 416.1}
+epoch 1 step 200/450 loss 0.4182 518s
+epoch 1 step 250/450 loss 0.3736 615s
+epoch 1 step 300/450 loss 0.3734 713s
+{"epoch": 1, "train_loss": 0.38840089658896126, "dev_macro_f1": 0.8078591178604771, "seconds": 739.6}
+epoch 2 step 350/450 loss 0.2551 837s
+epoch 2 step 400/450 loss 0.1938 934s
+epoch 2 step 450/450 loss 0.1911 1029s
+{"epoch": 2, "train_loss": 0.21335843578601876, "dev_macro_f1": 0.8568742772214186, "seconds": 1057.3}
+done ft_nli-deberta-v3-xsmall_paired_s2 1199s

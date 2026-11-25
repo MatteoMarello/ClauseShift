@@ -27,38 +27,40 @@ Difference = flip-pair accuracy(operator) − flip-pair accuracy(negation). Supp
 | zeroshot_nli-deberta-v3-base | -0.863 [-0.937, -0.780] | -0.863 [-0.937, -0.782] | -0.875 [-0.946, -0.798] | -0.875 [-0.946, -0.798] | yes |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | -0.512 [-0.642, -0.370] | -0.662 [-0.772, -0.542] | -0.738 [-0.833, -0.636] | -0.738 [-0.833, -0.635] | yes |
 | zeroshot_roberta-large-mnli | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | +0.000 [+0.000, +0.000] | no |
-| ft_nli-deberta-v3-xsmall_paired | -0.050 [-0.106, -0.011] | -0.162 [-0.244, -0.085] | -0.650 [-0.763, -0.543] | -0.400 [-0.513, -0.296] | yes |
-| ft_nli-deberta-v3-xsmall_unpaired | -0.062 [-0.120, -0.014] | -0.175 [-0.265, -0.095] | -0.575 [-0.688, -0.464] | -0.325 [-0.431, -0.224] | yes |
+| ft_nli-deberta-v3-xsmall_paired | -0.069 [-0.116, -0.030] | -0.131 [-0.184, -0.082] | -0.488 [-0.584, -0.397] | -0.356 [-0.443, -0.272] | yes |
+| ft_nli-deberta-v3-xsmall_unpaired | -0.056 [-0.101, -0.019] | -0.150 [-0.213, -0.093] | -0.556 [-0.651, -0.463] | -0.331 [-0.425, -0.243] | yes |
 
 ### H3: paired vs. unpaired training (equal size)
 
-**ft_nli-deberta-v3-xsmall** (seeds [0]; paired − unpaired, mean over seeds, cluster bootstrap)
+**ft_nli-deberta-v3-xsmall** (seeds [0, 1]; paired − unpaired, mean over seeds, cluster bootstrap)
 
 | Metric | Paired | Unpaired | Difference | Per-seed differences |
 |---|---|---|---|---|
-| flip_accuracy | 0.796 | 0.799 | -0.002 [-0.029, +0.023] | -0.002 |
-| pair_accuracy | 0.807 | 0.823 | -0.016 [-0.037, +0.005] | -0.016 |
-| accuracy | 0.882 | 0.896 | -0.014 [-0.029, -0.001] | -0.014 |
-| macro_f1 | 0.894 | 0.909 | -0.015 [-0.028, -0.003] | -0.015 |
-| flip_sensitivity | 0.835 | 0.840 | -0.005 [-0.030, +0.019] | -0.005 |
-| invariance | 0.933 | 0.933 | +0.000 [-0.025, +0.024] | +0.000 |
+| flip_accuracy | 0.817 | 0.799 | +0.018 [+0.000, +0.037] | -0.002, +0.039 |
+| pair_accuracy | 0.831 | 0.816 | +0.015 [+0.001, +0.029] | -0.016, +0.045 |
+| accuracy | 0.900 | 0.892 | +0.008 [-0.001, +0.017] | -0.014, +0.030 |
+| macro_f1 | 0.910 | 0.904 | +0.005 [-0.003, +0.014] | -0.015, +0.026 |
+| flip_sensitivity | 0.863 | 0.860 | +0.003 [-0.013, +0.018] | -0.005, +0.010 |
+| invariance | 0.930 | 0.922 | +0.008 [-0.010, +0.026] | +0.000, +0.017 |
 
-Registered analysis (`scripts/analyze.py`, seeds pooled as independent pairs): flip-accuracy difference -0.002 [-0.028, +0.025] → **not supported**. Cluster bootstrap (above): **not supported**. Only 1 of 3 preregistered seeds available: provisional.
+Seed-level sensitivity (treats training runs as the random unit and ignores test sampling): mean per-seed flip-accuracy difference +0.018, SD 0.029, 95% t-interval [-0.244, +0.280] (df = 1). The pair bootstraps treat seeds as fixed, so they do not include this training-run variance.
 
-By test family (flip-pair accuracy, paired − unpaired): enrollment: -0.010 [-0.044, +0.024]; research_funding: +0.005 [-0.036, +0.044]
+Registered analysis (`scripts/analyze.py`, seeds pooled as independent pairs): flip-accuracy difference +0.018 [-0.000, +0.037] → **not supported**. Cluster bootstrap (above): **not supported**. Only 2 of 3 preregistered seeds available: provisional.
+
+By test family (flip-pair accuracy, paired − unpaired): enrollment: +0.021 [-0.002, +0.045]; research_funding: +0.015 [-0.012, +0.045]
 
 Per-operator flip-pair accuracy difference (paired − unpaired):
 
 | Operator | Paired | Unpaired | Difference |
 |---|---|---|---|
-| exception_add | 0.950 | 0.938 | +0.012 [-0.042, +0.067] |
-| xref_redirect | 0.838 | 0.825 | +0.013 [-0.091, +0.123] |
+| exception_add | 0.931 | 0.944 | -0.013 [-0.065, +0.040] |
+| xref_redirect | 0.869 | 0.850 | +0.019 [-0.039, +0.074] |
 | negation | 1.000 | 1.000 | +0.000 [+0.000, +0.000] |
-| threshold_cross | 0.350 | 0.425 | -0.075 [-0.186, +0.039] |
-| date_cross | 0.600 | 0.675 | -0.075 [-0.188, +0.038] |
-| scope_restrict | 0.613 | 0.487 | +0.125 [+0.013, +0.236] |
-| condition_unknown | 0.887 | 0.881 | +0.006 [-0.042, +0.057] |
-| topic_swap | 0.919 | 0.938 | -0.019 [-0.058, +0.023] |
+| threshold_cross | 0.512 | 0.444 | +0.069 [-0.013, +0.159] |
+| date_cross | 0.644 | 0.669 | -0.025 [-0.093, +0.043] |
+| scope_restrict | 0.631 | 0.600 | +0.031 [-0.042, +0.109] |
+| condition_unknown | 0.872 | 0.850 | +0.022 [-0.013, +0.058] |
+| topic_swap | 0.919 | 0.891 | +0.028 [-0.008, +0.064] |
 
 ### H4: shift from dev (vehicles) to test families, and to reserved templates
 
@@ -66,8 +68,8 @@ Dev and test are independent samples (independent bootstraps). Reserved vs. seen
 
 | Group | Dev acc. | Test acc. | Dev − test | Seen − reserved (raw) | Seen − reserved (operator-stratified) |
 |---|---|---|---|---|---|
-| ft_nli-deberta-v3-xsmall_paired | 0.819 | 0.882 | -0.063 [-0.094, -0.035] | +0.062 [+0.036, +0.090] | +0.058 [+0.033, +0.084] |
-| ft_nli-deberta-v3-xsmall_unpaired | 0.867 | 0.896 | -0.030 [-0.060, -0.002] | +0.031 [+0.003, +0.057] | +0.027 [+0.000, +0.053] |
+| ft_nli-deberta-v3-xsmall_paired | 0.834 | 0.900 | -0.066 [-0.092, -0.041] | +0.051 [+0.030, +0.072] | +0.047 [+0.027, +0.067] |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.845 | 0.892 | -0.047 [-0.075, -0.021] | +0.037 [+0.013, +0.059] | +0.032 [+0.008, +0.054] |
 
 Reserved-template pairs in test: 924 of 1280.
 
@@ -143,8 +145,8 @@ Flip-pair accuracy by operator:
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | – | 0.539 [0.518, 0.559] | 0.509 [0.485, 0.532] | 0.326 [0.300, 0.352] | 0.320 [0.288, 0.353] | 0.323 [0.290, 0.356] | 0.996 [0.989, 1.000] |
 | zeroshot_roberta-large-mnli | – | 0.378 [0.358, 0.397] | 0.307 [0.292, 0.321] | 0.150 [0.130, 0.170] | 0.070 [0.053, 0.088] | 0.229 [0.202, 0.259] | 0.956 [0.937, 0.973] |
 | zeroshot_roberta-large-mnli_factsinpremise | – | 0.506 [0.487, 0.525] | 0.451 [0.429, 0.473] | 0.263 [0.240, 0.288] | 0.225 [0.198, 0.255] | 0.228 [0.200, 0.257] | 0.994 [0.985, 1.000] |
-| ft_nli-deberta-v3-xsmall_paired | 1 | 0.882 [0.868, 0.896] | 0.894 [0.880, 0.906] | 0.807 [0.784, 0.828] | 0.796 [0.767, 0.823] | 0.835 [0.809, 0.860] | 0.933 [0.909, 0.955] |
-| ft_nli-deberta-v3-xsmall_unpaired | 1 | 0.896 [0.884, 0.910] | 0.909 [0.897, 0.920] | 0.823 [0.802, 0.845] | 0.799 [0.771, 0.826] | 0.840 [0.813, 0.865] | 0.933 [0.910, 0.954] |
+| ft_nli-deberta-v3-xsmall_paired | 2 | 0.900 [0.889, 0.911] | 0.910 [0.900, 0.919] | 0.831 [0.812, 0.848] | 0.817 [0.793, 0.839] | 0.863 [0.841, 0.882] | 0.930 [0.911, 0.948] |
+| ft_nli-deberta-v3-xsmall_unpaired | 2 | 0.892 [0.880, 0.904] | 0.904 [0.894, 0.914] | 0.816 [0.798, 0.835] | 0.799 [0.774, 0.823] | 0.860 [0.839, 0.881] | 0.922 [0.902, 0.940] |
 
 ## 5. How flip pairs fail (exploratory)
 
@@ -163,8 +165,8 @@ Each flip pair is either solved (both sides correct), *insensitive* (same predic
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | 0.320 | 0.677 | 0.002 |
 | zeroshot_roberta-large-mnli | 0.070 | 0.771 | 0.159 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.225 | 0.772 | 0.003 |
-| ft_nli-deberta-v3-xsmall_paired | 0.796 | 0.165 | 0.039 |
-| ft_nli-deberta-v3-xsmall_unpaired | 0.799 | 0.160 | 0.041 |
+| ft_nli-deberta-v3-xsmall_paired | 0.817 | 0.137 | 0.046 |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.799 | 0.140 | 0.061 |
 
 ## 6. Document complexity by operator (test, exploratory)
 
@@ -194,12 +196,16 @@ Preregistered occlusion hit@1 (sentence whose removal most lowers p(gold) is in 
 | System | hit@1 | Random-sentence hit rate | Top sentence = obligation | Strict hit@1 (non-obligation evidence) | Random, strict |
 |---|---|---|---|---|---|
 | ft_nli-deberta-v3-xsmall_paired_s0 | 1.000 [1.000, 1.000] | 0.489 | 0.907 | 0.126 [0.086, 0.171] (n=222) | 0.279 |
+| ft_nli-deberta-v3-xsmall_paired_s1 | 0.993 [0.983, 1.000] | 0.509 | 0.873 | 0.159 [0.115, 0.207] (n=227) | 0.295 |
 | ft_nli-deberta-v3-xsmall_unpaired_s0 | 1.000 [1.000, 1.000] | 0.502 | 0.940 | 0.084 [0.051, 0.121] (n=214) | 0.307 |
+| ft_nli-deberta-v3-xsmall_unpaired_s1 | 0.997 [0.990, 1.000] | 0.502 | 0.930 | 0.089 [0.053, 0.129] (n=225) | 0.283 |
 
 **Counterfactual removal test.** For each sampled item and each sentence, the expected label after deleting that sentence is derived from the rule specification (`clauseshift.evidence`, validated against the generator on 706 pairs). Removals are grouped as: the obligation sentence (expected: insufficient), a *decisive* condition (expected: the label changes), and a *non-decisive* sentence (expected: unchanged). Items with a cross-reference are excluded: removal variants drop the article headers, so "Article k" cannot be resolved. The header-free full document (no sentence removed) is the format control.
 
 | System | Items | Header-free control correct | Obligation removed → insufficient | Decisive removed → label changes as expected | Non-decisive removed → label kept |
 |---|---|---|---|---|---|
 | ft_nli-deberta-v3-xsmall_paired_s0 | 272 | 0.915 | 0.982 (n=272) | 0.800 (n=90) | 0.904 (n=679) |
+| ft_nli-deberta-v3-xsmall_paired_s1 | 273 | 0.960 | 0.956 (n=273) | 0.879 (n=99) | 0.920 (n=662) |
 | ft_nli-deberta-v3-xsmall_unpaired_s0 | 269 | 0.985 | 0.989 (n=269) | 0.877 (n=73) | 0.948 (n=670) |
+| ft_nli-deberta-v3-xsmall_unpaired_s1 | 273 | 0.949 | 0.996 (n=273) | 0.824 (n=102) | 0.918 (n=646) |
 
