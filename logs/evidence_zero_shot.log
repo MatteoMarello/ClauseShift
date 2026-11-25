@@ -1,0 +1,7 @@
+zeroshot_DeBERTa-v3-base-mnli-fever-anli {'n': 300, 'eligible': 1130, 'hit_at_1': 1.0, 'top_sentence_role_counts': {'obligation': 277, 'date': 2, 'exception': 7, 'scope': 4, 'xref': 5, 'threshold': 5}}
+zeroshot_nli-deberta-v3-base {'n': 300, 'eligible': 1122, 'hit_at_1': 1.0, 'top_sentence_role_counts': {'obligation': 295, 'xref': 1, 'scope': 2, 'threshold': 1, 'exception': 1}}
+zeroshot_nli-deberta-v3-xsmall {'n': 300, 'eligible': 716, 'hit_at_1': 0.9933333333333333, 'top_sentence_role_counts': {'obligation': 279, 'exception': 17, 'scope': 2, 'xref': 2}}
+Some weights of the model checkpoint at FacebookAI/roberta-large-mnli were not used when initializing RobertaForSequenceClassification: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+zeroshot_roberta-large-mnli {'n': 300, 'eligible': 638, 'hit_at_1': 0.97, 'top_sentence_role_counts': {'obligation': 267, 'scope': 9, 'exception': 10, 'xref': 6, 'article2': 4, 'date': 2, 'threshold': 2}}

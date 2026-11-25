@@ -1,0 +1,15 @@
+{
+  "model": "cross-encoder/nli-deberta-v3-base",
+  "revision": "6c749ce3425cd33b46d187e45b92bbf96ee12ec7",
+  "license": "apache-2.0",
+  "label_mapping": {
+    "0": "contradicted",
+    "1": "entailed",
+    "2": "insufficient"
+  },
+  "max_length": 384,
+  "input_format": "facts_in_premise",
+  "seconds_test": 489.7,
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "torch": "2.5.1+cpu"
+}

@@ -48,8 +48,8 @@ What ClauseShift adds is narrower and methodological:
    design.
 
 Limitations that bound these claims: the text is template-generated and fictional, so results show what models do
-on controlled rule language, not on real contracts; labels are generator-derived until the human review is
-complete; the encoder experiments run on CPU-sized models.
+on controlled synthetic rule language. Labels follow the generator specification. A [blinded LLM audit](../review/clauseshift_llm_audit.md)
+checked 112 items. Independent human review is pending. The encoder experiments use CPU-sized models.
 
 ## References
 
@@ -81,3 +81,13 @@ complete; the encoder experiments run on CPU-sized models.
 - Saeidi, M. et al. (2018). Interpretation of Natural Language Rules in Conversational Machine Reading. EMNLP.
 - Sun, H., Cohen, W. W., Salakhutdinov, R. (2022). ConditionalQA: A Complex Reading Comprehension Dataset with
   Conditional Answers. ACL. https://aclanthology.org/2022.acl-long.253
+
+### Models and methods used
+- Efron, B., Tibshirani, R. J. (1993). An Introduction to the Bootstrap. Chapman & Hall.
+- He, P., Liu, X., Gao, J., Chen, W. (2021). DeBERTa: Decoding-enhanced BERT with Disentangled Attention. ICLR.
+- He, P., Gao, J., Chen, W. (2023). DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with
+  Gradient-Disentangled Embedding Sharing. ICLR.
+- Liu, Y. et al. (2019). RoBERTa: A Robustly Optimized BERT Pretraining Approach. arXiv:1907.11692.
+- Loshchilov, I., Hutter, F. (2019). Decoupled Weight Decay Regularization. ICLR.
+- Williams, A., Nangia, N., Bowman, S. R. (2018). A Broad-Coverage Challenge Corpus for Sentence Understanding
+  through Inference. NAACL.

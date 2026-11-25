@@ -2,6 +2,126 @@
 
 ## Confusion matrices (test; rows = gold, columns = predicted)
 
+**ft_deberta-v3-xsmall_paired_s0**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 794 | 205 | 0 |
+| contradicted | 362 | 581 | 0 |
+| insufficient | 1 | 0 | 617 |
+
+**ft_deberta-v3-xsmall_paired_s1**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 24 | 970 | 5 |
+| contradicted | 18 | 919 | 6 |
+| insufficient | 32 | 9 | 577 |
+
+**ft_deberta-v3-xsmall_paired_s2**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 828 | 171 | 0 |
+| contradicted | 484 | 459 | 0 |
+| insufficient | 0 | 0 | 618 |
+
+**ft_deberta-v3-xsmall_unpaired_s0**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 728 | 271 | 0 |
+| contradicted | 363 | 580 | 0 |
+| insufficient | 0 | 0 | 618 |
+
+**ft_deberta-v3-xsmall_unpaired_s1**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 733 | 266 | 0 |
+| contradicted | 402 | 541 | 0 |
+| insufficient | 3 | 3 | 612 |
+
+**ft_deberta-v3-xsmall_unpaired_s2**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 701 | 298 | 0 |
+| contradicted | 324 | 619 | 0 |
+| insufficient | 1 | 1 | 616 |
+
+**ft_nli-deberta-v3-xsmall_op_holdout_s0**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 901 | 98 | 0 |
+| contradicted | 71 | 872 | 0 |
+| insufficient | 0 | 0 | 618 |
+
+**ft_nli-deberta-v3-xsmall_op_holdout_s1**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 883 | 116 | 0 |
+| contradicted | 61 | 882 | 0 |
+| insufficient | 0 | 2 | 616 |
+
+**ft_nli-deberta-v3-xsmall_op_holdout_s2**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 909 | 90 | 0 |
+| contradicted | 73 | 870 | 0 |
+| insufficient | 0 | 5 | 613 |
+
+**ft_nli-deberta-v3-xsmall_paired_s0**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 804 | 183 | 12 |
+| contradicted | 95 | 847 | 1 |
+| insufficient | 0 | 11 | 607 |
+
+**ft_nli-deberta-v3-xsmall_paired_s1**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 878 | 110 | 11 |
+| contradicted | 78 | 859 | 6 |
+| insufficient | 0 | 5 | 613 |
+
+**ft_nli-deberta-v3-xsmall_paired_s2**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 882 | 114 | 3 |
+| contradicted | 107 | 836 | 0 |
+| insufficient | 0 | 2 | 616 |
+
+**ft_nli-deberta-v3-xsmall_unpaired_s0**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 851 | 146 | 2 |
+| contradicted | 117 | 826 | 0 |
+| insufficient | 0 | 0 | 618 |
+
+**ft_nli-deberta-v3-xsmall_unpaired_s1**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 802 | 188 | 9 |
+| contradicted | 87 | 856 | 0 |
+| insufficient | 1 | 2 | 615 |
+
+**ft_nli-deberta-v3-xsmall_unpaired_s2**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 820 | 174 | 5 |
+| contradicted | 95 | 846 | 2 |
+| insufficient | 2 | 8 | 608 |
+
 **majority**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -26,6 +146,38 @@
 | contradicted | 330 | 611 | 2 |
 | insufficient | 208 | 403 | 7 |
 
+**zeroshot_DeBERTa-v3-base-mnli-fever-anli**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 454 | 400 | 145 |
+| contradicted | 172 | 676 | 95 |
+| insufficient | 125 | 263 | 230 |
+
+**zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 633 | 366 | 0 |
+| contradicted | 351 | 592 | 0 |
+| insufficient | 194 | 270 | 154 |
+
+**zeroshot_nli-deberta-v3-base**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 518 | 400 | 81 |
+| contradicted | 281 | 604 | 58 |
+| insufficient | 170 | 281 | 167 |
+
+**zeroshot_nli-deberta-v3-base_factsinpremise**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 603 | 391 | 5 |
+| contradicted | 339 | 598 | 6 |
+| insufficient | 191 | 281 | 146 |
+
 **zeroshot_nli-deberta-v3-xsmall**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -34,21 +186,113 @@
 | contradicted | 13 | 642 | 288 |
 | insufficient | 33 | 279 | 306 |
 
+**zeroshot_nli-deberta-v3-xsmall_factsinpremise**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 182 | 404 | 413 |
+| contradicted | 34 | 646 | 263 |
+| insufficient | 70 | 284 | 264 |
+
+**zeroshot_roberta-large-mnli**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 0 | 384 | 615 |
+| contradicted | 0 | 638 | 305 |
+| insufficient | 0 | 288 | 330 |
+
+**zeroshot_roberta-large-mnli_factsinpremise**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 606 | 393 | 0 |
+| contradicted | 346 | 597 | 0 |
+| insufficient | 194 | 331 | 93 |
+
 ## Exact-boundary edits (threshold_cross, date_cross)
 
 Item accuracy on the side of the pair whose case value equals the cutoff ("more than 50" with value 50) versus the other boundary-free items of the same operators.
 
 | System | Boundary items | Accuracy (boundary) | Accuracy (non-boundary) |
 |---|---|---|---|
+| ft_deberta-v3-xsmall_paired_s0 | 41 | 0.366 | 0.520 |
+| ft_deberta-v3-xsmall_paired_s1 | 41 | 0.463 | 0.502 |
+| ft_deberta-v3-xsmall_paired_s2 | 41 | 0.341 | 0.534 |
+| ft_deberta-v3-xsmall_unpaired_s0 | 41 | 0.317 | 0.527 |
+| ft_deberta-v3-xsmall_unpaired_s1 | 41 | 0.415 | 0.509 |
+| ft_deberta-v3-xsmall_unpaired_s2 | 41 | 0.341 | 0.523 |
+| ft_nli-deberta-v3-xsmall_op_holdout_s0 | 41 | 0.610 | 0.935 |
+| ft_nli-deberta-v3-xsmall_op_holdout_s1 | 41 | 0.780 | 0.921 |
+| ft_nli-deberta-v3-xsmall_op_holdout_s2 | 41 | 0.659 | 0.925 |
+| ft_nli-deberta-v3-xsmall_paired_s0 | 41 | 0.585 | 0.756 |
+| ft_nli-deberta-v3-xsmall_paired_s1 | 41 | 0.829 | 0.842 |
+| ft_nli-deberta-v3-xsmall_paired_s2 | 41 | 0.463 | 0.842 |
+| ft_nli-deberta-v3-xsmall_unpaired_s0 | 41 | 0.659 | 0.785 |
+| ft_nli-deberta-v3-xsmall_unpaired_s1 | 41 | 0.634 | 0.792 |
+| ft_nli-deberta-v3-xsmall_unpaired_s2 | 41 | 0.390 | 0.796 |
 | majority | 41 | 0.537 | 0.495 |
 | tfidf_lr_document_hypothesis | 41 | 0.122 | 0.412 |
 | tfidf_lr_hypothesis_only | 41 | 0.195 | 0.545 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 41 | 0.000 | 0.538 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | 41 | 0.000 | 0.573 |
+| zeroshot_nli-deberta-v3-base | 41 | 0.000 | 0.530 |
+| zeroshot_nli-deberta-v3-base_factsinpremise | 41 | 0.000 | 0.573 |
 | zeroshot_nli-deberta-v3-xsmall | 41 | 0.000 | 0.323 |
+| zeroshot_nli-deberta-v3-xsmall_factsinpremise | 41 | 0.000 | 0.351 |
+| zeroshot_roberta-large-mnli | 41 | 0.000 | 0.297 |
+| zeroshot_roberta-large-mnli_factsinpremise | 41 | 0.000 | 0.573 |
 
 ## Calibration (test, 10-bin ECE)
 
 | System | ECE | Mean confidence | Accuracy |
 |---|---|---|---|
+| ft_deberta-v3-xsmall_paired_s0 | 0.040 | 0.792 | 0.778 |
+| ft_deberta-v3-xsmall_paired_s1 | 0.028 | 0.598 | 0.594 |
+| ft_deberta-v3-xsmall_paired_s2 | 0.036 | 0.749 | 0.744 |
+| ft_deberta-v3-xsmall_unpaired_s0 | 0.059 | 0.795 | 0.752 |
+| ft_deberta-v3-xsmall_unpaired_s1 | 0.023 | 0.726 | 0.737 |
+| ft_deberta-v3-xsmall_unpaired_s2 | 0.045 | 0.789 | 0.756 |
+| ft_nli-deberta-v3-xsmall_op_holdout_s0 | 0.052 | 0.986 | 0.934 |
+| ft_nli-deberta-v3-xsmall_op_holdout_s1 | 0.060 | 0.990 | 0.930 |
+| ft_nli-deberta-v3-xsmall_op_holdout_s2 | 0.053 | 0.985 | 0.934 |
+| ft_nli-deberta-v3-xsmall_paired_s0 | 0.026 | 0.905 | 0.882 |
+| ft_nli-deberta-v3-xsmall_paired_s1 | 0.018 | 0.932 | 0.918 |
+| ft_nli-deberta-v3-xsmall_paired_s2 | 0.021 | 0.933 | 0.912 |
+| ft_nli-deberta-v3-xsmall_unpaired_s0 | 0.023 | 0.916 | 0.896 |
+| ft_nli-deberta-v3-xsmall_unpaired_s1 | 0.013 | 0.896 | 0.888 |
+| ft_nli-deberta-v3-xsmall_unpaired_s2 | 0.014 | 0.891 | 0.888 |
 | tfidf_lr_document_hypothesis | 0.017 | 0.412 | 0.413 |
 | tfidf_lr_hypothesis_only | 0.038 | 0.453 | 0.415 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.345 | 0.876 | 0.531 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | 0.431 | 0.968 | 0.539 |
+| zeroshot_nli-deberta-v3-base | 0.473 | 0.977 | 0.504 |
+| zeroshot_nli-deberta-v3-base_factsinpremise | 0.466 | 0.991 | 0.526 |
 | zeroshot_nli-deberta-v3-xsmall | 0.558 | 0.957 | 0.399 |
+| zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.515 | 0.942 | 0.427 |
+| zeroshot_roberta-large-mnli | 0.517 | 0.895 | 0.378 |
+| zeroshot_roberta-large-mnli_factsinpremise | 0.455 | 0.961 | 0.506 |
+
+## Example failures (ft_nli-deberta-v3-xsmall_paired_s0)
+
+- **exception_add** gold `contradicted`, predicted `entailed`
+  - Document: Article 1. It is mandatory for applicants to submit an English language certificate. This requirement applies only to applications received after 4 February 2026. This requirement applies only to applicants educated in Ireland. Article 2. It is mandatory for applicants to provide two reference letters. Article 3. Interviews may be held online.
+  - Hypothesis: Ola Nowak asks for 54 credits to be recognised. Ola Nowak was educated in Ireland. Ola Nowak's application was received on 17 February 2026. Ola Nowak is a transfer applicant. Ola Nowak is not required to submit an English language certificate.
+- **xref_redirect** gold `contradicted`, predicted `entailed`
+  - Document: Article 1. Every applicant is required to submit an English language certificate. This requirement applies only to applications received after 4 March 2026. This requirement applies only if the number of credits to be recognised is more than 3 credits. Article 2. Every applicant is required to upload a copy of their identity document. Article 3. Transfer applicants are exempt from Article 2. Article 4. Scholarship applications follow a separate procedure.
+  - Hypothesis: Nour Fahmy's application was received on 17 March 2026. Nour Fahmy asks for 93 credits to be recognised. Nour Fahmy is a transfer applicant. Nour Fahmy was educated in Ireland. Nour Fahmy does not have to submit an English language certificate.
+- **threshold_cross** gold `entailed`, predicted `contradicted`
+  - Document: Article 1. Applicants are obliged to submit an English language certificate. Unless the number of credits to be recognised is greater than 117 credits, this requirement does not apply. Article 2. Applicants are obliged to pay the application fee.
+  - Hypothesis: Deepa Iyer was educated in Mexico. Deepa Iyer asks for 108 credits to be recognised. Deepa Iyer's application was received on 20 December 2024. Deepa Iyer is a first-year applicant. Deepa Iyer does not have to submit an English language certificate.
+- **date_cross** gold `contradicted`, predicted `entailed`
+  - Document: Article 1. It is mandatory for applicants to submit an English language certificate. Only cases where the number of credits to be recognised is above 9 credits are covered by this requirement. The obligation covers applications received after 3 March 2026 and no others. Article 2. It is mandatory for applicants to upload a copy of their identity document. Article 3. Interviews may be held online.
+  - Hypothesis: Hiba Mansour is a transfer applicant. Hiba Mansour asks for 12 credits to be recognised. Hiba Mansour's application was received on 30 December 2025. Hiba Mansour was educated in Egypt. Hiba Mansour has an obligation to submit an English language certificate.
+- **scope_restrict** gold `entailed`, predicted `insufficient`
+  - Document: Article 1. Applicants must submit an English language certificate. The obligation is restricted to applicants educated in Mexico. The obligation is limited to cases in which the number of credits to be recognised exceeds 0 credits. Article 2. Applicants must upload a copy of their identity document. Article 3. Incomplete applications are not assessed.
+  - Hypothesis: Mateo Herrera asks for 3 credits to be recognised. Mateo Herrera is an exchange applicant. Mateo Herrera was educated in Poland. Mateo Herrera does not have to submit an English language certificate.
+- **condition_unknown** gold `entailed`, predicted `contradicted`
+  - Document: Article 1. Applicants must submit an English language certificate. Transfer applicants fall outside the scope of this requirement. Unless the number of credits to be recognised is greater than 63 credits, this requirement does not apply. Article 2. Applicants must provide two reference letters.
+  - Hypothesis: Linh Pham asks for 84 credits to be recognised. Linh Pham was educated in Egypt. Linh Pham is an exchange applicant. Linh Pham must submit an English language certificate.
+- **topic_swap** gold `entailed`, predicted `contradicted`
+  - Document: Article 1. It is mandatory for applicants to submit an English language certificate. Unless the number of credits to be recognised is greater than 105 credits, this requirement does not apply. Transfer applicants are exempt from this requirement. Article 2. It is mandatory for applicants to upload a copy of their identity document.
+  - Hypothesis: Deepa Iyer was educated in Poland. Deepa Iyer asks for 114 credits to be recognised. Deepa Iyer's application was received on 7 November 2025. Deepa Iyer is an exchange applicant. Deepa Iyer has an obligation to submit an English language certificate.

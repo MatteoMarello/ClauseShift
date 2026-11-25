@@ -1,0 +1,52 @@
+{
+  "model": "cross-encoder/nli-deberta-v3-xsmall",
+  "revision": "a150876415327c80daeff35ca6f68f5ed8cf5c24",
+  "condition": "unpaired",
+  "seed": 1,
+  "holdout_operators": null,
+  "train_items": 2400,
+  "train_pairs_complete": 0,
+  "epochs": 3,
+  "lr": 3e-05,
+  "batch_size": 16,
+  "max_length": 320,
+  "selected_epoch": 2,
+  "selected_dev_macro_f1": 0.831534375755214,
+  "log": [
+    {
+      "epoch": 0,
+      "train_loss": 1.0046975988149642,
+      "dev_macro_f1": 0.7522467648364836,
+      "seconds": 330.2
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.36067563414573667,
+      "dev_macro_f1": 0.8154170156502684,
+      "seconds": 624.9
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2282559467976292,
+      "dev_macro_f1": 0.831534375755214,
+      "seconds": 910.8
+    }
+  ],
+  "torch": "2.5.1+cpu",
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "smoke_test": false,
+  "evidence_test": {
+    "n": 300,
+    "eligible": 1658,
+    "hit_at_1": 0.9966666666666667,
+    "top_sentence_role_counts": {
+      "obligation": 279,
+      "threshold": 3,
+      "xref": 1,
+      "date": 8,
+      "scope": 7,
+      "exception": 1,
+      "article2": 1
+    }
+  }
+}

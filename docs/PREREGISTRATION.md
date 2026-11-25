@@ -83,8 +83,57 @@ Synthetic, template-generated English text; four categories and a handful of con
 from a specification rather than annotated; zero-shot models were trained on MNLI-style data whose neutral class
 does not exactly match "insufficient evidence".
 
+## Annotation status update
+
+A [blinded LLM audit](../review/clauseshift_llm_audit.md) matched 112/112 generator labels across 56 pairs
+(Cohen's κ = 1.000) and flagged two potentially ambiguous items. Independent human validation is pending.
+The original human-review sheet is available in `review/annotation_sheet.csv`.
+
+## Deviations and additions after registration
+
+Recorded on 2026-11-25, before any fine-tuned model was evaluated on test. The sections above are unchanged.
+
+1. **Compute.** The fine-tuning runs were planned for a 6-core laptop CPU (12 threads). They were executed in a cloud
+   container with a 4-core Intel Xeon CPU and no GPU. The training recipe (model, data selection, optimiser,
+   learning rates, epochs, batch size, max length, seeds, epoch selection on dev) is unchanged. Hardware and thread
+   count are now detected at run time and stored in each `meta.json`. A re-run of a stored zero-shot system on the
+   new hardware reproduced its dev predictions exactly (`results/reproduction_check.json`).
+2. **Order and scope of the fine-tuning runs.** One run took about 15 minutes (paired/unpaired) to 28 minutes
+   (operator hold-out) of training on this hardware. Runs were executed in order of informativeness
+   (`scripts/run_cloud_queue.sh`): paired and unpaired, seeds 0–2, interleaved by seed (H3); operator hold-out,
+   seed 0; the no-NLI-pre-training ablation, seed 0; operator hold-out, seeds 1–2; the no-NLI ablation, seeds 1–2
+   (added after the original run list, `scripts/run_finetune_queue.sh`, which planned one seed for that ablation,
+   so that every condition has the three seeds specified above). **All 15 registered fine-tuning runs were
+   completed; the registered scope was not reduced.** No run was repeated, excluded or replaced; one no-NLI run that
+   did not converge within the registered three epochs is reported as it is.
+3. **H1 decision rule, made explicit.** "At least 10 points below" is evaluated as: the 95% bootstrap interval
+   of (item accuracy on flip pairs − flip-pair accuracy − 0.10) lies above 0.
+4. **H3 inference.** The registered analysis (seed-pooled predictions, pairs from different seeds treated as
+   independent units) is kept in `scripts/analyze.py`. Because the same test pair appears once per seed, that
+   bootstrap can understate uncertainty; `scripts/analyze_extended.py` adds a cluster bootstrap that resamples
+   test pairs and keeps all seeds of a pair together. Both are reported; the decision uses the registered one, and
+   any disagreement between the two is stated. Because both bootstraps treat the seeds as fixed, a seed-level
+   t-interval over the per-seed differences is reported as a further sensitivity check.
+5. **Evidence (occlusion).** The registered hit@1 metric and its sample are unchanged. Two problems with it were
+   found while implementing the analysis and are reported, not fixed silently: (a) the obligation sentence belongs
+   to the gold evidence of every decided item, and removing it always makes the document silent on the claim, so
+   hit@1 can be high without the model using the edited clause; (b) removal variants are built by joining the
+   remaining sentences, which drops the "Article k." headers, so cross-references cannot be resolved in any
+   variant. Per-item occlusion records (including a header-free, no-removal control) are now saved, and two
+   exploratory measures are added: a strict hit@1 that ignores the obligation sentence, and a counterfactual
+   removal test that compares each prediction after a sentence is removed with the label the specification
+   assigns to the shortened document (`src/clauseshift/evidence.py`, validated against the generator in
+   `tests/test_evidence.py`).
+6. **Exploratory analyses (not registered).** Zero-shot evaluation with the case facts moved into the premise
+   (`--format facts_in_premise`); decomposition of flip-pair failures into insensitive and sensitive-but-wrong;
+   document complexity by operator; operator-stratified reserved-template comparison for H4; 2,000 bootstrap
+   resamples in the extended analysis (1,000 in the registered tables).
+
 ## Changelog
 - 2026-11-25: initial version (data v1, commit 8bed406).
 - 2026-11-25: data v2, before any neural model. The hypothesis-only control exposed a claim-polarity shortcut in
   near-miss/invariant pairs (v1 dev accuracy 0.604). Near-miss and invariant pairs now have balanced shared labels.
   See `results/design_iterations/README.md`. Splits, operators, models, metrics and hypotheses are unchanged.
+- 2026-11-25: added "Deviations and additions after registration" (compute, run order and scope, explicit H1
+  rule, seed-aware H3 bootstrap, occlusion caveats, exploratory analyses). Hypotheses, splits, models and metrics
+  are unchanged.

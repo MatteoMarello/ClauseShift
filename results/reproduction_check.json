@@ -1,0 +1,10 @@
+{
+  "system": "zeroshot_nli-deberta-v3-xsmall",
+  "split": "dev",
+  "items": 960,
+  "label_agreement": 1.0,
+  "max_abs_prob_diff": 5.8710575103759766e-06,
+  "stored_hardware": "CPU, AMD Ryzen 5 4600H, 12 threads",
+  "rerun_hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "torch": "2.5.1+cpu"
+}

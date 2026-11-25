@@ -1,0 +1,75 @@
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/MatteoMarello/ClauseShift.git        
+2026-11-25T13:21:10Z checkpoint: reproduction check of stored zero-shot predictions
+2026-11-25T13:21:10Z start zeroshot_nli-deberta-v3-xsmall_factsinpremise
+2026-11-25T13:24:18Z checkpoint: zero-shot facts_in_premise, nli-deberta-v3-xsmall
+2026-11-25T13:24:18Z start zeroshot_nli-deberta-v3-base_factsinpremise
+2026-11-25T13:35:16Z checkpoint: zero-shot facts_in_premise, nli-deberta-v3-base
+2026-11-25T13:35:16Z start zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise
+2026-11-25T13:42:15Z checkpoint: zero-shot facts_in_premise, DeBERTa-v3-base-mnli-fever-anli
+2026-11-25T13:42:15Z start zeroshot_roberta-large-mnli_factsinpremise
+2026-11-25T13:57:03Z checkpoint: zero-shot facts_in_premise, roberta-large-mnli
+2026-11-25T13:57:03Z start paired_s0
+2026-11-25T14:14:07Z end paired_s0 rc=0
+2026-11-25T14:14:56Z checkpoint: fine-tuning run paired_s0
+2026-11-25T14:14:56Z start unpaired_s0
+2026-11-25T14:32:29Z end unpaired_s0 rc=0
+2026-11-25T14:33:47Z checkpoint: fine-tuning run unpaired_s0
+2026-11-25T14:33:47Z start paired_s1
+2026-11-25T14:52:56Z end paired_s1 rc=0
+2026-11-25T14:53:54Z checkpoint: fine-tuning run paired_s1
+2026-11-25T14:53:54Z start unpaired_s1
+2026-11-25T15:11:22Z end unpaired_s1 rc=0
+2026-11-25T15:13:16Z checkpoint: fine-tuning run unpaired_s1
+2026-11-25T15:13:16Z start paired_s2
+2026-11-25T15:33:19Z end paired_s2 rc=0
+2026-11-25T15:34:23Z checkpoint: fine-tuning run paired_s2
+2026-11-25T15:34:23Z start unpaired_s2
+2026-11-25T15:51:19Z end unpaired_s2 rc=0
+2026-11-25T15:53:49Z checkpoint: fine-tuning run unpaired_s2
+2026-11-25T15:53:49Z start zero-shot evidence
+2026-11-25T16:09:51Z checkpoint: occlusion evidence for zero-shot models
+2026-11-25T16:09:51Z start op_holdout_s0
+2026-11-25T16:36:54Z end op_holdout_s0 rc=0
+2026-11-25T16:39:25Z checkpoint: fine-tuning run op_holdout_s0
+2026-11-25T16:39:25Z start raw_paired_s0
+2026-11-25T16:59:12Z end raw_paired_s0 rc=0
+2026-11-25T17:01:48Z checkpoint: fine-tuning run raw_paired_s0
+2026-11-25T17:01:48Z start raw_unpaired_s0
+2026-11-25T17:18:26Z end raw_unpaired_s0 rc=0
+2026-11-25T17:21:36Z checkpoint: fine-tuning run raw_unpaired_s0
+2026-11-25T17:21:36Z start op_holdout_s1
+2026-11-25T17:51:56Z end op_holdout_s1 rc=0
+2026-11-25T17:55:02Z checkpoint: fine-tuning run op_holdout_s1
+2026-11-25T17:55:02Z start op_holdout_s2
+2026-11-25T18:22:06Z end op_holdout_s2 rc=0
+2026-11-25T18:25:25Z checkpoint: fine-tuning run op_holdout_s2
+2026-11-25T18:25:25Z queue finished
+skip zeroshot_nli-deberta-v3-xsmall_factsinpremise
+skip zeroshot_nli-deberta-v3-base_factsinpremise
+skip zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise
+skip zeroshot_roberta-large-mnli_factsinpremise
+skip paired_s0
+skip unpaired_s0
+skip paired_s1
+skip unpaired_s1
+skip paired_s2
+skip unpaired_s2
+skip op_holdout_s0
+skip raw_paired_s0
+skip raw_unpaired_s0
+skip op_holdout_s1
+skip op_holdout_s2
+2026-11-25T18:25:43Z start raw_paired_s1
+2026-11-25T18:43:53Z end raw_paired_s1 rc=0
+2026-11-25T18:46:49Z checkpoint: fine-tuning run raw_paired_s1
+2026-11-25T18:46:49Z start raw_unpaired_s1
+2026-11-25T19:03:42Z end raw_unpaired_s1 rc=0
+2026-11-25T19:07:38Z checkpoint: fine-tuning run raw_unpaired_s1
+2026-11-25T19:07:38Z start raw_paired_s2
+2026-11-25T19:28:15Z end raw_paired_s2 rc=0
+2026-11-25T19:31:07Z checkpoint: fine-tuning run raw_paired_s2
+2026-11-25T19:31:07Z start raw_unpaired_s2
+2026-11-25T19:46:20Z end raw_unpaired_s2 rc=0
+2026-11-25T19:51:07Z checkpoint: fine-tuning run raw_unpaired_s2
+2026-11-25T19:51:07Z queue finished

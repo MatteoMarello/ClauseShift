@@ -1,0 +1,15 @@
+{
+  "model": "FacebookAI/roberta-large-mnli",
+  "revision": "2a8f12d27941090092df78e4ba6f0928eb5eac98",
+  "license": "mit",
+  "label_mapping": {
+    "0": "contradicted",
+    "1": "insufficient",
+    "2": "entailed"
+  },
+  "max_length": 384,
+  "input_format": "facts_in_premise",
+  "seconds_test": 600.6,
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "torch": "2.5.1+cpu"
+}

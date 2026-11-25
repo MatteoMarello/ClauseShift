@@ -1,0 +1,11 @@
+zeroshot_nli-deberta-v3-xsmall_factsinpremise dev: 960 items in 45s
+zeroshot_nli-deberta-v3-xsmall_factsinpremise test: 2560 items in 103s
+zeroshot_nli-deberta-v3-base_factsinpremise dev: 960 items in 120s
+zeroshot_nli-deberta-v3-base_factsinpremise test: 2560 items in 490s
+zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise dev: 960 items in 107s
+zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise test: 2560 items in 263s
+Some weights of the model checkpoint at FacebookAI/roberta-large-mnli were not used when initializing RobertaForSequenceClassification: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+zeroshot_roberta-large-mnli_factsinpremise dev: 960 items in 232s
+zeroshot_roberta-large-mnli_factsinpremise test: 2560 items in 601s
