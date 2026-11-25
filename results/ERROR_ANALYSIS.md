@@ -50,6 +50,14 @@
 | contradicted | 13 | 642 | 288 |
 | insufficient | 33 | 279 | 306 |
 
+**zeroshot_nli-deberta-v3-xsmall_factsinpremise**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 182 | 404 | 413 |
+| contradicted | 34 | 646 | 263 |
+| insufficient | 70 | 284 | 264 |
+
 **zeroshot_roberta-large-mnli**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -70,6 +78,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 41 | 0.000 | 0.538 |
 | zeroshot_nli-deberta-v3-base | 41 | 0.000 | 0.530 |
 | zeroshot_nli-deberta-v3-xsmall | 41 | 0.000 | 0.323 |
+| zeroshot_nli-deberta-v3-xsmall_factsinpremise | 41 | 0.000 | 0.351 |
 | zeroshot_roberta-large-mnli | 41 | 0.000 | 0.297 |
 
 ## Calibration (test, 10-bin ECE)
@@ -81,4 +90,5 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.345 | 0.876 | 0.531 |
 | zeroshot_nli-deberta-v3-base | 0.473 | 0.977 | 0.504 |
 | zeroshot_nli-deberta-v3-xsmall | 0.558 | 0.957 | 0.399 |
+| zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.515 | 0.942 | 0.427 |
 | zeroshot_roberta-large-mnli | 0.517 | 0.895 | 0.378 |
