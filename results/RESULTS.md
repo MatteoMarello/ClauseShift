@@ -23,7 +23,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | Group | Seeds | Dev acc. | Accuracy | Macro-F1 | Pair accuracy | Flip accuracy | Invariance | Invariant-pair acc. |
 |---|---|---|---|---|---|---|---|---|
 | ft_deberta-v3-xsmall_paired | 2 | 0.708 | 0.686 ± 0.130 | 0.676 ± 0.179 | 0.491 ± 0.208 | 0.387 ± 0.289 | 0.939 ± 0.055 | 0.666 ± 0.072 |
-| ft_deberta-v3-xsmall_unpaired | 1 | 0.756 | 0.752 ± 0.000 | 0.781 ± 0.000 | 0.588 ± 0.000 | 0.530 ± 0.000 | 0.883 ± 0.000 | 0.685 ± 0.000 |
+| ft_deberta-v3-xsmall_unpaired | 2 | 0.749 | 0.745 ± 0.011 | 0.774 ± 0.011 | 0.573 ± 0.022 | 0.507 ± 0.033 | 0.877 ± 0.009 | 0.682 ± 0.004 |
 | ft_nli-deberta-v3-xsmall_op_holdout | 3 | 0.890 | 0.933 ± 0.002 | 0.941 ± 0.002 | 0.873 ± 0.007 | 0.822 ± 0.008 | 0.976 ± 0.010 | 0.959 ± 0.005 |
 | ft_nli-deberta-v3-xsmall_paired | 3 | 0.838 | 0.904 ± 0.019 | 0.914 ± 0.017 | 0.836 ± 0.025 | 0.815 ± 0.021 | 0.937 ± 0.012 | 0.869 ± 0.039 |
 | ft_nli-deberta-v3-xsmall_unpaired | 3 | 0.843 | 0.891 ± 0.005 | 0.903 ± 0.005 | 0.814 ± 0.008 | 0.795 ± 0.007 | 0.919 ± 0.012 | 0.845 ± 0.018 |
@@ -41,7 +41,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_roberta-large-mnli | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.05 | 0.03 | 1.00 | 0.00 | 0.00 | 0.01 | 0.00 | 0.58 |
 | ft_deberta-v3-xsmall_paired | 0.42 | 0.30 | 0.51 | 0.03 | 0.01 | 0.09 | 0.67 | 0.59 |
-| ft_deberta-v3-xsmall_unpaired | 0.81 | 0.01 | 1.00 | 0.01 | 0.00 | 0.23 | 0.80 | 0.82 |
+| ft_deberta-v3-xsmall_unpaired | 0.77 | 0.01 | 1.00 | 0.02 | 0.01 | 0.26 | 0.76 | 0.74 |
 | ft_nli-deberta-v3-xsmall_op_holdout | 0.97 | 0.04 | 1.00 | 0.78 | 0.81 | 0.94 | 0.90 | 0.94 |
 | ft_nli-deberta-v3-xsmall_paired | 0.92 | 0.86 | 1.00 | 0.51 | 0.67 | 0.67 | 0.86 | 0.90 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.94 | 0.84 | 1.00 | 0.46 | 0.62 | 0.54 | 0.87 | 0.91 |
@@ -62,13 +62,17 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_roberta-large-mnli | 0.99 | 1.00 | 0.82 | 0.96 | 1.00 | 0.96 |
 | zeroshot_roberta-large-mnli_factsinpremise | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 0.97 |
 | ft_deberta-v3-xsmall_paired | 0.93 | 0.99 | 0.95 | 0.88 | 0.96 | 0.93 |
-| ft_deberta-v3-xsmall_unpaired | 0.82 | 1.00 | 0.89 | 0.76 | 0.84 | 0.99 |
+| ft_deberta-v3-xsmall_unpaired | 0.82 | 0.99 | 0.82 | 0.81 | 0.84 | 0.98 |
 | ft_nli-deberta-v3-xsmall_op_holdout | 0.95 | 0.98 | 0.98 | 0.98 | 0.97 | 1.00 |
 | ft_nli-deberta-v3-xsmall_paired | 0.89 | 0.96 | 0.95 | 0.94 | 0.91 | 0.97 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.82 | 0.96 | 0.94 | 0.93 | 0.91 | 0.96 |
 
 ## H3: paired minus unpaired training (seed-pooled test pairs, paired bootstrap)
 
+- ft_deberta-v3-xsmall flip_accuracy: -0.120 [-0.144, -0.096]
+- ft_deberta-v3-xsmall pair_accuracy: -0.081 [-0.101, -0.062]
+- ft_deberta-v3-xsmall accuracy: -0.059 [-0.073, -0.044]
+- ft_deberta-v3-xsmall invariance: +0.061 [+0.041, +0.083]
 - ft_nli-deberta-v3-xsmall flip_accuracy: +0.021 [+0.006, +0.036]
 - ft_nli-deberta-v3-xsmall pair_accuracy: +0.022 [+0.011, +0.034]
 - ft_nli-deberta-v3-xsmall accuracy: +0.013 [+0.006, +0.020]
@@ -79,7 +83,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | Group | Dev acc. (vehicles) | Test acc. | Test, reserved templates | Test, seen templates |
 |---|---|---|---|---|
 | ft_deberta-v3-xsmall_paired | 0.708 | 0.686 | 0.682 | 0.696 |
-| ft_deberta-v3-xsmall_unpaired | 0.756 | 0.752 | 0.742 | 0.779 |
+| ft_deberta-v3-xsmall_unpaired | 0.749 | 0.745 | 0.733 | 0.773 |
 | ft_nli-deberta-v3-xsmall_op_holdout | 0.890 | 0.933 | 0.929 | 0.942 |
 | ft_nli-deberta-v3-xsmall_paired | 0.838 | 0.904 | 0.892 | 0.934 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.843 | 0.891 | 0.880 | 0.920 |

@@ -62,3 +62,6 @@ skip op_holdout_s1
 skip op_holdout_s2
 2026-11-25T18:25:43Z start raw_paired_s1
 2026-11-25T18:43:53Z end raw_paired_s1 rc=0
+2026-11-25T18:46:49Z checkpoint: fine-tuning run raw_paired_s1
+2026-11-25T18:46:49Z start raw_unpaired_s1
+2026-11-25T19:03:42Z end raw_unpaired_s1 rc=0
