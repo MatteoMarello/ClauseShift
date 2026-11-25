@@ -8,10 +8,10 @@ edit (an exemption, a numeric threshold, a date cutoff, a cross-reference, a neg
 hypothesis about a case. Gold labels are computed from a rule specification, so the effect of each edit on the
 correct answer is known exactly. A model is credited with a pair only if it answers both sides correctly.
 
-> **Status (2026-11-25).** Data, baselines, zero-shot evaluation (two input formats), the preregistered
-> paired-vs-unpaired fine-tuning (3 seeds per condition) and the extended analysis are complete. The ablations are
-> running on a 4-core CPU (see [`CLOUD_RESUME.md`](CLOUD_RESUME.md)). Labels are generator-derived and have not been
-> validated by human annotators.
+> **Status (2026-11-25).** All preregistered experiments are complete: baselines, four zero-shot NLI models (plus an
+> exploratory input-format control) and all 15 fine-tuning runs (paired vs. unpaired, operator hold-out, no NLI
+> pre-training; three seeds each). Labels are generator-derived and have not yet been validated by human annotators.
+> Technical report: [`docs/REPORT.md`](docs/REPORT.md).
 
 ## Research questions
 
@@ -52,7 +52,7 @@ Preregistered before any model was run ([`docs/PREREGISTRATION.md`](docs/PREREGI
   resampling matrix); cluster bootstrap over test pairs for multi-seed groups. Decision rules for H1–H5 are fixed in
   the preregistration; everything else is labelled exploratory.
 
-## Findings so far (test set: 1,280 pairs, families never seen in training)
+## Findings (test set: 1,280 pairs, families never seen in training)
 
 | System | Accuracy | Pair accuracy | Flip-pair accuracy |
 |---|---|---|---|
@@ -91,11 +91,19 @@ analyses).
 6. **Training on complete pairs gives a small, fragile gain (H3 supported by the preregistered rule).** At equal
    size, paired training improves flip-pair accuracy by +0.021 [+0.006, +0.036] (three seeds; per-seed differences
    −0.002, +0.039, +0.026). The bootstrap treats seeds as fixed; a seed-level t-interval, [−0.032, +0.073],
-   includes 0. Read with the mixed CAD literature, this is evidence of a small effect, not a robust one.
+   includes 0. Without NLI pre-training the sign reverses (−0.093 [−0.113, −0.074]), driven by one run that did not
+   converge within the registered three epochs. Read with the mixed CAD literature, this is evidence of a small,
+   initialisation-dependent effect, not a robust one.
 7. **H4 is not supported.** Reserved test templates cost about 4 points of accuracy, but test accuracy is *higher*
    than dev accuracy: the single dev family is harder than the two test families, so family difficulty and shift
    cannot be separated with this split.
-8. **Ablations (operator hold-out, no NLI pre-training):** running.
+8. **Cross-references are a separate skill.** Trained without cross-reference and date pairs, models still handle
+   unseen date edits (0.81) but not unseen cross-reference edits (0.04 [0.02, 0.07]; 0.84–0.86 when seen in
+   training), although they handle the same exemption stated inline (0.97).
+9. **The preregistered evidence metric is uninformative here.** Occlusion hit@1 is 0.97–1.00 for every neural
+   model, from flip-pair accuracy 0.07 to 0.82, because the obligation sentence is in every evidence set. A
+   counterfactual removal test with specification-derived labels separates the models: removing the decisive
+   condition gives the expected label in 80–88% of cases after fine-tuning, 0–72% zero-shot.
 
 <p align="center">
   <img src="results/figures/fig3_flip_accuracy_by_operator.png" width="760" alt="Flip-pair accuracy by edit operator and system">
@@ -106,25 +114,32 @@ analyses).
 <p align="center">
   <img src="results/figures/fig4_flip_failure_decomposition.png" width="640" alt="Decomposition of flip-pair outcomes into solved, insensitive and sensitive-but-wrong">
 </p>
+<p align="center">
+  <img src="results/figures/fig6_counterfactual_removal.png" width="640" alt="Counterfactual removal test: agreement of post-removal predictions with specification-derived labels">
+</p>
 
 ## Methodological notes
 
-- **Occlusion evidence is weakly informative here.** The preregistered evidence metric (does removing the gold
-  evidence sentence hurt most?) counts the obligation sentence as evidence for every decided item, and removal
-  variants lose the article headers that cross-references point to. Both issues are documented as deviations; an
-  exploratory *counterfactual removal test* compares each post-removal prediction with the label the specification
-  assigns to the shortened document ([`src/clauseshift/evidence.py`](src/clauseshift/evidence.py), validated against
-  the generator in [`tests/test_evidence.py`](tests/test_evidence.py)).
-- **Per-operator accuracy is confounded with document complexity**: negation documents carry no conditions, while
-  threshold and date documents carry about two (`results/EXTENDED_ANALYSIS.md`, Section 6).
-- **Reproduction**: re-running a stored zero-shot system on different hardware reproduced its predictions exactly
+- **Preregistration and deviations.** Hypotheses, splits, models, metrics and decision rules were fixed before any
+  model was run. Everything added later (format control, seed-aware statistics, evidence tests) is labelled
+  exploratory, and every deviation is listed in [`docs/PREREGISTRATION.md`](docs/PREREGISTRATION.md). No run was
+  repeated, excluded or replaced.
+- **Statistics.** Intervals are percentile bootstraps over minimal pairs with a shared resampling matrix, so every
+  comparison is paired. Seed groups additionally get a cluster bootstrap and a seed-level t-interval, because the
+  registered bootstrap treats training runs as fixed.
+- **Evidence.** The counterfactual removal test relies on [`src/clauseshift/evidence.py`](src/clauseshift/evidence.py),
+  validated against the generator on 706 pairs ([`tests/test_evidence.py`](tests/test_evidence.py)). Removal
+  variants drop the article headers; a header-free control quantifies that effect.
+- **Confounds.** Per-operator accuracy mixes edit type with document complexity: negation documents carry no
+  conditions, threshold and date documents about two (`results/EXTENDED_ANALYSIS.md` §6).
+- **Reproduction.** Re-running a stored zero-shot system on different hardware reproduced its predictions exactly
   ([`results/reproduction_check.json`](results/reproduction_check.json)).
 
 ## Limitations
 
 Synthetic, template-generated English with ~100-token documents; labels derived from a specification and not yet
 human-validated (a blind sample of 112 items is prepared in `review/`); compact encoders and a CPU budget, no
-instruction-tuned LLMs; two test families. ClauseShift measures sensitivity to decisive edits in controlled rule
+instruction-tuned LLMs; two test families; a three-epoch training budget under which most runs had not converged. ClauseShift measures sensitivity to decisive edits in controlled rule
 language. It is not a measure of legal competence, and results should not be extrapolated to real documents without
 validation on real text.
 
@@ -151,7 +166,7 @@ python -m pytest -q && python scripts/verify_integrity.py
 python scripts/run_baselines.py && python scripts/run_zero_shot.py
 ```
 ```bash
-bash scripts/run_cloud_queue.sh   # facts-in-premise, fine-tuning, evidence; restartable, ~5 h on 4 CPU cores
+bash scripts/run_cloud_queue.sh   # facts-in-premise, fine-tuning, evidence; restartable, ~6.5 h on 4 CPU cores
 ```
 ```bash
 python scripts/analyze.py && python scripts/analyze_extended.py && python scripts/error_analysis.py
