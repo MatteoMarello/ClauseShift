@@ -579,9 +579,9 @@ if fmt_res:
     h = [plt.Line2D([], [], color=BLUE, marker="o", lw=0, label="facts in hypothesis (standard format)"),
          plt.Line2D([], [], color=ORANGE, marker="s", lw=0, label="facts in premise")]
     fig.legend(handles=h, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(0.6, 0.0))
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
     fig.suptitle("Zero-shot NLI on ClauseShift test: effect of input format (95% bootstrap CIs over pairs)",
-                 fontsize=9, color=INK, x=0.6, y=1.0 + 0.25 / (0.55 * len(ms) + 1.1))
-    fig.tight_layout()
+                 fontsize=9, color=INK, x=0.6, y=0.98)
     fig.savefig(FIG / "fig1_format_comparison.png")
     plt.close(fig)
 
