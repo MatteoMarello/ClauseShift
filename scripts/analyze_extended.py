@@ -145,7 +145,18 @@ for s in SYSTEMS:
         GROUPS[re.sub(r"_s\d+$", "", s)].append(s)
 for g in GROUPS:
     GROUPS[g].sort()
-UNITS = [s for s in SYSTEMS if not s.startswith("ft_")] + sorted(GROUPS)    # evaluation units
+def _order(u: str) -> tuple:
+    if u in ("majority", "tfidf_lr_hypothesis_only", "tfidf_lr_document_hypothesis"):
+        return (0, ["majority", "tfidf_lr_hypothesis_only", "tfidf_lr_document_hypothesis"].index(u), 0)
+    if u.startswith("zeroshot_"):
+        m = u[len("zeroshot_"):].replace("_factsinpremise", "")
+        return (1, ZS_MODELS.index(m) if m in ZS_MODELS else 99, u.endswith("_factsinpremise"))
+    cond = ["paired", "unpaired", "op_holdout", "full"]
+    c = next((i for i, x in enumerate(cond) if u.endswith("_" + x)), 9)
+    return (2, "nli-deberta" not in u, c)
+
+
+UNITS = sorted([s for s in SYSTEMS if not s.startswith("ft_")] + list(GROUPS), key=_order)   # evaluation units
 
 tables = {split: {} for split in ("dev", "test")}
 for split in ("dev", "test"):
@@ -517,14 +528,15 @@ if fmt_res:
             errbar(ax, j, summarize(M[f"zeroshot_{m}_factsinpremise"][k]), ORANGE, marker="s", dy=-0.13)
         ax.set_title(t, fontsize=8.5, color=INK)
         ax.set_xlim(0, 1)
+        ax.set_ylim(len(ms) - 0.5, -0.5)
         ax.grid(axis="y", visible=False)
     axes[0].set_yticks(range(len(ms)), [SHORT[m] for m in ms])
-    axes[0].invert_yaxis()
-    h = [plt.Line2D([], [], color=BLUE, marker="o", lw=0, label="facts in hypothesis (standard)"),
+    h = [plt.Line2D([], [], color=BLUE, marker="o", lw=0, label="facts in hypothesis (standard format)"),
          plt.Line2D([], [], color=ORANGE, marker="s", lw=0, label="facts in premise")]
-    fig.legend(handles=h, loc="lower center", ncol=2, frameon=False, bbox_to_anchor=(0.55, -0.08))
+    fig.legend(handles=h, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(0.6, 0.0))
     fig.suptitle("Zero-shot NLI on ClauseShift test: effect of input format (95% bootstrap CIs over pairs)",
-                 fontsize=9, color=INK, x=0.55)
+                 fontsize=9, color=INK, x=0.6, y=1.0 + 0.25 / (0.55 * len(ms) + 1.1))
+    fig.tight_layout()
     fig.savefig(FIG / "fig1_format_comparison.png")
     plt.close(fig)
 
@@ -633,9 +645,13 @@ if ev_res and any("counterfactual_removal" in v for v in ev_res.values()):
         for j, (t, _) in enumerate(cats):
             v = ev_res[s]["counterfactual_removal"].get(t, {}).get("agreement", np.nan)
             ax.barh(y + (j - 1) * 0.26, v, height=0.24, color=[GRAY, BLUE, AQUA][j], label=cats[j][1] if y == 0 else None)
-    ax.set_yticks(range(len(us)), [label(s) if not s.startswith("ft_") else
-                                   label(re.sub(r"_s\d+$", "", s)).split(" (")[0] + f", {s.split('_')[-2]} seed {s[-1]}"
-                                   for s in us], fontsize=7)
+    def single(s: str) -> str:
+        if not s.startswith("ft_"):
+            return label(s)
+        m = re.match(r"ft_(.+?)_(paired|unpaired|op_holdout|full)_s(\d+)$", s)
+        init = "NLI init." if m.group(1) == "nli-deberta-v3-xsmall" else "no NLI"
+        return f"FT xsmall ({init}), {m.group(2).replace('_', ' ')}, seed {m.group(3)}"
+    ax.set_yticks(range(len(us)), [single(s) for s in us], fontsize=7)
     ax.invert_yaxis()
     ax.set_xlim(0, 1)
     ax.grid(axis="y", visible=False)
