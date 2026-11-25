@@ -1,7 +1,8 @@
 """Pilot-2 probe set: cross-reference and inline exemptions of the case's own vs. another category.
 
 Uses the original generator's rendering and labelling functions without modifying them (data/ is untouched).
-Family: vehicles (dev); non-reserved templates only. Output: research_next/results/probes_xref.jsonl.
+Family: vehicles (dev) as pre-specified; enrollment and research_funding were added after the vehicles results were
+seen (declared in PILOT_RESULTS.md). Non-reserved templates only. Output: research_next/results/probes_xref*.jsonl.
 See research_next/PILOT_PLAN.md for the predictions fixed before this script was run.
 """
 
@@ -17,7 +18,8 @@ sys.path.insert(0, str(ROOT / "src"))
 from clauseshift.domains import DOMAINS  # noqa: E402
 from clauseshift.generator import PairBuilder, document_text, gold_label, render_document, render_hypothesis  # noqa: E402
 
-FAMILY, N, SEED = "vehicles", 200, 20261126
+FAMILY = sys.argv[1] if len(sys.argv) > 1 else "vehicles"   # post hoc extension: enrollment, research_funding
+N, SEED = 200, 20261126
 rng = random.Random(f"{SEED}-{FAMILY}-probes")
 b = PairBuilder(FAMILY, rng, allow_reserved=False)
 dom = DOMAINS[FAMILY]
@@ -42,7 +44,7 @@ for j in range(N):
         out.append({"id": f"probe-{j:03d}-{name}", "case_id": j, "variant": name, "family": FAMILY,
                     "premise": document_text(sents), "sentences": [s["text"] for s in sents],
                     "sentence_roles": [s["role"] for s in sents], "hypothesis": hyp, "label": label})
-path = ROOT / "research_next" / "results" / "probes_xref.jsonl"
+path = ROOT / "research_next" / "results" / ("probes_xref.jsonl" if FAMILY == "vehicles" else f"probes_xref_{FAMILY}.jsonl")
 path.parent.mkdir(parents=True, exist_ok=True)
 with open(path, "w", encoding="utf-8", newline="\n") as f:
     for r in out:
