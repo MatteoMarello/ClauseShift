@@ -15,6 +15,7 @@ from clauseshift.data import load  # noqa: E402
 from clauseshift.nli import label_mapping, predict_probs  # noqa: E402
 from clauseshift.nli import load as load_model  # noqa: E402
 from clauseshift.predictions import save_predictions  # noqa: E402
+from clauseshift.runtime import hardware_string, num_threads  # noqa: E402
 
 MODELS = ["cross-encoder/nli-deberta-v3-xsmall", "cross-encoder/nli-deberta-v3-base",
           "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli", "FacebookAI/roberta-large-mnli"]
@@ -25,7 +26,7 @@ ap.add_argument("--splits", nargs="+", default=["dev", "test"])
 ap.add_argument("--format", default="standard", choices=["standard", "facts_in_premise"],
                 help="facts_in_premise (exploratory): case facts appended to the document; hypothesis = claim only")
 args = ap.parse_args()
-torch.set_num_threads(12)
+torch.set_num_threads(num_threads())
 
 for name in args.models:
     info = HfApi().model_info(name)
@@ -45,5 +46,5 @@ for name in args.models:
         save_predictions(system, split, items, probs, meta={
             "model": name, "revision": info.sha, "license": (info.card_data or {}).get("license"),
             "label_mapping": label_mapping(model), "max_length": 384, "input_format": args.format, "seconds_" + split: round(secs, 1),
-            "hardware": "CPU, AMD Ryzen 5 4600H, 12 threads", "torch": torch.__version__})
+            "hardware": hardware_string(num_threads()), "torch": torch.__version__})
         print(f"{system} {split}: {len(items)} items in {secs:.0f}s", flush=True)

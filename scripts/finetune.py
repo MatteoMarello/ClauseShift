@@ -29,6 +29,7 @@ from clauseshift.generator import LABELS  # noqa: E402
 from clauseshift.metrics import macro_f1  # noqa: E402
 from clauseshift.nli import NAME_MAP, evidence_hit_rate, label_mapping, predict_probs  # noqa: E402
 from clauseshift.predictions import save_predictions  # noqa: E402
+from clauseshift.runtime import hardware_string, num_threads  # noqa: E402
 
 
 def select_training_items(train: list[dict], condition: str, seed: int, holdout: list[str]) -> list[dict]:
@@ -63,7 +64,7 @@ def main() -> None:
     ap.add_argument("--tag", default="")
     args = ap.parse_args()
 
-    torch.set_num_threads(12)
+    torch.set_num_threads(num_threads())
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -131,7 +132,7 @@ def main() -> None:
             if args.condition != "unpaired" else 0, "epochs": args.epochs, "lr": args.lr,
             "batch_size": args.batch_size, "max_length": args.max_length, "selected_epoch": best[1],
             "selected_dev_macro_f1": best[0], "log": log, "torch": torch.__version__,
-            "hardware": "CPU, AMD Ryzen 5 4600H, 12 threads", "smoke_test": args.max_steps is not None}
+            "hardware": hardware_string(num_threads()), "smoke_test": args.max_steps is not None}
     for split, items in (("dev", dev), ("test", test)):
         probs = predict_probs(tok, model, [i["premise"] for i in items], [i["hypothesis"] for i in items])
         if split == "test" and args.max_steps is None:

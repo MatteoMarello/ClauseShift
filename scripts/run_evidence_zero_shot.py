@@ -12,15 +12,17 @@ from clauseshift.data import load  # noqa: E402
 from clauseshift.nli import evidence_hit_rate  # noqa: E402
 from clauseshift.nli import load as load_model  # noqa: E402
 from clauseshift.predictions import ROOT, load_predictions  # noqa: E402
+from clauseshift.runtime import hardware_string, num_threads  # noqa: E402
 
-torch.set_num_threads(12)
+torch.set_num_threads(num_threads())
 test = load("test")
 for d in sorted(ROOT.glob("zeroshot_*")):
     meta = json.loads((d / "meta.json").read_text())
-    if "evidence_test" in meta:
-        continue
+    if "evidence_test" in meta or meta.get("input_format", "standard") != "standard":
+        continue  # done already, or predictions come from a different input format than occlusion uses
     tok, model = load_model(meta["model"], meta["revision"])
     preds = {k: v["pred"] for k, v in load_predictions(d.name, "test").items()}
     meta["evidence_test"] = evidence_hit_rate(tok, model, test, preds)
+    meta["evidence_hardware"] = hardware_string(num_threads())
     (d / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     print(d.name, meta["evidence_test"], flush=True)
