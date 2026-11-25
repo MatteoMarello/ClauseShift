@@ -264,7 +264,9 @@ family difficulty. A leave-one-family-out design would separate the two.
 - Synthetic, template-generated text with short documents (about 100 tokens) and few conditions per rule. Results
   describe behaviour on controlled rule language, not on real contracts or regulations.
 - Labels are derived from the specification. They are as reliable as the templates; a blind human annotation of
-  112 test items is prepared but not yet done.
+  112 test items is prepared but not yet done. A single LLM annotator labelled the same 112 items before seeing
+  the key and agreed with the generator on all of them (`review/clauseshift_llm_audit.md`); this checks template
+  consistency on two families, not human agreement.
 - MNLI "neutral" is not the same concept as "insufficient evidence for this case"; zero-shot numbers partly measure
   this label mismatch, which is why fine-tuned models are reported separately.
 - CPU-only compute (a 4-core cloud CPU): compact encoders, at most three seeds, no hyper-parameter search, no

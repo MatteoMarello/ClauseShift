@@ -138,7 +138,9 @@ analyses).
 ## Limitations
 
 Synthetic, template-generated English with ~100-token documents; labels derived from a specification and not yet
-human-validated (a blind sample of 112 items is prepared in `review/`); compact encoders and a CPU budget, no
+human-validated (a blind sample of 112 items is prepared in `review/`; a single-LLM audit of that sample agreed
+with the generator on 112/112 items, [`review/clauseshift_llm_audit.md`](review/clauseshift_llm_audit.md), which is a
+consistency check, not human validation); compact encoders and a CPU budget, no
 instruction-tuned LLMs; two test families; a three-epoch training budget (12 of 15 runs selected the last epoch). ClauseShift measures sensitivity to decisive edits in controlled rule
 language. It is not a measure of legal competence, and results should not be extrapolated to real documents without
 validation on real text.
