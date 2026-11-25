@@ -68,7 +68,60 @@ derived from the specification.
 
 ## 5. Results
 
-To be written from `results/RESULTS.md` once all runs have finished.
+Test set: 2,560 items in 1,280 minimal pairs from two families never seen in training. Brackets are 95% bootstrap
+intervals over pairs. Figures are in `results/figures/`.
+
+### 5.1 Baselines and shortcut control (RQ5)
+
+The majority class reaches 0.390 accuracy, the hypothesis-only TF-IDF model 0.415 [0.398, 0.432], and the
+document + hypothesis TF-IDF model 0.413 [0.395, 0.432] with flip-pair accuracy 0.083 [0.064, 0.102]. H5
+(hypothesis-only flip-pair accuracy ≤ 0.05) is supported with 0.000, but this holds by construction: both sides of
+a pair share the hypothesis and flip pairs have different labels, so any deterministic hypothesis-only classifier
+scores 0. The informative number is the small item-accuracy margin of the hypothesis-only model over the majority
+class (+0.025), which bounds the remaining hypothesis-side cues after design iteration v2.
+
+### 5.2 Zero-shot NLI models (RQ1, RQ2)
+
+| Model (standard format) | Accuracy | Item acc. on flip pairs | Flip-pair acc. | Gap |
+|---|---|---|---|---|
+| DeBERTa-v3-xsmall NLI | 0.399 [0.380, 0.419] | 0.472 [0.452, 0.491] | 0.129 [0.107, 0.153] | 0.343 [0.327, 0.359] |
+| DeBERTa-v3-base NLI | 0.504 [0.484, 0.524] | 0.612 [0.595, 0.628] | 0.263 [0.233, 0.293] | 0.349 [0.333, 0.365] |
+| DeBERTa-v3-base MNLI-FEVER-ANLI | 0.531 [0.511, 0.551] | 0.623 [0.603, 0.642] | 0.304 [0.272, 0.337] | 0.319 [0.303, 0.335] |
+| RoBERTa-large-MNLI | 0.378 [0.358, 0.397] | 0.426 [0.408, 0.444] | 0.070 [0.053, 0.088] | 0.356 [0.340, 0.371] |
+
+**H1 is supported for all four models**: the lower bound of every gap exceeds 0.10. The gap is mostly explained by
+*insensitivity*: 61–77% of flip pairs receive the same prediction on both sides, against 4–16% that change the
+prediction but get a side wrong (Figure 4). High invariance on near-miss and invariant pairs (0.89–0.97) must be
+read together with this: a model that rarely changes its answer is invariant for free.
+
+**H2 is supported for the three DeBERTa models and not for RoBERTa-large-MNLI.** For the DeBERTa models, flip-pair
+accuracy on exception, cross-reference, threshold and date edits is 0.30 to 0.88 below negation, with every
+interval excluding 0. Thresholds and dates reach at most 0.04, cross-references at most 0.11, and conditions on an
+unstated attribute at most 0.04. RoBERTa-large-MNLI scores 0.00 on negation in the standard format, so the
+comparison cannot go in the predicted direction (Figure 3). On the exact-boundary side of threshold and date pairs
+("more than 50" with the value 50; 41 test items), every zero-shot model is wrong on every item, in both formats.
+
+### 5.3 Input format: a control for the zero-shot setting (exploratory)
+
+In the registered format, the case facts are part of the hypothesis. To an MNLI-trained model these facts are
+unsupported by the premise, which pushes predictions away from `entailment`; RoBERTa-large-MNLI never predicts
+`entailed` (0 of 2,560 items). Moving the facts into the premise (Figure 1, Figure 2):
+
+| Model | Flip-pair acc., standard → facts in premise | Difference | `entailed` share of predictions |
+|---|---|---|---|
+| DeBERTa-v3-xsmall NLI | 0.129 → 0.176 | +0.047 [+0.028, +0.067] | 0.047 → 0.112 |
+| DeBERTa-v3-base NLI | 0.263 → 0.290 | +0.027 [+0.013, +0.042] | 0.379 → 0.443 |
+| DeBERTa-v3-base MNLI-FEVER-ANLI | 0.304 → 0.320 | +0.016 [−0.008, +0.041] | 0.293 → 0.460 |
+| RoBERTa-large-MNLI | 0.070 → 0.225 | +0.155 [+0.122, +0.190] | 0.000 → 0.448 |
+
+The format accounts for RoBERTa's anomaly (its negation flip-pair accuracy rises from 0.00 to 1.00) and gives small
+gains for the DeBERTa models, while the share of `insufficient` predictions falls to 0.04–0.37 (gold: 0.24). It
+does not change the operator ranking: threshold and date edits remain at ≤ 0.04 and cross-references at ≤ 0.11 in
+both formats. The zero-shot failure on decisive clauses is therefore not an artefact of where the facts are placed.
+
+### 5.4 Fine-tuning (RQ3, RQ4)
+
+Runs in progress; this section is completed from `results/EXTENDED_ANALYSIS.md` when the queue finishes.
 
 ## 6. Discussion
 
