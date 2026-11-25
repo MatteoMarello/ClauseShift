@@ -1,0 +1,44 @@
+{
+ "zeroshot_nli-deberta-v3-base_factsinpremise": {
+  "adaptive_items": 13,
+  "random_items_median": 85.5,
+  "random_runs_not_identified_within_max": 0,
+  "max_items": 300
+ },
+ "zeroshot_roberta-large-mnli_factsinpremise": {
+  "adaptive_items": 13,
+  "random_items_median": 88.0,
+  "random_runs_not_identified_within_max": 0,
+  "max_items": 300
+ },
+ "zeroshot_DeBERTa-v3-base-mnli-fever-anli": {
+  "adaptive_items": 47,
+  "random_items_median": 154.0,
+  "random_runs_not_identified_within_max": 2,
+  "max_items": 300
+ },
+ "ft_nli-deberta-v3-xsmall_paired_s1": {
+  "adaptive_items": 29,
+  "random_items_median": 130.0,
+  "random_runs_not_identified_within_max": 1,
+  "max_items": 300
+ },
+ "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+  "adaptive_items": 17,
+  "random_items_median": 74.5,
+  "random_runs_not_identified_within_max": 0,
+  "max_items": 300
+ },
+ "ft_deberta-v3-xsmall_unpaired_s0": {
+  "adaptive_items": 139,
+  "random_items_median": 155.0,
+  "random_runs_not_identified_within_max": 5,
+  "max_items": 300
+ },
+ "ft_deberta-v3-xsmall_paired_s0": {
+  "adaptive_items": 14,
+  "random_items_median": 104.0,
+  "random_runs_not_identified_within_max": 1,
+  "max_items": 300
+ }
+}
