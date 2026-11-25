@@ -253,6 +253,17 @@ for prefix in sorted({re.sub(r"_(paired|unpaired|op_holdout|full)$", "", g) for 
     verdict = res["flip_accuracy"]["point"] > 0 and res["flip_accuracy"]["lo"] > 0
     res["supported_cluster"] = verdict
     res["n_seeds"] = len(common)
+    if len(common) >= 2:
+        from scipy import stats
+
+        d = np.array(res["flip_accuracy"]["per_seed"])
+        half = stats.t.ppf(0.975, len(d) - 1) * d.std(ddof=1) / np.sqrt(len(d))
+        res["seed_level_t_interval"] = {"mean": float(d.mean()), "lo": float(d.mean() - half),
+                                        "hi": float(d.mean() + half), "sd": float(d.std(ddof=1))}
+        L += ["", f"Seed-level sensitivity (treats training runs as the random unit and ignores test sampling): "
+              f"mean per-seed flip-accuracy difference {d.mean():+.3f}, SD {d.std(ddof=1):.3f}, 95% t-interval "
+              f"[{d.mean() - half:+.3f}, {d.mean() + half:+.3f}] (df = {len(d) - 1}). The pair bootstraps treat seeds "
+              "as fixed, so they do not include this training-run variance."]
     reg = json.loads(Path("results/summary.json").read_text())["hypotheses"].get(
         "H3_paired_minus_unpaired", {}).get(prefix, {}).get("flip_accuracy")
     if reg:
