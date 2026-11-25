@@ -190,14 +190,14 @@ Operator hold-out and the no-NLI-pre-training ablation: runs in progress; comple
 ## 6. Discussion
 
 **What the minimal pairs reveal.** Off-the-shelf NLI models answer roughly half of the items on flip pairs correctly
-but solve at most 0.30 of the pairs, and the main failure is not a wrong reaction to the edit but no reaction. The
+but solve at most 0.30 of the pairs (0.32 with the facts in the premise), and the main failure is not a wrong reaction to the edit but no reaction. The
 edits they handle are those that are lexically salient and close to their training distribution (an explicit "not
 required", an obligation that is simply different); the edits that decide most real eligibility questions — a
 number or date on the wrong side of a cutoff, a cross-reference that moves an exemption to another article — are
 almost never handled. The format control shows that this is not an artefact of where the case facts are placed.
 
-**What fine-tuning changes.** Two thousand four hundred synthetic items from other families are enough for a 22M-
-parameter encoder to solve about 80% of flip pairs in unseen vocabularies, and the counterfactual removal test
+**What fine-tuning changes.** Two thousand four hundred synthetic items from other families are enough for an encoder with a
+22M-parameter backbone to solve about 80% of flip pairs in unseen vocabularies, and the counterfactual removal test
 indicates that the fine-tuned models depend on the decisive conditions in the way the rules require. Numeric and
 date comparisons remain the weakest point, and exact boundaries ("more than 50" with the value 50) are handled
 inconsistently across seeds. This suggests that the residual errors are about comparison semantics rather than
