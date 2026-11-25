@@ -104,7 +104,8 @@ Recorded on 2026-11-25, before any fine-tuned model was evaluated on test. The s
    independent units) is kept in `scripts/analyze.py`. Because the same test pair appears once per seed, that
    bootstrap can understate uncertainty; `scripts/analyze_extended.py` adds a cluster bootstrap that resamples
    test pairs and keeps all seeds of a pair together. Both are reported; the decision uses the registered one, and
-   any disagreement between the two is stated.
+   any disagreement between the two is stated. Because both bootstraps treat the seeds as fixed, a seed-level
+   t-interval over the per-seed differences is reported as a further sensitivity check.
 5. **Evidence (occlusion).** The registered hit@1 metric and its sample are unchanged. Two problems with it were
    found while implementing the analysis and are reported, not fixed silently: (a) the obligation sentence belongs
    to the gold evidence of every decided item, and removing it always makes the document silent on the claim, so

@@ -6,8 +6,9 @@ inference (`entailed` / `contradicted` / `insufficient`) on the ClauseShift v2 t
 hyperparameters, selected epochs and training logs are in `results/predictions/ft_*/meta.json`.
 
 Weights are not published: the models exist to answer the research questions in `docs/PREREGISTRATION.md`, and
-every number can be regenerated with `scripts/run_finetune_queue.sh` (CPU, about 25–45 minutes per run on a
-6-core laptop CPU).
+every number can be regenerated with `scripts/run_cloud_queue.sh` (CPU only; about 20 minutes per paired or
+unpaired run and about 35 minutes per operator hold-out run on a 4-core cloud CPU, as recorded in each
+`meta.json`).
 
 ## Training
 AdamW (weight decay 0.01), linear schedule with 10% warmup, batch size 16, max length 320 tokens, 3 epochs,
