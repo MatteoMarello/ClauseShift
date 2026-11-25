@@ -18,6 +18,14 @@
 | contradicted | 18 | 919 | 6 |
 | insufficient | 32 | 9 | 577 |
 
+**ft_deberta-v3-xsmall_paired_s2**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 828 | 171 | 0 |
+| contradicted | 484 | 459 | 0 |
+| insufficient | 0 | 0 | 618 |
+
 **ft_deberta-v3-xsmall_unpaired_s0**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -202,6 +210,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 |---|---|---|---|
 | ft_deberta-v3-xsmall_paired_s0 | 41 | 0.366 | 0.520 |
 | ft_deberta-v3-xsmall_paired_s1 | 41 | 0.463 | 0.502 |
+| ft_deberta-v3-xsmall_paired_s2 | 41 | 0.341 | 0.534 |
 | ft_deberta-v3-xsmall_unpaired_s0 | 41 | 0.317 | 0.527 |
 | ft_deberta-v3-xsmall_unpaired_s1 | 41 | 0.415 | 0.509 |
 | ft_nli-deberta-v3-xsmall_op_holdout_s0 | 41 | 0.610 | 0.935 |
@@ -231,6 +240,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 |---|---|---|---|
 | ft_deberta-v3-xsmall_paired_s0 | 0.040 | 0.792 | 0.778 |
 | ft_deberta-v3-xsmall_paired_s1 | 0.028 | 0.598 | 0.594 |
+| ft_deberta-v3-xsmall_paired_s2 | 0.036 | 0.749 | 0.744 |
 | ft_deberta-v3-xsmall_unpaired_s0 | 0.059 | 0.795 | 0.752 |
 | ft_deberta-v3-xsmall_unpaired_s1 | 0.023 | 0.726 | 0.737 |
 | ft_nli-deberta-v3-xsmall_op_holdout_s0 | 0.052 | 0.986 | 0.934 |
