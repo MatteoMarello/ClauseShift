@@ -401,9 +401,9 @@ L.append("")
 ho = [g for g in GROUPS if g.endswith("_op_holdout")]
 if ho:
     L += ["## 4. Operator hold-out (preregistered ablation)", "",
-          "Training excludes xref_redirect and date_cross pairs. Compared with the full-size paired condition is not "
-          "possible (different training size); the comparison below is with the unpaired and paired groups of the "
-          "same model, on the held-out and on the seen operators.", "",
+          "Training uses all training pairs except xref_redirect and date_cross (4,200 items), so it is not "
+          "size-matched with the paired and unpaired conditions (2,400 items), which did see both operators. The "
+          "question is whether sensitivity to an unseen edit type transfers from the other edit types.", "",
           "| Group | Seeds | xref_redirect | date_cross | Other flip operators (mean) |", "|---|---|---|---|---|"]
     for g in sorted(GROUPS):
         if not g.startswith(ho[0].replace("_op_holdout", "")):
