@@ -63,6 +63,11 @@ Standard: premise = document, hypothesis = case facts + claim. facts_in_premise:
 | DeBERTa-v3-base (MNLI-FEVER-ANLI) | pair_accuracy | 0.316 | 0.326 | +0.009 [-0.010, +0.030] |
 | DeBERTa-v3-base (MNLI-FEVER-ANLI) | flip_accuracy | 0.304 | 0.320 | +0.016 [-0.008, +0.041] |
 | DeBERTa-v3-base (MNLI-FEVER-ANLI) | invariance | 0.892 | 0.996 | +0.104 [+0.077, +0.133] |
+| RoBERTa-large (MNLI) | accuracy | 0.378 | 0.506 | +0.128 [+0.104, +0.153] |
+| RoBERTa-large (MNLI) | macro_f1 | 0.307 | 0.451 | +0.145 [+0.123, +0.167] |
+| RoBERTa-large (MNLI) | pair_accuracy | 0.150 | 0.263 | +0.113 [+0.085, +0.142] |
+| RoBERTa-large (MNLI) | flip_accuracy | 0.070 | 0.225 | +0.155 [+0.122, +0.190] |
+| RoBERTa-large (MNLI) | invariance | 0.956 | 0.994 | +0.037 [+0.019, +0.057] |
 
 Predicted label distribution (test; gold: entailed 0.390, contradicted 0.368, insufficient 0.241)
 
@@ -75,6 +80,7 @@ Predicted label distribution (test; gold: entailed 0.390, contradicted 0.368, in
 | DeBERTa-v3-base (MNLI-FEVER-ANLI) | standard | 0.293 | 0.523 | 0.184 |
 | DeBERTa-v3-base (MNLI-FEVER-ANLI) | facts_in_premise | 0.460 | 0.480 | 0.060 |
 | RoBERTa-large (MNLI) | standard | 0.000 | 0.512 | 0.488 |
+| RoBERTa-large (MNLI) | facts_in_premise | 0.448 | 0.516 | 0.036 |
 
 Flip-pair accuracy by operator:
 
@@ -87,6 +93,7 @@ Flip-pair accuracy by operator:
 | DeBERTa-v3-base (MNLI-FEVER-ANLI) | standard | 0.26 | 0.11 | 0.78 | 0.04 | 0.04 | 0.23 | 0.01 | 0.78 |
 | DeBERTa-v3-base (MNLI-FEVER-ANLI) | facts_in_premise | 0.15 | 0.09 | 1.00 | 0.00 | 0.00 | 0.05 | 0.00 | 0.96 |
 | RoBERTa-large (MNLI) | standard | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
+| RoBERTa-large (MNLI) | facts_in_premise | 0.05 | 0.03 | 1.00 | 0.00 | 0.00 | 0.01 | 0.00 | 0.58 |
 
 ## 3. All systems (test)
 
@@ -102,6 +109,7 @@ Flip-pair accuracy by operator:
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | – | 0.531 [0.511, 0.551] | 0.511 [0.490, 0.533] | 0.316 [0.291, 0.341] | 0.304 [0.272, 0.337] | 0.386 [0.353, 0.420] | 0.892 [0.863, 0.918] |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | – | 0.539 [0.518, 0.559] | 0.509 [0.485, 0.532] | 0.326 [0.300, 0.352] | 0.320 [0.288, 0.353] | 0.323 [0.290, 0.356] | 0.996 [0.989, 1.000] |
 | zeroshot_roberta-large-mnli | – | 0.378 [0.358, 0.397] | 0.307 [0.292, 0.321] | 0.150 [0.130, 0.170] | 0.070 [0.053, 0.088] | 0.229 [0.202, 0.259] | 0.956 [0.937, 0.973] |
+| zeroshot_roberta-large-mnli_factsinpremise | – | 0.506 [0.487, 0.525] | 0.451 [0.429, 0.473] | 0.263 [0.240, 0.288] | 0.225 [0.198, 0.255] | 0.228 [0.200, 0.257] | 0.994 [0.985, 1.000] |
 
 ## 5. How flip pairs fail (exploratory)
 
@@ -119,6 +127,7 @@ Each flip pair is either solved (both sides correct), *insensitive* (same predic
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.304 | 0.614 | 0.083 |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise | 0.320 | 0.677 | 0.002 |
 | zeroshot_roberta-large-mnli | 0.070 | 0.771 | 0.159 |
+| zeroshot_roberta-large-mnli_factsinpremise | 0.225 | 0.772 | 0.003 |
 
 ## 6. Document complexity by operator (test, exploratory)
 

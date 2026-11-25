@@ -8,3 +8,6 @@ remote:   https://github.com/MatteoMarello/ClauseShift.git
 2026-11-25T13:35:16Z start zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise
 2026-11-25T13:42:15Z checkpoint: zero-shot facts_in_premise, DeBERTa-v3-base-mnli-fever-anli
 2026-11-25T13:42:15Z start zeroshot_roberta-large-mnli_factsinpremise
+2026-11-25T13:57:03Z checkpoint: zero-shot facts_in_premise, roberta-large-mnli
+2026-11-25T13:57:03Z start paired_s0
+2026-11-25T14:14:07Z end paired_s0 rc=0

@@ -18,6 +18,12 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_roberta-large-mnli | 0.378 [0.361, 0.398] | 0.307 [0.293, 0.321] | 0.150 [0.133, 0.170] | 0.070 [0.054, 0.090] | 0.229 [0.201, 0.258] | 0.956 [0.939, 0.973] | 0.283 [0.249, 0.326] |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.506 [0.486, 0.525] | 0.451 [0.430, 0.471] | 0.263 [0.239, 0.286] | 0.225 [0.198, 0.254] | 0.228 [0.200, 0.258] | 0.994 [0.986, 1.000] | 0.327 [0.289, 0.369] |
 
+## Fine-tuned models (test, mean ± SD over seeds)
+
+| Group | Seeds | Dev acc. | Accuracy | Macro-F1 | Pair accuracy | Flip accuracy | Invariance | Invariant-pair acc. |
+|---|---|---|---|---|---|---|---|---|
+| ft_nli-deberta-v3-xsmall_paired | 1 | 0.819 | 0.882 ± 0.000 | 0.894 ± 0.000 | 0.807 ± 0.000 | 0.796 ± 0.000 | 0.933 ± 0.000 | 0.825 ± 0.000 |
+
 ## Flip accuracy by operator (test)
 
 | System | exception_add | xref_redirect | negation | threshold_cross | date_cross | scope_restrict | condition_unknown | topic_swap |
@@ -30,6 +36,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.10 | 0.00 | 0.57 | 0.00 | 0.00 | 0.01 | 0.05 | 0.49 |
 | zeroshot_roberta-large-mnli | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.05 | 0.03 | 1.00 | 0.00 | 0.00 | 0.01 | 0.00 | 0.58 |
+| ft_nli-deberta-v3-xsmall_paired | 0.95 | 0.84 | 1.00 | 0.35 | 0.60 | 0.61 | 0.89 | 0.92 |
 
 ## Invariance by operator (test; near-miss and invariant operators)
 
@@ -46,3 +53,10 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.93 | 1.00 | 0.86 | 0.96 | 0.96 | 0.96 |
 | zeroshot_roberta-large-mnli | 0.99 | 1.00 | 0.82 | 0.96 | 1.00 | 0.96 |
 | zeroshot_roberta-large-mnli_factsinpremise | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 0.97 |
+| ft_nli-deberta-v3-xsmall_paired | 0.86 | 0.99 | 0.91 | 0.91 | 0.93 | 1.00 |
+
+## H4: shift (fine-tuned, mean over seeds)
+
+| Group | Dev acc. (vehicles) | Test acc. | Test, reserved templates | Test, seen templates |
+|---|---|---|---|---|
+| ft_nli-deberta-v3-xsmall_paired | 0.819 | 0.882 | 0.865 | 0.927 |

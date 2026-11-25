@@ -2,6 +2,14 @@
 
 ## Confusion matrices (test; rows = gold, columns = predicted)
 
+**ft_nli-deberta-v3-xsmall_paired_s0**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 804 | 183 | 12 |
+| contradicted | 95 | 847 | 1 |
+| insufficient | 0 | 11 | 607 |
+
 **majority**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -96,6 +104,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 
 | System | Boundary items | Accuracy (boundary) | Accuracy (non-boundary) |
 |---|---|---|---|
+| ft_nli-deberta-v3-xsmall_paired_s0 | 41 | 0.585 | 0.756 |
 | majority | 41 | 0.537 | 0.495 |
 | tfidf_lr_document_hypothesis | 41 | 0.122 | 0.412 |
 | tfidf_lr_hypothesis_only | 41 | 0.195 | 0.545 |
@@ -112,6 +121,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 
 | System | ECE | Mean confidence | Accuracy |
 |---|---|---|---|
+| ft_nli-deberta-v3-xsmall_paired_s0 | 0.026 | 0.905 | 0.882 |
 | tfidf_lr_document_hypothesis | 0.017 | 0.412 | 0.413 |
 | tfidf_lr_hypothesis_only | 0.038 | 0.453 | 0.415 |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.345 | 0.876 | 0.531 |
@@ -122,3 +132,27 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.515 | 0.942 | 0.427 |
 | zeroshot_roberta-large-mnli | 0.517 | 0.895 | 0.378 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.455 | 0.961 | 0.506 |
+
+## Example failures (ft_nli-deberta-v3-xsmall_paired_s0)
+
+- **exception_add** gold `contradicted`, predicted `entailed`
+  - Document: Article 1. It is mandatory for applicants to submit an English language certificate. This requirement applies only to applications received after 4 February 2026. This requirement applies only to applicants educated in Ireland. Article 2. It is mandatory for applicants to provide two reference letters. Article 3. Interviews may be held online.
+  - Hypothesis: Ola Nowak asks for 54 credits to be recognised. Ola Nowak was educated in Ireland. Ola Nowak's application was received on 17 February 2026. Ola Nowak is a transfer applicant. Ola Nowak is not required to submit an English language certificate.
+- **xref_redirect** gold `contradicted`, predicted `entailed`
+  - Document: Article 1. Every applicant is required to submit an English language certificate. This requirement applies only to applications received after 4 March 2026. This requirement applies only if the number of credits to be recognised is more than 3 credits. Article 2. Every applicant is required to upload a copy of their identity document. Article 3. Transfer applicants are exempt from Article 2. Article 4. Scholarship applications follow a separate procedure.
+  - Hypothesis: Nour Fahmy's application was received on 17 March 2026. Nour Fahmy asks for 93 credits to be recognised. Nour Fahmy is a transfer applicant. Nour Fahmy was educated in Ireland. Nour Fahmy does not have to submit an English language certificate.
+- **threshold_cross** gold `entailed`, predicted `contradicted`
+  - Document: Article 1. Applicants are obliged to submit an English language certificate. Unless the number of credits to be recognised is greater than 117 credits, this requirement does not apply. Article 2. Applicants are obliged to pay the application fee.
+  - Hypothesis: Deepa Iyer was educated in Mexico. Deepa Iyer asks for 108 credits to be recognised. Deepa Iyer's application was received on 20 December 2024. Deepa Iyer is a first-year applicant. Deepa Iyer does not have to submit an English language certificate.
+- **date_cross** gold `contradicted`, predicted `entailed`
+  - Document: Article 1. It is mandatory for applicants to submit an English language certificate. Only cases where the number of credits to be recognised is above 9 credits are covered by this requirement. The obligation covers applications received after 3 March 2026 and no others. Article 2. It is mandatory for applicants to upload a copy of their identity document. Article 3. Interviews may be held online.
+  - Hypothesis: Hiba Mansour is a transfer applicant. Hiba Mansour asks for 12 credits to be recognised. Hiba Mansour's application was received on 30 December 2025. Hiba Mansour was educated in Egypt. Hiba Mansour has an obligation to submit an English language certificate.
+- **scope_restrict** gold `entailed`, predicted `insufficient`
+  - Document: Article 1. Applicants must submit an English language certificate. The obligation is restricted to applicants educated in Mexico. The obligation is limited to cases in which the number of credits to be recognised exceeds 0 credits. Article 2. Applicants must upload a copy of their identity document. Article 3. Incomplete applications are not assessed.
+  - Hypothesis: Mateo Herrera asks for 3 credits to be recognised. Mateo Herrera is an exchange applicant. Mateo Herrera was educated in Poland. Mateo Herrera does not have to submit an English language certificate.
+- **condition_unknown** gold `entailed`, predicted `contradicted`
+  - Document: Article 1. Applicants must submit an English language certificate. Transfer applicants fall outside the scope of this requirement. Unless the number of credits to be recognised is greater than 63 credits, this requirement does not apply. Article 2. Applicants must provide two reference letters.
+  - Hypothesis: Linh Pham asks for 84 credits to be recognised. Linh Pham was educated in Egypt. Linh Pham is an exchange applicant. Linh Pham must submit an English language certificate.
+- **topic_swap** gold `entailed`, predicted `contradicted`
+  - Document: Article 1. It is mandatory for applicants to submit an English language certificate. Unless the number of credits to be recognised is greater than 105 credits, this requirement does not apply. Transfer applicants are exempt from this requirement. Article 2. It is mandatory for applicants to upload a copy of their identity document.
+  - Hypothesis: Deepa Iyer was educated in Poland. Deepa Iyer asks for 114 credits to be recognised. Deepa Iyer's application was received on 7 November 2025. Deepa Iyer is an exchange applicant. Deepa Iyer has an obligation to submit an English language certificate.
