@@ -1,0 +1,19 @@
+epoch 0 step 50/789 loss 1.6538 316s
+epoch 0 step 100/789 loss 0.8159 403s
+epoch 0 step 150/789 loss 0.5070 487s
+epoch 0 step 200/789 loss 0.3932 571s
+epoch 0 step 250/789 loss 0.3619 662s
+{"epoch": 0, "train_loss": 0.7257088073476186, "dev_macro_f1": 0.8037525575725916, "seconds": 713.5}
+epoch 1 step 300/789 loss 0.2286 786s
+epoch 1 step 350/789 loss 0.1921 879s
+epoch 1 step 400/789 loss 0.1409 967s
+epoch 1 step 450/789 loss 0.0898 1053s
+epoch 1 step 500/789 loss 0.0453 1139s
+{"epoch": 1, "train_loss": 0.12822096271682956, "dev_macro_f1": 0.9208211072391421, "seconds": 1209.0}
+epoch 2 step 550/789 loss 0.0470 1247s
+epoch 2 step 600/789 loss 0.0439 1328s
+epoch 2 step 650/789 loss 0.0631 1414s
+epoch 2 step 700/789 loss 0.0596 1506s
+epoch 2 step 750/789 loss 0.0445 1590s
+{"epoch": 2, "train_loss": 0.048733437527015366, "dev_macro_f1": 0.9239003162080085, "seconds": 1679.0}
+done ft_nli-deberta-v3-xsmall_op_holdout_s1 1816s

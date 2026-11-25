@@ -672,6 +672,230 @@
     }
    }
   },
+  "ft_nli-deberta-v3-xsmall_op_holdout_s1": {
+   "test": {
+    "accuracy": {
+     "point": 0.930078125,
+     "lo": 0.919921875,
+     "hi": 0.93984375
+    },
+    "macro_f1": {
+     "point": 0.9383858108440638,
+     "lo": 0.9299396652551122,
+     "hi": 0.9466737011846162
+    },
+    "pair_accuracy": {
+     "point": 0.86640625,
+     "lo": 0.8484375,
+     "hi": 0.884375
+    },
+    "flip_item_accuracy": {
+     "point": 0.905625,
+     "lo": 0.8919754163717282,
+     "hi": 0.9190834675254965
+    },
+    "flip_sensitivity": {
+     "point": 0.86,
+     "lo": 0.837593510230179,
+     "hi": 0.8820632355510379
+    },
+    "flip_accuracy": {
+     "point": 0.81375,
+     "lo": 0.7877586610486892,
+     "hi": 0.8400514553647546
+    },
+    "invariance": {
+     "point": 0.9666666666666667,
+     "lo": 0.9498955021581817,
+     "hi": 0.9821238963380603
+    },
+    "invariant_pair_accuracy": {
+     "point": 0.9541666666666667,
+     "lo": 0.935542291751795,
+     "hi": 0.9723927125506072
+    }
+   },
+   "dev": {
+    "accuracy": 0.9177083333333333,
+    "macro_f1": 0.9239003162080085,
+    "pair_accuracy": 0.8520833333333333,
+    "flip_item_accuracy": 0.8966666666666666,
+    "flip_sensitivity": 0.85,
+    "flip_accuracy": 0.7966666666666666,
+    "invariance": 0.9833333333333333,
+    "invariant_pair_accuracy": 0.9444444444444444
+   },
+   "test_by_operator": {
+    "condition_unknown": {
+     "accuracy": 0.93125,
+     "macro_f1": 0.907158305639078,
+     "pair_accuracy": 0.8625,
+     "flip_item_accuracy": 0.93125,
+     "flip_sensitivity": 1.0,
+     "flip_accuracy": 0.8625,
+     "n_pairs": 160
+    },
+    "date_cross": {
+     "accuracy": 0.9125,
+     "macro_f1": 0.6081871345029239,
+     "pair_accuracy": 0.825,
+     "flip_item_accuracy": 0.9125,
+     "flip_sensitivity": 0.825,
+     "flip_accuracy": 0.825,
+     "n_pairs": 80
+    },
+    "distractor_add": {
+     "accuracy": 1.0,
+     "macro_f1": 1.0,
+     "pair_accuracy": 1.0,
+     "invariance": 1.0,
+     "invariant_pair_accuracy": 1.0,
+     "n_pairs": 80
+    },
+    "exception_add": {
+     "accuracy": 0.99375,
+     "macro_f1": 0.6624998372332253,
+     "pair_accuracy": 0.9875,
+     "flip_item_accuracy": 0.99375,
+     "flip_sensitivity": 0.9875,
+     "flip_accuracy": 0.9875,
+     "n_pairs": 80
+    },
+    "exception_near_miss": {
+     "accuracy": 0.95625,
+     "macro_f1": 0.9558089079135846,
+     "pair_accuracy": 0.9125,
+     "invariance": 0.9125,
+     "invariant_pair_accuracy": 0.9125,
+     "n_pairs": 80
+    },
+    "negation": {
+     "accuracy": 1.0,
+     "macro_f1": 0.6666666666666666,
+     "pair_accuracy": 1.0,
+     "flip_item_accuracy": 1.0,
+     "flip_sensitivity": 1.0,
+     "flip_accuracy": 1.0,
+     "n_pairs": 80
+    },
+    "paraphrase": {
+     "accuracy": 0.98125,
+     "macro_f1": 0.980161431488865,
+     "pair_accuracy": 0.975,
+     "invariance": 0.9875,
+     "invariant_pair_accuracy": 0.975,
+     "n_pairs": 80
+    },
+    "reorder": {
+     "accuracy": 0.9375,
+     "macro_f1": 0.9342359767891683,
+     "pair_accuracy": 0.9125,
+     "invariance": 0.95,
+     "invariant_pair_accuracy": 0.9125,
+     "n_pairs": 80
+    },
+    "scope_near_miss": {
+     "accuracy": 0.9875,
+     "macro_f1": 0.9888610414926204,
+     "pair_accuracy": 0.975,
+     "invariance": 0.975,
+     "invariant_pair_accuracy": 0.975,
+     "n_pairs": 80
+    },
+    "scope_restrict": {
+     "accuracy": 0.975,
+     "macro_f1": 0.65,
+     "pair_accuracy": 0.95,
+     "flip_item_accuracy": 0.975,
+     "flip_sensitivity": 0.95,
+     "flip_accuracy": 0.95,
+     "n_pairs": 80
+    },
+    "threshold_cross": {
+     "accuracy": 0.89375,
+     "macro_f1": 0.5956974939010867,
+     "pair_accuracy": 0.8,
+     "flip_item_accuracy": 0.89375,
+     "flip_sensitivity": 0.8125,
+     "flip_accuracy": 0.8,
+     "n_pairs": 80
+    },
+    "threshold_near_miss": {
+     "accuracy": 0.9625,
+     "macro_f1": 0.963198394111743,
+     "pair_accuracy": 0.95,
+     "invariance": 0.975,
+     "invariant_pair_accuracy": 0.95,
+     "n_pairs": 80
+    },
+    "topic_swap": {
+     "accuracy": 0.95,
+     "macro_f1": 0.9345658339661339,
+     "pair_accuracy": 0.90625,
+     "flip_item_accuracy": 0.95,
+     "flip_sensitivity": 0.99375,
+     "flip_accuracy": 0.90625,
+     "n_pairs": 160
+    },
+    "xref_redirect": {
+     "accuracy": 0.51875,
+     "macro_f1": 0.34370125699605464,
+     "pair_accuracy": 0.0375,
+     "flip_item_accuracy": 0.51875,
+     "flip_sensitivity": 0.0375,
+     "flip_accuracy": 0.0375,
+     "n_pairs": 80
+    }
+   },
+   "test_by_family": {
+    "enrollment": {
+     "accuracy": 0.9484375,
+     "macro_f1": 0.9542025990325554,
+     "pair_accuracy": 0.896875,
+     "flip_item_accuracy": 0.92375,
+     "flip_sensitivity": 0.885,
+     "flip_accuracy": 0.8475,
+     "invariance": 0.9791666666666666,
+     "invariant_pair_accuracy": 0.9791666666666666,
+     "n_pairs": 640
+    },
+    "research_funding": {
+     "accuracy": 0.91171875,
+     "macro_f1": 0.9225398397354331,
+     "pair_accuracy": 0.8359375,
+     "flip_item_accuracy": 0.8875,
+     "flip_sensitivity": 0.835,
+     "flip_accuracy": 0.78,
+     "invariance": 0.9541666666666667,
+     "invariant_pair_accuracy": 0.9291666666666667,
+     "n_pairs": 640
+    }
+   },
+   "test_by_reserved_template": {
+    "False": {
+     "accuracy": 0.9452247191011236,
+     "macro_f1": 0.9524212520727667,
+     "pair_accuracy": 0.8904494382022472,
+     "flip_item_accuracy": 0.9326530612244898,
+     "flip_sensitivity": 0.889795918367347,
+     "flip_accuracy": 0.8653061224489796,
+     "invariance": 0.9459459459459459,
+     "invariant_pair_accuracy": 0.9459459459459459,
+     "n_pairs": 356
+    },
+    "True": {
+     "accuracy": 0.9242424242424242,
+     "macro_f1": 0.9328006292768339,
+     "pair_accuracy": 0.8571428571428571,
+     "flip_item_accuracy": 0.8936936936936937,
+     "flip_sensitivity": 0.8468468468468469,
+     "flip_accuracy": 0.790990990990991,
+     "invariance": 0.9728997289972899,
+     "invariant_pair_accuracy": 0.9566395663956639,
+     "n_pairs": 924
+    }
+   }
+  },
   "ft_nli-deberta-v3-xsmall_paired_s0": {
    "test": {
     "accuracy": {
@@ -4626,13 +4850,13 @@
     "xref_redirect": 0.0125
    },
    "ft_nli-deberta-v3-xsmall_op_holdout": {
-    "condition_unknown": 0.9125,
-    "date_cross": 0.8125,
-    "exception_add": 0.95,
+    "condition_unknown": 0.8875,
+    "date_cross": 0.81875,
+    "exception_add": 0.96875,
     "negation": 1.0,
     "scope_restrict": 0.95,
-    "threshold_cross": 0.7625,
-    "topic_swap": 0.95,
+    "threshold_cross": 0.78125,
+    "topic_swap": 0.928125,
     "xref_redirect": 0.0375
    },
    "ft_nli-deberta-v3-xsmall_paired": {
@@ -4736,10 +4960,10 @@
     "test_acc_not_reserved": 0.7794943820224719
    },
    "ft_nli-deberta-v3-xsmall_op_holdout": {
-    "dev_accuracy": 0.8666666666666667,
-    "test_accuracy": 0.933984375,
-    "test_acc_reserved": 0.9307359307359307,
-    "test_acc_not_reserved": 0.9424157303370787
+    "dev_accuracy": 0.8921875,
+    "test_accuracy": 0.93203125,
+    "test_acc_reserved": 0.9274891774891775,
+    "test_acc_not_reserved": 0.9438202247191012
    },
    "ft_nli-deberta-v3-xsmall_paired": {
     "dev_accuracy": 0.8381944444444445,
@@ -4835,39 +5059,39 @@
   },
   "ft_nli-deberta-v3-xsmall_op_holdout": {
    "accuracy": [
-    0.933984375,
-    0.0
+    0.93203125,
+    0.0027621358640099515
    ],
    "macro_f1": [
-    0.9419712685304753,
-    0.0
+    0.9401785396872695,
+    0.0025353014437189997
    ],
    "pair_accuracy": [
-    0.87421875,
-    0.0
+    0.8703125,
+    0.005524271728019903
    ],
    "flip_item_accuracy": [
-    0.911875,
-    0.0
+    0.90875,
+    0.004419417382415906
    ],
    "flip_sensitivity": [
-    0.85125,
-    0.0
+    0.855625,
+    0.006187184335382316
    ],
    "flip_accuracy": [
-    0.82375,
-    0.0
+    0.81875,
+    0.007071067811865481
    ],
    "invariance": [
-    0.975,
-    0.0
+    0.9708333333333333,
+    0.005892556509887875
    ],
    "invariant_pair_accuracy": [
-    0.9583333333333334,
-    0.0
+    0.95625,
+    0.0029462782549439376
    ],
-   "n_seeds": 1,
-   "dev_accuracy": 0.8666666666666667
+   "n_seeds": 2,
+   "dev_accuracy": 0.8921875
   },
   "ft_nli-deberta-v3-xsmall_paired": {
    "accuracy": [
