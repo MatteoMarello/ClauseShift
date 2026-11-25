@@ -23,3 +23,6 @@ remote:   https://github.com/MatteoMarello/ClauseShift.git
 2026-11-25T15:13:16Z checkpoint: fine-tuning run unpaired_s1
 2026-11-25T15:13:16Z start paired_s2
 2026-11-25T15:33:19Z end paired_s2 rc=0
+2026-11-25T15:34:23Z checkpoint: fine-tuning run paired_s2
+2026-11-25T15:34:23Z start unpaired_s2
+2026-11-25T15:51:19Z end unpaired_s2 rc=0

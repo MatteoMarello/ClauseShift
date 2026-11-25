@@ -42,6 +42,14 @@
 | contradicted | 87 | 856 | 0 |
 | insufficient | 1 | 2 | 615 |
 
+**ft_nli-deberta-v3-xsmall_unpaired_s2**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 820 | 174 | 5 |
+| contradicted | 95 | 846 | 2 |
+| insufficient | 2 | 8 | 608 |
+
 **majority**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -141,6 +149,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | ft_nli-deberta-v3-xsmall_paired_s2 | 41 | 0.463 | 0.842 |
 | ft_nli-deberta-v3-xsmall_unpaired_s0 | 41 | 0.659 | 0.785 |
 | ft_nli-deberta-v3-xsmall_unpaired_s1 | 41 | 0.634 | 0.792 |
+| ft_nli-deberta-v3-xsmall_unpaired_s2 | 41 | 0.390 | 0.796 |
 | majority | 41 | 0.537 | 0.495 |
 | tfidf_lr_document_hypothesis | 41 | 0.122 | 0.412 |
 | tfidf_lr_hypothesis_only | 41 | 0.195 | 0.545 |
@@ -162,6 +171,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | ft_nli-deberta-v3-xsmall_paired_s2 | 0.021 | 0.933 | 0.912 |
 | ft_nli-deberta-v3-xsmall_unpaired_s0 | 0.023 | 0.916 | 0.896 |
 | ft_nli-deberta-v3-xsmall_unpaired_s1 | 0.013 | 0.896 | 0.888 |
+| ft_nli-deberta-v3-xsmall_unpaired_s2 | 0.014 | 0.891 | 0.888 |
 | tfidf_lr_document_hypothesis | 0.017 | 0.412 | 0.413 |
 | tfidf_lr_hypothesis_only | 0.038 | 0.453 | 0.415 |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.345 | 0.876 | 0.531 |
