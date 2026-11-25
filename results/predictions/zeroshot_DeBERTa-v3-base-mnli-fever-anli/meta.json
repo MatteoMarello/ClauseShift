@@ -1,0 +1,14 @@
+{
+  "model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+  "revision": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb",
+  "license": "mit",
+  "label_mapping": {
+    "0": "entailed",
+    "1": "insufficient",
+    "2": "contradicted"
+  },
+  "max_length": 384,
+  "seconds_test": 585.7,
+  "hardware": "CPU, AMD Ryzen 5 4600H, 12 threads",
+  "torch": "2.5.1+cpu"
+}

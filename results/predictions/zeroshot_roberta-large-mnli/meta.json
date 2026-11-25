@@ -1,0 +1,14 @@
+{
+  "model": "FacebookAI/roberta-large-mnli",
+  "revision": "2a8f12d27941090092df78e4ba6f0928eb5eac98",
+  "license": "mit",
+  "label_mapping": {
+    "0": "contradicted",
+    "1": "insufficient",
+    "2": "entailed"
+  },
+  "max_length": 384,
+  "seconds_test": 1311.5,
+  "hardware": "CPU, AMD Ryzen 5 4600H, 12 threads",
+  "torch": "2.5.1+cpu"
+}
