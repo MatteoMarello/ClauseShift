@@ -23,7 +23,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | Group | Seeds | Dev acc. | Accuracy | Macro-F1 | Pair accuracy | Flip accuracy | Invariance | Invariant-pair acc. |
 |---|---|---|---|---|---|---|---|---|
 | ft_nli-deberta-v3-xsmall_paired | 2 | 0.834 | 0.900 ± 0.025 | 0.910 ± 0.022 | 0.831 ± 0.034 | 0.817 ± 0.029 | 0.930 ± 0.004 | 0.854 ± 0.041 |
-| ft_nli-deberta-v3-xsmall_unpaired | 1 | 0.867 | 0.896 ± 0.000 | 0.909 ± 0.000 | 0.823 ± 0.000 | 0.799 ± 0.000 | 0.933 ± 0.000 | 0.863 ± 0.000 |
+| ft_nli-deberta-v3-xsmall_unpaired | 2 | 0.845 | 0.892 ± 0.006 | 0.904 ± 0.006 | 0.816 ± 0.009 | 0.799 ± 0.000 | 0.922 ± 0.016 | 0.845 ± 0.025 |
 
 ## Flip accuracy by operator (test)
 
@@ -38,7 +38,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_roberta-large-mnli | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.05 | 0.03 | 1.00 | 0.00 | 0.00 | 0.01 | 0.00 | 0.58 |
 | ft_nli-deberta-v3-xsmall_paired | 0.93 | 0.87 | 1.00 | 0.51 | 0.64 | 0.63 | 0.87 | 0.92 |
-| ft_nli-deberta-v3-xsmall_unpaired | 0.94 | 0.82 | 1.00 | 0.42 | 0.68 | 0.49 | 0.88 | 0.94 |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.94 | 0.85 | 1.00 | 0.44 | 0.67 | 0.60 | 0.85 | 0.89 |
 
 ## Invariance by operator (test; near-miss and invariant operators)
 
@@ -56,11 +56,18 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_roberta-large-mnli | 0.99 | 1.00 | 0.82 | 0.96 | 1.00 | 0.96 |
 | zeroshot_roberta-large-mnli_factsinpremise | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 0.97 |
 | ft_nli-deberta-v3-xsmall_paired | 0.88 | 0.98 | 0.94 | 0.92 | 0.89 | 0.96 |
-| ft_nli-deberta-v3-xsmall_unpaired | 0.86 | 0.99 | 0.94 | 0.93 | 0.90 | 0.99 |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.82 | 0.98 | 0.93 | 0.93 | 0.90 | 0.97 |
+
+## H3: paired minus unpaired training (seed-pooled test pairs, paired bootstrap)
+
+- ft_nli-deberta-v3-xsmall flip_accuracy: +0.018 [-0.000, +0.037]
+- ft_nli-deberta-v3-xsmall pair_accuracy: +0.015 [+0.001, +0.029]
+- ft_nli-deberta-v3-xsmall accuracy: +0.008 [-0.002, +0.017]
+- ft_nli-deberta-v3-xsmall invariance: +0.008 [-0.010, +0.027]
 
 ## H4: shift (fine-tuned, mean over seeds)
 
 | Group | Dev acc. (vehicles) | Test acc. | Test, reserved templates | Test, seen templates |
 |---|---|---|---|---|
 | ft_nli-deberta-v3-xsmall_paired | 0.834 | 0.900 | 0.886 | 0.937 |
-| ft_nli-deberta-v3-xsmall_unpaired | 0.867 | 0.896 | 0.888 | 0.919 |
+| ft_nli-deberta-v3-xsmall_unpaired | 0.845 | 0.892 | 0.882 | 0.919 |

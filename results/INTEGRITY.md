@@ -18,6 +18,8 @@
 - PASS: ft_nli-deberta-v3-xsmall_paired_s1/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: ft_nli-deberta-v3-xsmall_unpaired_s0/dev: 960 items, ids/labels/probabilities/arg-max
 - PASS: ft_nli-deberta-v3-xsmall_unpaired_s0/test: 2560 items, ids/labels/probabilities/arg-max
+- PASS: ft_nli-deberta-v3-xsmall_unpaired_s1/dev: 960 items, ids/labels/probabilities/arg-max
+- PASS: ft_nli-deberta-v3-xsmall_unpaired_s1/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: majority/dev: 960 items, ids/labels/probabilities/arg-max
 - PASS: majority/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: tfidf_lr_document_hypothesis/dev: 960 items, ids/labels/probabilities/arg-max
@@ -46,6 +48,7 @@
 - PASS: ft_nli-deberta-v3-xsmall_paired_s0: test point estimates reproduced
 - PASS: ft_nli-deberta-v3-xsmall_paired_s1: test point estimates reproduced
 - PASS: ft_nli-deberta-v3-xsmall_unpaired_s0: test point estimates reproduced
+- PASS: ft_nli-deberta-v3-xsmall_unpaired_s1: test point estimates reproduced
 - PASS: majority: test point estimates reproduced
 - PASS: tfidf_lr_document_hypothesis: test point estimates reproduced
 - PASS: tfidf_lr_hypothesis_only: test point estimates reproduced
