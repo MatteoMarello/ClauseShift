@@ -22,6 +22,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 
 | Group | Seeds | Dev acc. | Accuracy | Macro-F1 | Pair accuracy | Flip accuracy | Invariance | Invariant-pair acc. |
 |---|---|---|---|---|---|---|---|---|
+| ft_nli-deberta-v3-xsmall_op_holdout | 1 | 0.867 | 0.934 ± 0.000 | 0.942 ± 0.000 | 0.874 ± 0.000 | 0.824 ± 0.000 | 0.975 ± 0.000 | 0.958 ± 0.000 |
 | ft_nli-deberta-v3-xsmall_paired | 3 | 0.838 | 0.904 ± 0.019 | 0.914 ± 0.017 | 0.836 ± 0.025 | 0.815 ± 0.021 | 0.937 ± 0.012 | 0.869 ± 0.039 |
 | ft_nli-deberta-v3-xsmall_unpaired | 3 | 0.843 | 0.891 ± 0.005 | 0.903 ± 0.005 | 0.814 ± 0.008 | 0.795 ± 0.007 | 0.919 ± 0.012 | 0.845 ± 0.018 |
 
@@ -37,6 +38,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.10 | 0.00 | 0.57 | 0.00 | 0.00 | 0.01 | 0.05 | 0.49 |
 | zeroshot_roberta-large-mnli | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
 | zeroshot_roberta-large-mnli_factsinpremise | 0.05 | 0.03 | 1.00 | 0.00 | 0.00 | 0.01 | 0.00 | 0.58 |
+| ft_nli-deberta-v3-xsmall_op_holdout | 0.95 | 0.04 | 1.00 | 0.76 | 0.81 | 0.95 | 0.91 | 0.95 |
 | ft_nli-deberta-v3-xsmall_paired | 0.92 | 0.86 | 1.00 | 0.51 | 0.67 | 0.67 | 0.86 | 0.90 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.94 | 0.84 | 1.00 | 0.46 | 0.62 | 0.54 | 0.87 | 0.91 |
 
@@ -55,6 +57,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.93 | 1.00 | 0.86 | 0.96 | 0.96 | 0.96 |
 | zeroshot_roberta-large-mnli | 0.99 | 1.00 | 0.82 | 0.96 | 1.00 | 0.96 |
 | zeroshot_roberta-large-mnli_factsinpremise | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 0.97 |
+| ft_nli-deberta-v3-xsmall_op_holdout | 0.96 | 0.97 | 0.97 | 0.96 | 0.99 | 0.99 |
 | ft_nli-deberta-v3-xsmall_paired | 0.89 | 0.96 | 0.95 | 0.94 | 0.91 | 0.97 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.82 | 0.96 | 0.94 | 0.93 | 0.91 | 0.96 |
 
@@ -69,5 +72,6 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 
 | Group | Dev acc. (vehicles) | Test acc. | Test, reserved templates | Test, seen templates |
 |---|---|---|---|---|
+| ft_nli-deberta-v3-xsmall_op_holdout | 0.867 | 0.934 | 0.931 | 0.942 |
 | ft_nli-deberta-v3-xsmall_paired | 0.838 | 0.904 | 0.892 | 0.934 |
 | ft_nli-deberta-v3-xsmall_unpaired | 0.843 | 0.891 | 0.880 | 0.920 |

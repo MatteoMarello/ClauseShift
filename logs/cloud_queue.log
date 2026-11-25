@@ -28,3 +28,6 @@ remote:   https://github.com/MatteoMarello/ClauseShift.git
 2026-11-25T15:51:19Z end unpaired_s2 rc=0
 2026-11-25T15:53:49Z checkpoint: fine-tuning run unpaired_s2
 2026-11-25T15:53:49Z start zero-shot evidence
+2026-11-25T16:09:51Z checkpoint: occlusion evidence for zero-shot models
+2026-11-25T16:09:51Z start op_holdout_s0
+2026-11-25T16:36:54Z end op_holdout_s0 rc=0

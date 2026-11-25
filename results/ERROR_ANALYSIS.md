@@ -2,6 +2,14 @@
 
 ## Confusion matrices (test; rows = gold, columns = predicted)
 
+**ft_nli-deberta-v3-xsmall_op_holdout_s0**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 901 | 98 | 0 |
+| contradicted | 71 | 872 | 0 |
+| insufficient | 0 | 0 | 618 |
+
 **ft_nli-deberta-v3-xsmall_paired_s0**
 
 | gold \ pred | entailed | contradicted | insufficient |
@@ -144,6 +152,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 
 | System | Boundary items | Accuracy (boundary) | Accuracy (non-boundary) |
 |---|---|---|---|
+| ft_nli-deberta-v3-xsmall_op_holdout_s0 | 41 | 0.610 | 0.935 |
 | ft_nli-deberta-v3-xsmall_paired_s0 | 41 | 0.585 | 0.756 |
 | ft_nli-deberta-v3-xsmall_paired_s1 | 41 | 0.829 | 0.842 |
 | ft_nli-deberta-v3-xsmall_paired_s2 | 41 | 0.463 | 0.842 |
@@ -166,6 +175,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 
 | System | ECE | Mean confidence | Accuracy |
 |---|---|---|---|
+| ft_nli-deberta-v3-xsmall_op_holdout_s0 | 0.052 | 0.986 | 0.934 |
 | ft_nli-deberta-v3-xsmall_paired_s0 | 0.026 | 0.905 | 0.882 |
 | ft_nli-deberta-v3-xsmall_paired_s1 | 0.018 | 0.932 | 0.918 |
 | ft_nli-deberta-v3-xsmall_paired_s2 | 0.021 | 0.933 | 0.912 |
