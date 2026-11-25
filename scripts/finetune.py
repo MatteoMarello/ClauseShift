@@ -27,7 +27,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, get_
 from clauseshift.data import load  # noqa: E402
 from clauseshift.generator import LABELS  # noqa: E402
 from clauseshift.metrics import macro_f1  # noqa: E402
-from clauseshift.nli import NAME_MAP, evidence_hit_rate, label_mapping, predict_probs  # noqa: E402
+from clauseshift.nli import NAME_MAP, evidence_hit_rate, label_mapping, predict_probs, save_evidence_records  # noqa: E402
 from clauseshift.predictions import save_predictions  # noqa: E402
 from clauseshift.runtime import hardware_string, num_threads  # noqa: E402
 
@@ -137,7 +137,9 @@ def main() -> None:
         probs = predict_probs(tok, model, [i["premise"] for i in items], [i["hypothesis"] for i in items])
         if split == "test" and args.max_steps is None:
             preds = {i["id"]: max(p, key=p.get) for i, p in zip(items, probs)}
-            meta["evidence_test"] = evidence_hit_rate(tok, model, items, preds)
+            records = []
+            meta["evidence_test"] = evidence_hit_rate(tok, model, items, preds, records=records)
+            save_evidence_records(system, records)
         save_predictions(system, split, items, probs, meta=meta)
     print("done", system, f"{time.time() - t0:.0f}s")
 

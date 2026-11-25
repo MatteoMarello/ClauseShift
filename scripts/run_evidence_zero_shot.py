@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import torch  # noqa: E402
 
 from clauseshift.data import load  # noqa: E402
-from clauseshift.nli import evidence_hit_rate  # noqa: E402
+from clauseshift.nli import evidence_hit_rate, save_evidence_records  # noqa: E402
 from clauseshift.nli import load as load_model  # noqa: E402
 from clauseshift.predictions import ROOT, load_predictions  # noqa: E402
 from clauseshift.runtime import hardware_string, num_threads  # noqa: E402
@@ -22,7 +22,9 @@ for d in sorted(ROOT.glob("zeroshot_*")):
         continue  # done already, or predictions come from a different input format than occlusion uses
     tok, model = load_model(meta["model"], meta["revision"])
     preds = {k: v["pred"] for k, v in load_predictions(d.name, "test").items()}
-    meta["evidence_test"] = evidence_hit_rate(tok, model, test, preds)
+    records = []
+    meta["evidence_test"] = evidence_hit_rate(tok, model, test, preds, records=records)
+    save_evidence_records(d.name, records)
     meta["evidence_hardware"] = hardware_string(num_threads())
     (d / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     print(d.name, meta["evidence_test"], flush=True)
