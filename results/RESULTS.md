@@ -16,6 +16,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_nli-deberta-v3-xsmall | 0.399 [0.381, 0.420] | 0.351 [0.333, 0.370] | 0.181 [0.160, 0.202] | 0.129 [0.106, 0.153] | 0.246 [0.218, 0.277] | 0.973 [0.958, 0.986] | 0.269 [0.231, 0.310] |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.427 [0.408, 0.447] | 0.397 [0.377, 0.417] | 0.210 [0.190, 0.232] | 0.176 [0.151, 0.202] | 0.268 [0.240, 0.298] | 0.946 [0.925, 0.965] | 0.267 [0.229, 0.308] |
 | zeroshot_roberta-large-mnli | 0.378 [0.361, 0.398] | 0.307 [0.293, 0.321] | 0.150 [0.133, 0.170] | 0.070 [0.054, 0.090] | 0.229 [0.201, 0.258] | 0.956 [0.939, 0.973] | 0.283 [0.249, 0.326] |
+| zeroshot_roberta-large-mnli_factsinpremise | 0.506 [0.486, 0.525] | 0.451 [0.430, 0.471] | 0.263 [0.239, 0.286] | 0.225 [0.198, 0.254] | 0.228 [0.200, 0.258] | 0.994 [0.986, 1.000] | 0.327 [0.289, 0.369] |
 
 ## Flip accuracy by operator (test)
 
@@ -28,6 +29,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_nli-deberta-v3-xsmall | 0.03 | 0.00 | 0.33 | 0.00 | 0.00 | 0.00 | 0.04 | 0.42 |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.10 | 0.00 | 0.57 | 0.00 | 0.00 | 0.01 | 0.05 | 0.49 |
 | zeroshot_roberta-large-mnli | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
+| zeroshot_roberta-large-mnli_factsinpremise | 0.05 | 0.03 | 1.00 | 0.00 | 0.00 | 0.01 | 0.00 | 0.58 |
 
 ## Invariance by operator (test; near-miss and invariant operators)
 
@@ -43,3 +45,4 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | zeroshot_nli-deberta-v3-xsmall | 0.96 | 1.00 | 0.90 | 0.99 | 1.00 | 0.99 |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.93 | 1.00 | 0.86 | 0.96 | 0.96 | 0.96 |
 | zeroshot_roberta-large-mnli | 0.99 | 1.00 | 0.82 | 0.96 | 1.00 | 0.96 |
+| zeroshot_roberta-large-mnli_factsinpremise | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 0.97 |

@@ -82,6 +82,14 @@
 | contradicted | 0 | 638 | 305 |
 | insufficient | 0 | 288 | 330 |
 
+**zeroshot_roberta-large-mnli_factsinpremise**
+
+| gold \ pred | entailed | contradicted | insufficient |
+|---|---|---|---|
+| entailed | 606 | 393 | 0 |
+| contradicted | 346 | 597 | 0 |
+| insufficient | 194 | 331 | 93 |
+
 ## Exact-boundary edits (threshold_cross, date_cross)
 
 Item accuracy on the side of the pair whose case value equals the cutoff ("more than 50" with value 50) versus the other boundary-free items of the same operators.
@@ -98,6 +106,7 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | zeroshot_nli-deberta-v3-xsmall | 41 | 0.000 | 0.323 |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 41 | 0.000 | 0.351 |
 | zeroshot_roberta-large-mnli | 41 | 0.000 | 0.297 |
+| zeroshot_roberta-large-mnli_factsinpremise | 41 | 0.000 | 0.573 |
 
 ## Calibration (test, 10-bin ECE)
 
@@ -112,3 +121,4 @@ Item accuracy on the side of the pair whose case value equals the cutoff ("more 
 | zeroshot_nli-deberta-v3-xsmall | 0.558 | 0.957 | 0.399 |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.515 | 0.942 | 0.427 |
 | zeroshot_roberta-large-mnli | 0.517 | 0.895 | 0.378 |
+| zeroshot_roberta-large-mnli_factsinpremise | 0.455 | 0.961 | 0.506 |

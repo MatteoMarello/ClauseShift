@@ -32,6 +32,8 @@
 - PASS: zeroshot_nli-deberta-v3-xsmall_factsinpremise/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: zeroshot_roberta-large-mnli/dev: 960 items, ids/labels/probabilities/arg-max
 - PASS: zeroshot_roberta-large-mnli/test: 2560 items, ids/labels/probabilities/arg-max
+- PASS: zeroshot_roberta-large-mnli_factsinpremise/dev: 960 items, ids/labels/probabilities/arg-max
+- PASS: zeroshot_roberta-large-mnli_factsinpremise/test: 2560 items, ids/labels/probabilities/arg-max
 
 ## Reported metrics (results/summary.json)
 
@@ -45,5 +47,6 @@
 - PASS: zeroshot_nli-deberta-v3-xsmall: test point estimates reproduced
 - PASS: zeroshot_nli-deberta-v3-xsmall_factsinpremise: test point estimates reproduced
 - PASS: zeroshot_roberta-large-mnli: test point estimates reproduced
+- PASS: zeroshot_roberta-large-mnli_factsinpremise: test point estimates reproduced
 
 **ALL CHECKS PASSED**
