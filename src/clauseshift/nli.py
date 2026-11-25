@@ -84,11 +84,11 @@ def evidence_hit_rate(tok, model, items: list[dict], preds: dict[str, str], n: i
             "top_sentence_role_counts": {r: len(v) for r, v in by_role.items()}}
 
 
-def save_evidence_records(system: str, records: list[dict]) -> None:
+def save_evidence_records(system: str, records: list[dict], root=None) -> None:
     import json
     from pathlib import Path
 
-    path = Path("results/predictions") / system / "evidence_test.jsonl"
+    path = Path(root or "results/predictions") / system / "evidence_test.jsonl"
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         for r in records:
             f.write(json.dumps(r) + "\n")

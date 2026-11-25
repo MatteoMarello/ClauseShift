@@ -10,8 +10,9 @@ from .generator import LABELS
 ROOT = Path("results/predictions")
 
 
-def save_predictions(system: str, split: str, items: list[dict], probs: list[dict], meta: dict | None = None) -> None:
-    out = ROOT / system
+def save_predictions(system: str, split: str, items: list[dict], probs: list[dict], meta: dict | None = None,
+                     root: Path | None = None) -> None:
+    out = (root or ROOT) / system
     out.mkdir(parents=True, exist_ok=True)
     with open(out / f"{split}.jsonl", "w", encoding="utf-8", newline="\n") as f:
         for it, p in zip(items, probs):
