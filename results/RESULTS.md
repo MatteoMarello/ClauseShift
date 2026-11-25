@@ -11,6 +11,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | tfidf_lr_hypothesis_only | 0.415 [0.398, 0.431] | 0.319 [0.306, 0.332] | 0.124 [0.108, 0.141] | 0.000 [0.000, 0.000] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] | 0.331 [0.292, 0.372] |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.531 [0.511, 0.551] | 0.511 [0.489, 0.533] | 0.316 [0.292, 0.341] | 0.304 [0.272, 0.335] | 0.386 [0.352, 0.419] | 0.892 [0.866, 0.920] | 0.338 [0.296, 0.381] |
 | zeroshot_nli-deberta-v3-base | 0.504 [0.483, 0.523] | 0.477 [0.455, 0.499] | 0.281 [0.256, 0.305] | 0.263 [0.231, 0.292] | 0.300 [0.270, 0.330] | 0.960 [0.943, 0.977] | 0.312 [0.273, 0.355] |
+| zeroshot_nli-deberta-v3-base_factsinpremise | 0.526 [0.505, 0.545] | 0.494 [0.471, 0.516] | 0.303 [0.280, 0.327] | 0.290 [0.260, 0.320] | 0.296 [0.265, 0.327] | 0.992 [0.982, 1.000] | 0.325 [0.286, 0.367] |
 | zeroshot_nli-deberta-v3-xsmall | 0.399 [0.381, 0.420] | 0.351 [0.333, 0.370] | 0.181 [0.160, 0.202] | 0.129 [0.106, 0.153] | 0.246 [0.218, 0.277] | 0.973 [0.958, 0.986] | 0.269 [0.231, 0.310] |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.427 [0.408, 0.447] | 0.397 [0.377, 0.417] | 0.210 [0.190, 0.232] | 0.176 [0.151, 0.202] | 0.268 [0.240, 0.298] | 0.946 [0.925, 0.965] | 0.267 [0.229, 0.308] |
 | zeroshot_roberta-large-mnli | 0.378 [0.361, 0.398] | 0.307 [0.293, 0.321] | 0.150 [0.133, 0.170] | 0.070 [0.054, 0.090] | 0.229 [0.201, 0.258] | 0.956 [0.939, 0.973] | 0.283 [0.249, 0.326] |
@@ -21,6 +22,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 |---|---|---|---|---|---|---|---|---|
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.26 | 0.11 | 0.78 | 0.04 | 0.04 | 0.23 | 0.01 | 0.78 |
 | zeroshot_nli-deberta-v3-base | 0.01 | 0.01 | 0.88 | 0.00 | 0.00 | 0.06 | 0.02 | 0.81 |
+| zeroshot_nli-deberta-v3-base_factsinpremise | 0.00 | 0.01 | 0.99 | 0.01 | 0.00 | 0.09 | 0.01 | 0.89 |
 | zeroshot_nli-deberta-v3-xsmall | 0.03 | 0.00 | 0.33 | 0.00 | 0.00 | 0.00 | 0.04 | 0.42 |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.10 | 0.00 | 0.57 | 0.00 | 0.00 | 0.01 | 0.05 | 0.49 |
 | zeroshot_roberta-large-mnli | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.35 |
@@ -34,6 +36,7 @@ Test split: 2560 items, 1280 minimal pairs, families ['enrollment', 'research_fu
 | tfidf_lr_hypothesis_only | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 | zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.88 | 0.96 | 0.72 | 0.86 | 0.96 | 0.96 |
 | zeroshot_nli-deberta-v3-base | 0.96 | 1.00 | 0.91 | 0.99 | 0.95 | 0.95 |
+| zeroshot_nli-deberta-v3-base_factsinpremise | 0.99 | 1.00 | 0.99 | 1.00 | 0.97 | 1.00 |
 | zeroshot_nli-deberta-v3-xsmall | 0.96 | 1.00 | 0.90 | 0.99 | 1.00 | 0.99 |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.93 | 1.00 | 0.86 | 0.96 | 0.96 | 0.96 |
 | zeroshot_roberta-large-mnli | 0.99 | 1.00 | 0.82 | 0.96 | 1.00 | 0.96 |

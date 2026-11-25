@@ -1,2 +1,4 @@
 zeroshot_nli-deberta-v3-xsmall_factsinpremise dev: 960 items in 45s
 zeroshot_nli-deberta-v3-xsmall_factsinpremise test: 2560 items in 103s
+zeroshot_nli-deberta-v3-base_factsinpremise dev: 960 items in 120s
+zeroshot_nli-deberta-v3-base_factsinpremise test: 2560 items in 490s

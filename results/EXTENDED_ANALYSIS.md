@@ -79,12 +79,12 @@ Flip-pair accuracy by operator:
 | System | Seeds | Accuracy | Macro-F1 | Pair acc. | Flip-pair acc. | Flip sensitivity | Invariance |
 |---|---|---|---|---|---|---|---|
 | majority | – | 0.390 [0.371, 0.408] | 0.187 [0.181, 0.193] | 0.141 [0.121, 0.159] | 0.000 [0.000, 0.000] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] |
-| tfidf_lr_document_hypothesis | – | 0.413 [0.395, 0.432] | 0.390 [0.369, 0.409] | 0.170 [0.149, 0.191] | 0.083 [0.064, 0.102] | 0.182 [0.156, 0.210] | 0.827 [0.793, 0.859] |
 | tfidf_lr_hypothesis_only | – | 0.415 [0.398, 0.432] | 0.319 [0.305, 0.334] | 0.124 [0.106, 0.142] | 0.000 [0.000, 0.000] | 0.000 [0.000, 0.000] | 1.000 [1.000, 1.000] |
-| zeroshot_DeBERTa-v3-base-mnli-fever-anli | – | 0.531 [0.511, 0.551] | 0.511 [0.490, 0.533] | 0.316 [0.291, 0.341] | 0.304 [0.272, 0.337] | 0.386 [0.353, 0.420] | 0.892 [0.863, 0.918] |
-| zeroshot_nli-deberta-v3-base | – | 0.504 [0.484, 0.524] | 0.477 [0.455, 0.499] | 0.281 [0.257, 0.305] | 0.263 [0.233, 0.293] | 0.300 [0.269, 0.333] | 0.960 [0.941, 0.978] |
+| tfidf_lr_document_hypothesis | – | 0.413 [0.395, 0.432] | 0.390 [0.369, 0.409] | 0.170 [0.149, 0.191] | 0.083 [0.064, 0.102] | 0.182 [0.156, 0.210] | 0.827 [0.793, 0.859] |
 | zeroshot_nli-deberta-v3-xsmall | – | 0.399 [0.380, 0.419] | 0.351 [0.333, 0.370] | 0.181 [0.161, 0.204] | 0.129 [0.107, 0.153] | 0.246 [0.218, 0.277] | 0.973 [0.958, 0.987] |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | – | 0.427 [0.407, 0.446] | 0.397 [0.377, 0.417] | 0.210 [0.189, 0.232] | 0.176 [0.151, 0.203] | 0.268 [0.238, 0.299] | 0.946 [0.925, 0.966] |
+| zeroshot_nli-deberta-v3-base | – | 0.504 [0.484, 0.524] | 0.477 [0.455, 0.499] | 0.281 [0.257, 0.305] | 0.263 [0.233, 0.293] | 0.300 [0.269, 0.333] | 0.960 [0.941, 0.978] |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | – | 0.531 [0.511, 0.551] | 0.511 [0.490, 0.533] | 0.316 [0.291, 0.341] | 0.304 [0.272, 0.337] | 0.386 [0.353, 0.420] | 0.892 [0.863, 0.918] |
 | zeroshot_roberta-large-mnli | – | 0.378 [0.358, 0.397] | 0.307 [0.292, 0.321] | 0.150 [0.130, 0.170] | 0.070 [0.053, 0.088] | 0.229 [0.202, 0.259] | 0.956 [0.937, 0.973] |
 
 ## 5. How flip pairs fail (exploratory)
@@ -94,12 +94,12 @@ Each flip pair is either solved (both sides correct), *insensitive* (same predic
 | System | Solved | Insensitive | Sensitive but wrong |
 |---|---|---|---|
 | majority | 0.000 | 1.000 | 0.000 |
-| tfidf_lr_document_hypothesis | 0.083 | 0.818 | 0.100 |
 | tfidf_lr_hypothesis_only | 0.000 | 1.000 | 0.000 |
-| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.304 | 0.614 | 0.083 |
-| zeroshot_nli-deberta-v3-base | 0.263 | 0.700 | 0.038 |
+| tfidf_lr_document_hypothesis | 0.083 | 0.818 | 0.100 |
 | zeroshot_nli-deberta-v3-xsmall | 0.129 | 0.754 | 0.117 |
 | zeroshot_nli-deberta-v3-xsmall_factsinpremise | 0.176 | 0.732 | 0.091 |
+| zeroshot_nli-deberta-v3-base | 0.263 | 0.700 | 0.038 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.304 | 0.614 | 0.083 |
 | zeroshot_roberta-large-mnli | 0.070 | 0.771 | 0.159 |
 
 ## 6. Document complexity by operator (test, exploratory)

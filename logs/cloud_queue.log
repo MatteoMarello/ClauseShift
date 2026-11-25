@@ -2,3 +2,5 @@ remote: This repository moved. Please use the new location:
 remote:   https://github.com/MatteoMarello/ClauseShift.git        
 2026-11-25T13:21:10Z checkpoint: reproduction check of stored zero-shot predictions
 2026-11-25T13:21:10Z start zeroshot_nli-deberta-v3-xsmall_factsinpremise
+2026-11-25T13:24:18Z checkpoint: zero-shot facts_in_premise, nli-deberta-v3-xsmall
+2026-11-25T13:24:18Z start zeroshot_nli-deberta-v3-base_factsinpremise

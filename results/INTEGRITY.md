@@ -22,6 +22,8 @@
 - PASS: zeroshot_DeBERTa-v3-base-mnli-fever-anli/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: zeroshot_nli-deberta-v3-base/dev: 960 items, ids/labels/probabilities/arg-max
 - PASS: zeroshot_nli-deberta-v3-base/test: 2560 items, ids/labels/probabilities/arg-max
+- PASS: zeroshot_nli-deberta-v3-base_factsinpremise/dev: 960 items, ids/labels/probabilities/arg-max
+- PASS: zeroshot_nli-deberta-v3-base_factsinpremise/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: zeroshot_nli-deberta-v3-xsmall/dev: 960 items, ids/labels/probabilities/arg-max
 - PASS: zeroshot_nli-deberta-v3-xsmall/test: 2560 items, ids/labels/probabilities/arg-max
 - PASS: zeroshot_nli-deberta-v3-xsmall_factsinpremise/dev: 960 items, ids/labels/probabilities/arg-max
@@ -36,6 +38,7 @@
 - PASS: tfidf_lr_hypothesis_only: test point estimates reproduced
 - PASS: zeroshot_DeBERTa-v3-base-mnli-fever-anli: test point estimates reproduced
 - PASS: zeroshot_nli-deberta-v3-base: test point estimates reproduced
+- PASS: zeroshot_nli-deberta-v3-base_factsinpremise: test point estimates reproduced
 - PASS: zeroshot_nli-deberta-v3-xsmall: test point estimates reproduced
 - PASS: zeroshot_nli-deberta-v3-xsmall_factsinpremise: test point estimates reproduced
 - PASS: zeroshot_roberta-large-mnli: test point estimates reproduced
