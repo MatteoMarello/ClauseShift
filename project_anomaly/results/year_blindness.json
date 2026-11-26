@@ -1,0 +1,328 @@
+{
+  "training_data": {
+    "other_operators": {
+      "n": 905,
+      "month_day_comparison_correct": 640,
+      "same_after": 458,
+      "cross_after": 251,
+      "same_not_after": 182,
+      "cross_not_after": 14
+    },
+    "date_cross": {
+      "n": 300,
+      "month_day_comparison_correct": 255,
+      "same_after": 120,
+      "same_not_after": 135,
+      "cross_after": 30,
+      "cross_not_after": 15
+    }
+  },
+  "test": {
+    "nli_paired": {
+      "per_seed": {
+        "0": {
+          "same_after": 0.9049180327868852,
+          "same_not_after": 0.6951871657754011,
+          "cross_after": 0.9140625,
+          "cross_not_after": 0.4
+        },
+        "1": {
+          "same_after": 0.9016393442622951,
+          "same_not_after": 0.8983957219251337,
+          "cross_after": 0.9140625,
+          "cross_not_after": 0.5142857142857142
+        },
+        "2": {
+          "same_after": 0.8819672131147541,
+          "same_not_after": 0.93048128342246,
+          "cross_after": 0.9140625,
+          "cross_not_after": 0.5142857142857142
+        }
+      },
+      "same_after": {
+        "accuracy": 0.896174863387978,
+        "n_items": 305,
+        "ci95": [
+          0.8675448948570468,
+          0.9230789200415369
+        ]
+      },
+      "same_not_after": {
+        "accuracy": 0.841354723707665,
+        "n_items": 187,
+        "ci95": [
+          0.8050976775956283,
+          0.874079365079365
+        ]
+      },
+      "cross_after": {
+        "accuracy": 0.9140625,
+        "n_items": 128,
+        "ci95": [
+          0.8778604749787956,
+          0.9466694677871148
+        ]
+      },
+      "cross_not_after": {
+        "accuracy": 0.4761904761904762,
+        "n_items": 35,
+        "ci95": [
+          0.32380952380952377,
+          0.6274509803921569
+        ]
+      }
+    },
+    "nli_unpaired": {
+      "per_seed": {
+        "0": {
+          "same_after": 0.9147540983606557,
+          "same_not_after": 0.8663101604278075,
+          "cross_after": 0.9453125,
+          "cross_not_after": 0.2571428571428571
+        },
+        "1": {
+          "same_after": 0.7704918032786885,
+          "same_not_after": 0.8716577540106952,
+          "cross_after": 0.9375,
+          "cross_not_after": 0.37142857142857144
+        },
+        "2": {
+          "same_after": 0.9180327868852459,
+          "same_not_after": 0.6951871657754011,
+          "cross_after": 0.9453125,
+          "cross_not_after": 0.2571428571428571
+        }
+      },
+      "same_after": {
+        "accuracy": 0.8677595628415299,
+        "n_items": 305,
+        "ci95": [
+          0.8380634481186531,
+          0.8969753610875106
+        ]
+      },
+      "same_not_after": {
+        "accuracy": 0.8110516934046346,
+        "n_items": 187,
+        "ci95": [
+          0.7592398536260814,
+          0.8579890788224122
+        ]
+      },
+      "cross_after": {
+        "accuracy": 0.9427083333333333,
+        "n_items": 128,
+        "ci95": [
+          0.9026758607325107,
+          0.9743638676844784
+        ]
+      },
+      "cross_not_after": {
+        "accuracy": 0.2952380952380952,
+        "n_items": 35,
+        "ci95": [
+          0.17776041666666664,
+          0.4193647949024293
+        ]
+      }
+    },
+    "nli_op_holdout (no date_cross in training)": {
+      "per_seed": {
+        "0": {
+          "same_after": 0.9081967213114754,
+          "same_not_after": 0.9411764705882353,
+          "cross_after": 0.9296875,
+          "cross_not_after": 1.0
+        },
+        "1": {
+          "same_after": 0.8885245901639345,
+          "same_not_after": 0.9679144385026738,
+          "cross_after": 0.921875,
+          "cross_not_after": 1.0
+        },
+        "2": {
+          "same_after": 0.9114754098360656,
+          "same_not_after": 0.9358288770053476,
+          "cross_after": 0.9453125,
+          "cross_not_after": 1.0
+        }
+      },
+      "same_after": {
+        "accuracy": 0.9027322404371584,
+        "n_items": 305,
+        "ci95": [
+          0.8710782500437528,
+          0.9308420293683817
+        ]
+      },
+      "same_not_after": {
+        "accuracy": 0.9483065953654188,
+        "n_items": 187,
+        "ci95": [
+          0.9166666666666666,
+          0.9741124402835568
+        ]
+      },
+      "cross_after": {
+        "accuracy": 0.9322916666666666,
+        "n_items": 128,
+        "ci95": [
+          0.8870031275221952,
+          0.9703703703703703
+        ]
+      },
+      "cross_not_after": {
+        "accuracy": 1.0,
+        "n_items": 35,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "generic_paired": {
+      "per_seed": {
+        "0": {
+          "same_after": 0.6819672131147541,
+          "same_not_after": 0.5401069518716578,
+          "cross_after": 0.6796875,
+          "cross_not_after": 0.2571428571428571
+        },
+        "1": {
+          "same_after": 0.5672131147540984,
+          "same_not_after": 0.46524064171123,
+          "cross_after": 0.6015625,
+          "cross_not_after": 0.45714285714285713
+        },
+        "2": {
+          "same_after": 0.7573770491803279,
+          "same_not_after": 0.3582887700534759,
+          "cross_after": 0.8046875,
+          "cross_not_after": 0.2857142857142857
+        }
+      },
+      "same_after": {
+        "accuracy": 0.6688524590163935,
+        "n_items": 305,
+        "ci95": [
+          0.6328828828828829,
+          0.7029728314128341
+        ]
+      },
+      "same_not_after": {
+        "accuracy": 0.45454545454545453,
+        "n_items": 187,
+        "ci95": [
+          0.41285783850785024,
+          0.4950012376237623
+        ]
+      },
+      "cross_after": {
+        "accuracy": 0.6953125,
+        "n_items": 128,
+        "ci95": [
+          0.6414512415135546,
+          0.7477675043464517
+        ]
+      },
+      "cross_not_after": {
+        "accuracy": 0.3333333333333333,
+        "n_items": 35,
+        "ci95": [
+          0.2222222222222222,
+          0.4385964912280701
+        ]
+      }
+    },
+    "generic_unpaired": {
+      "per_seed": {
+        "0": {
+          "same_after": 0.6721311475409836,
+          "same_not_after": 0.43315508021390375,
+          "cross_after": 0.703125,
+          "cross_not_after": 0.2857142857142857
+        },
+        "1": {
+          "same_after": 0.5344262295081967,
+          "same_not_after": 0.5668449197860963,
+          "cross_after": 0.609375,
+          "cross_not_after": 0.6
+        },
+        "2": {
+          "same_after": 0.6721311475409836,
+          "same_not_after": 0.4385026737967914,
+          "cross_after": 0.7265625,
+          "cross_not_after": 0.2857142857142857
+        }
+      },
+      "same_after": {
+        "accuracy": 0.6262295081967213,
+        "n_items": 305,
+        "ci95": [
+          0.5763294232649071,
+          0.674324772934967
+        ]
+      },
+      "same_not_after": {
+        "accuracy": 0.4795008912655971,
+        "n_items": 187,
+        "ci95": [
+          0.41098419987546697,
+          0.5464587602459017
+        ]
+      },
+      "cross_after": {
+        "accuracy": 0.6796875,
+        "n_items": 128,
+        "ci95": [
+          0.6011396011396011,
+          0.7523845598845599
+        ]
+      },
+      "cross_not_after": {
+        "accuracy": 0.39047619047619053,
+        "n_items": 35,
+        "ci95": [
+          0.2368238304093567,
+          0.5432261208576997
+        ]
+      }
+    }
+  },
+  "dev_data": {
+    "other_operators": {
+      "n": 174,
+      "month_day_comparison_correct": 122,
+      "same_after": 84,
+      "cross_after": 44,
+      "same_not_after": 38,
+      "cross_not_after": 8
+    },
+    "date_cross": {
+      "n": 60,
+      "month_day_comparison_correct": 54,
+      "same_after": 27,
+      "same_not_after": 27,
+      "cross_after": 3,
+      "cross_not_after": 3
+    }
+  },
+  "test_data": {
+    "other_operators": {
+      "n": 495,
+      "month_day_comparison_correct": 358,
+      "cross_after": 115,
+      "same_after": 238,
+      "same_not_after": 120,
+      "cross_not_after": 22
+    },
+    "date_cross": {
+      "n": 160,
+      "month_day_comparison_correct": 134,
+      "same_after": 67,
+      "cross_not_after": 13,
+      "cross_after": 13,
+      "same_not_after": 67
+    }
+  }
+}

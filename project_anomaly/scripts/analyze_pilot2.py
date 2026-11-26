@@ -50,6 +50,8 @@ def stats(rows):
     sym_acc_o = psym.argmax(1) == y
     psym_f = pf * po[:, perm]                                 # the same decoder applied to the flipped item
     sym_acc_f = (psym_f / psym_f.sum(1, keepdims=True)).argmax(1) == yf
+    sym_pred = psym.argmax(1)
+    assert np.all(sym_pred[consistent] == a_o[consistent]), "Proposition 4 violated"   # MATHEMATICAL_NOTES.md
     return {"acc_orig": a_o == y, "acc_flip": a_f == yf, "consistent": consistent, "wrong": wrong,
             "sym_acc_orig": sym_acc_o, "sym_acc_flip": sym_acc_f, "sig_a_o": sig_a_o, "a_f": a_f}
 
@@ -80,7 +82,12 @@ def summarise(rows, pair_ids, rng):
     nw = max(int(w.sum()), 1)
     baseline = sum(mo[k] / nw * mf[k] / nw for k in mo)
     gain = s["sym_acc_orig"].astype(float) - s["acc_orig"]
-    return {
+    wf = ~s["acc_flip"]
+    # secondary (added after seeing the primary table, declared in PILOT_RESULTS.md): error co-occurrence
+    cooc = {"p_wrong_flip": float(wf.mean()), "p_wrong_flip_given_wrong_orig": float(wf[w].mean()) if w.any() else None,
+            "lift": float(wf[w].mean() / wf.mean()) if w.any() and wf.mean() > 0 else None,
+            "p_both_wrong": float((w & wf).mean())}
+    return {"error_cooccurrence": cooc,
         "accuracy_orig": est(s["acc_orig"]), "accuracy_flip": est(s["acc_flip"]),
         "symmetry_consistency": est(s["consistent"]),
         "covariant_error_share": est(s["consistent"], w), "covariant_independence_baseline": baseline,
@@ -132,13 +139,15 @@ def main():
          "pairs. Covariant share = among items wrong on the original, the share whose negated-claim prediction is "
          "σ(original prediction); baseline = the same share expected if the two predictions were independent.", "",
          "| Model | Acc. original | Acc. negated | Symmetry consistency | Covariant error share (n wrong) | "
-         "Independence baseline | Symmetrised acc. | Gain | H_prog | H_noise |", "|" + "---|" * 10]
+         "Independence baseline | Symmetrised acc. | Gain | H_prog | H_noise | P(neg. wrong) | P(neg. wrong given orig. wrong) |",
+         "|" + "---|" * 12]
     for name, r in results.items():
         a = r["all"]
         L.append(f"| {name} | {f(a['accuracy_orig'])} | {f(a['accuracy_flip'])} | {f(a['symmetry_consistency'])} | "
                  f"{f(a['covariant_error_share'])} (n={a['covariant_error_share']['n']}) | "
                  f"{a['covariant_independence_baseline']:.3f} | {f(a['symmetrised_accuracy_orig'])} | "
-                 f"{f(a['symmetrisation_gain_orig'])} | {r['verdict']['H_prog']} | {r['verdict']['H_noise']} |")
+                 f"{f(a['symmetrisation_gain_orig'])} | {r['verdict']['H_prog']} | {r['verdict']['H_noise']} | "
+                 f"{a['error_cooccurrence']['p_wrong_flip']:.3f} | {a['error_cooccurrence']['p_wrong_flip_given_wrong_orig']:.3f} |")
     L += ["", "## By family", "", "| Model | Family | Acc. original | Acc. negated | Consistency | Covariant share | Gain |",
           "|" + "---|" * 7]
     for name, r in results.items():
