@@ -90,3 +90,25 @@ inertia, not by confusion.
 The operator hold-out models never saw a date edit but solve date flip pairs better (0.81) than models that did
 (0.62–0.67); they also had 4,200 vs. 2,400 training items. Most likely a size effect; not an anomaly once controlled.
 Listed to avoid over-interpretation.
+
+## Entries added after the pilots
+
+**A2 (re-evaluated).** Pilot 1 rejects the string-identity explanation. The "100%" was largely a counting artefact:
+on an E/C flip pair, a non-"insufficient" error on the boundary side necessarily copies the other side's label.
+
+**A12. Year-blind date comparison after training on date edits** (post hoc; `results/YEAR_BLINDNESS.md`). On test
+items whose date is in an earlier year but later in the calendar than the cutoff (n = 35), accuracy is 0.476 / 0.295
+for NLI-init paired / unpaired runs (all six runs ≤ 0.51) and 1.000 for all three operator-hold-out runs, which never
+saw date edits. Competing explanations: (a) edits that move dates by 1–120 days rarely change the year, so the year is
+under-learned (Joshi & He 2022 mechanism); (b) training-set size (4,200 vs 2,400 items); (c) operator mix. Distinguishing
+experiment: retrain with date edits spanning years, and without date edits at matched size (needs approval).
+Relevance to A11: part of the hold-out models' date advantage sits in this cell.
+
+**A13. Lattice vs probe disagreement for generic-init models.** Pilot 1b: these models read an isolated threshold or
+date condition as satisfied at every distance ("ignore"); the lattice (`research_next`) selected "non-strict" on dev.
+Either the lattice's dev items do not separate "ignore" from "non-strict" for these models, or the models behave
+differently when other conditions are present. Unresolved.
+
+**A14. Better models have less systematic errors** (Pilot 2, descriptive). P(error recurs under claim negation):
+0.35–0.39 (NLI-init fine-tuned), 0.61–0.70 (generic-init), 0.87 (zero-shot NLI). Program identification assumes
+errors are program-like; for the strongest models two thirds of errors are not.

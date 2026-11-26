@@ -51,48 +51,55 @@ def num_forms(family: str, v: int) -> dict:
 
 UNIT = {"vehicles": 1, "enrollment": 1, "research_funding": 5000}
 N_BASE, SEED = 60, 20261127
-out = []
-for family in ("vehicles", "enrollment", "research_funding"):
-    rng = random.Random(f"{SEED}-{family}-boundary")
-    b = PairBuilder(family, rng, allow_reserved=False)
-    dom = DOMAINS[family]
-    lo, hi, step = dom["num_range"]
-    for j in range(N_BASE):
-        kind = "threshold" if j % 2 == 0 else "date"
-        case = b.case()
-        surf = b.surface()
-        if kind == "threshold":
-            t = rng.randrange(lo + step * 2, hi - step * 2, step)
-            spec = Spec(threshold=t)
-            positions = {"eq": t, "minus": t - UNIT[family], "plus": t + UNIT[family]}
-        else:
-            d = dt.date(2024, 1, 1) + dt.timedelta(days=rng.randrange(30, 870))
-            spec = Spec(date_cutoff=d)
-            positions = {"eq": d, "minus": d - dt.timedelta(days=1), "plus": d + dt.timedelta(days=1)}
-        doc = document_text(render_document(dom, spec, surf))
-        for pos, val in positions.items():
+
+
+def main():
+    out = []
+    for family in ("vehicles", "enrollment", "research_funding"):
+        rng = random.Random(f"{SEED}-{family}-boundary")
+        b = PairBuilder(family, rng, allow_reserved=False)
+        dom = DOMAINS[family]
+        lo, hi, step = dom["num_range"]
+        for j in range(N_BASE):
+            kind = "threshold" if j % 2 == 0 else "date"
+            case = b.case()
+            surf = b.surface()
             if kind == "threshold":
-                case.num = val
-                forms = num_forms(family, val)
-                original = dom["case_num"].format(name=case.name, v=val)
-                variants = {f: (original.replace(forms["same"], s, 1) if f != "same" else original)
-                            for f, s in forms.items() if s}
+                t = rng.randrange(lo + step * 2, hi - step * 2, step)
+                spec = Spec(threshold=t)
+                positions = {"eq": t, "minus": t - UNIT[family], "plus": t + UNIT[family]}
             else:
-                case.date = val
-                forms = date_forms(val)
-                original = dom["case_date"].format(name=case.name, d=fmt_date(val))
-                variants = {f: original.replace(forms["same"], s, 1) for f, s in forms.items()}
-            hyp = render_hypothesis(dom, case)
-            assert original in hyp, (family, original, hyp)
-            label, _ = gold_label(spec, case)
-            for form, sent in variants.items():
-                out.append({"id": f"{family}-{j:02d}-{kind}-{pos}-{form}", "base": f"{family}-{j:02d}", "family": family,
-                            "kind": kind, "position": pos, "form": form, "premise": doc,
-                            "hypothesis": hyp.replace(original, sent, 1), "label": label})
-path = ROOT / "project_anomaly/results/boundary_probes.jsonl"
-with open(path, "w", newline="\n") as f:
-    for r in out:
-        f.write(json.dumps(r) + "\n")
-print(len(out), "items")
-for r in out[:3] + [x for x in out if x["form"] == "words"][:2]:
-    print(r["position"], r["form"], r["label"], "|", r["premise"][:110], "|", r["hypothesis"])
+                d = dt.date(2024, 1, 1) + dt.timedelta(days=rng.randrange(30, 870))
+                spec = Spec(date_cutoff=d)
+                positions = {"eq": d, "minus": d - dt.timedelta(days=1), "plus": d + dt.timedelta(days=1)}
+            doc = document_text(render_document(dom, spec, surf))
+            for pos, val in positions.items():
+                if kind == "threshold":
+                    case.num = val
+                    forms = num_forms(family, val)
+                    original = dom["case_num"].format(name=case.name, v=val)
+                    variants = {f: (original.replace(forms["same"], s, 1) if f != "same" else original)
+                                for f, s in forms.items() if s}
+                else:
+                    case.date = val
+                    forms = date_forms(val)
+                    original = dom["case_date"].format(name=case.name, d=fmt_date(val))
+                    variants = {f: original.replace(forms["same"], s, 1) for f, s in forms.items()}
+                hyp = render_hypothesis(dom, case)
+                assert original in hyp, (family, original, hyp)
+                label, _ = gold_label(spec, case)
+                for form, sent in variants.items():
+                    out.append({"id": f"{family}-{j:02d}-{kind}-{pos}-{form}", "base": f"{family}-{j:02d}", "family": family,
+                                "kind": kind, "position": pos, "form": form, "premise": doc,
+                                "hypothesis": hyp.replace(original, sent, 1), "label": label})
+    path = ROOT / "project_anomaly/results/boundary_probes.jsonl"
+    with open(path, "w", newline="\n") as f:
+        for r in out:
+            f.write(json.dumps(r) + "\n")
+    print(len(out), "items")
+    for r in out[:3] + [x for x in out if x["form"] == "words"][:2]:
+        print(r["position"], r["form"], r["label"], "|", r["premise"][:110], "|", r["hypothesis"])
+
+
+if __name__ == "__main__":
+    main()
