@@ -37,7 +37,9 @@ the heuristic, and does training on complete minimal pairs make this more likely
 - Falsified if: false-flip rates on the breaking probes are low (< 0.2) for fine-tuned models, or not higher after
   paired than after unpaired training across seeds.
 - Evidence: [E] 0 of 2,560 test items distinguish "resolve the cross-reference" from "react to the digit 1";
-  pairing's largest per-operator gain is on cross-references. [P] Pilot 2 (see `PILOT_RESULTS.md`).
+  pairing's largest per-operator gain is on cross-references. [P] Pilot 2: reference-specific excess of false flips
+  in 12/12 model×family cells; NLI-init paired > unpaired by +0.17 to +0.36; the pre-specified inline control failed
+  in the pre-specified family (one seed; two families post hoc). See `PILOT_RESULTS.md`.
 - Why it matters: counterfactual pairs are motivated as a cure for spurious features. If the minimal difference of
   an edit type has a single lexical realisation, the pair isolates that token perfectly and may *install* a shortcut.
 
@@ -61,8 +63,8 @@ based on specification-derived expected label transitions, computed on a fixed i
 - Falsified if: the lazy program obtains a low hit@1, or the transition test fails to separate it from models that
   read conditions.
 - Evidence [P]: the lazy program obtains hit@1 = 1.00 (300/300 top sentences are the obligation) while ignoring
-  every condition; the transition test as originally computed cannot even score it (no decisive removals among its
-  correct items), which motivates the fixed-item-set version.
+  every condition. On a fixed item set, a single-input transition score also gives it 1.00 on decisive removals; the
+  joint score (correct before and after removal) gives it 0.00, against 0.65–0.78 for NLI-init fine-tuned models.
 
 ## RQ5. How many items does it take to know?
 
