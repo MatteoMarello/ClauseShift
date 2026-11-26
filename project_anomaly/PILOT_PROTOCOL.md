@@ -109,3 +109,40 @@ smallest |Δ| from which P_sat stays ≤ 0.1 (below) or ≥ 0.9 (above) at all l
   (±1 unit). Tested descriptively; with 30 base cases per family it is a pointer, not a test.
 - Generic-init models: P_sat ≈ 1 at every Δ (they ignore the condition), as Pilot 1 suggests; if not, the Pilot 1
   reading of these models is wrong.
+
+## Addendum 2 (written after Pilot 1b, before looking at any test-set breakdown of this kind; declared post hoc)
+
+Pilot 1b showed non-monotone psychometric curves for the NLI-init models. Exploring the Pilot 1b items (dev family
+vehicles and the probe items for enrollment and research_funding; not the registered test split), two surface
+heuristics fit the deviations:
+
+- **H_lex (digit-string order for amounts).** In research_funding, case values *below* the cutoff that have fewer
+  digits but a larger leading digit (e.g. €720,000 vs a cutoff of €1,440,000) were read as satisfied in 0.97 / 0.93
+  of cases (paired / unpaired), against 0.57 / 0.51 for below-cutoff values with the same number of digits.
+  No clear effect for small integers (enrollment, vehicles).
+- **H_md (year-blind dates).** Dates *before* the cutoff whose month-and-day is later than the cutoff's (an earlier
+  year) were read as satisfied in 0.54 / 0.36 of cases, against 0.09 / 0.00 when the month-and-day is earlier.
+
+Because these hypotheses were formed on the probe data, they are tested on **independent items**: the registered
+test split (2,560 items; enrollment and research_funding), using the **stored predictions** of all registered NLI-init
+fine-tuned runs (paired, unpaired, operator hold-out; seeds 0–2; nine runs). No new inference and no model or epoch
+selection are involved. Script: `scripts/lexical_comparison_test.py`.
+
+**Items.** Every test item whose spec has a threshold (resp. date) condition and whose case states the value, and
+for which the condition is *decisive*: setting the value just above the cutoff and at the cutoff gives different gold
+labels (other conditions held as they are). `sat_label` = the label with the condition satisfied. "Satisfied
+reading" = prediction equals `sat_label`. Only items with the value **below or at** the cutoff are used (that is where
+both heuristics predict false "satisfied" readings).
+
+**Contrasts, fixed now.**
+- H_lex: among research_funding threshold items below the cutoff, P_sat(lex-greater) − P_sat(other), where
+  lex-greater = fewer digits and a larger leading digit than the cutoff. Distance control: the same contrast
+  restricted to items whose value lies between 0.3 and 0.9 of the cutoff (both groups occur there).
+- H_md: among date items before the cutoff, P_sat(month-day later) − P_sat(month-day earlier). Distance control:
+  restricted to items 1–365 days before the cutoff.
+
+**Predictions.** Each heuristic is *supported on independent data* if the pooled contrast (nine runs) is ≥ 0.15 with a
+95% cluster-bootstrap CI (over minimal pairs) excluding 0, the distance-controlled contrast has the same sign with
+point estimate ≥ 0.10, and at least 7 of 9 runs show a positive contrast. If a group has fewer than 10 items the
+contrast is reported as not testable. Generic-init runs are reported for reference only (Pilot 1b suggests they
+ignore isolated conditions entirely). Whatever the outcome, it is reported.
