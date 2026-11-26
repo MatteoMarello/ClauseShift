@@ -1,0 +1,571 @@
+{
+  "ft_nli-deberta-v3-xsmall_paired_s0": {
+    "G": {
+      "validity_accuracy_same_year": 0.7972222222222223,
+      "p_sat": {
+        "before/same": 0.2111111111111111,
+        "before/cross": 0.7888888888888889,
+        "after/same": 0.8055555555555556,
+        "after/cross": 0.9388888888888889
+      },
+      "delta_before": {
+        "estimate": 0.5777777777777777,
+        "ci95": [
+          0.49999999999999994,
+          0.661111111111111
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.1333333333333333,
+        "ci95": [
+          -0.2001388888888889,
+          -0.07222222222222219
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.6333333333333333,
+        "d031-120": 0.6333333333333333,
+        "d121-300": 0.4666666666666667
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.5666666666666667,
+        "enrollment": 0.5499999999999999,
+        "research_funding": 0.6166666666666666
+      }
+    },
+    "US": {
+      "validity_accuracy_same_year": 0.7694444444444445,
+      "p_sat": {
+        "before/same": 0.2222222222222222,
+        "before/cross": 0.7333333333333333,
+        "after/same": 0.7611111111111111,
+        "after/cross": 0.9388888888888889
+      },
+      "delta_before": {
+        "estimate": 0.5111111111111111,
+        "ci95": [
+          0.4222222222222222,
+          0.5888888888888889
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.17777777777777773,
+        "ci95": [
+          -0.24444444444444446,
+          -0.1111111111111111
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.6,
+        "d031-120": 0.5833333333333334,
+        "d121-300": 0.35
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.5499999999999999,
+        "enrollment": 0.43333333333333335,
+        "research_funding": 0.5499999999999999
+      }
+    },
+    "ISO": {
+      "validity_accuracy_same_year": 0.7305555555555555,
+      "p_sat": {
+        "before/same": 0.2,
+        "before/cross": 0.5611111111111111,
+        "after/same": 0.6722222222222223,
+        "after/cross": 0.6777777777777778
+      },
+      "delta_before": {
+        "estimate": 0.36111111111111105,
+        "ci95": [
+          0.2722222222222222,
+          0.4444444444444445
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.005555555555555574,
+        "ci95": [
+          -0.09999999999999998,
+          0.08888888888888886
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.44999999999999996,
+        "d031-120": 0.31666666666666665,
+        "d121-300": 0.31666666666666665
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.31666666666666665,
+        "enrollment": 0.3333333333333333,
+        "research_funding": 0.43333333333333335
+      }
+    },
+    "C3_cutoff_jan_mar": {
+      "n_cross": 138,
+      "n_same": 16,
+      "p_sat_cross": 0.7536231884057971,
+      "p_sat_same": 0.0625,
+      "delta_before": 0.6911231884057971,
+      "bin_d001_030": {
+        "n_cross": 60,
+        "n_same": 15,
+        "delta_before": 0.6833333333333333
+      }
+    },
+    "year_only": {
+      "p_sat_by_offset": {
+        "-2": 0.0,
+        "-1": 0.0,
+        "1": 0.5555555555555556,
+        "2": 0.6888888888888889
+      },
+      "Y": 0.6222222222222222
+    },
+    "day_month_only": {
+      "day_only/before": 0.9333333333333333,
+      "day_only/after": 0.7111111111111111,
+      "month_only/before": 0.8888888888888888,
+      "month_only/after": 0.9111111111111111,
+      "day_only": 0.8222222222222222,
+      "month_only": 0.9
+    },
+    "verdict": {
+      "V": false,
+      "H1": true,
+      "H2_asymmetry (\u0394_after < 0.10)": true,
+      "H3_year_only (Y < 0.50)": false,
+      "H4_format": {
+        "US": "uninterpretable (V fails)",
+        "ISO": "uninterpretable (V fails)"
+      },
+      "H5_day_month (both \u2265 0.80)": true,
+      "C3 (\u0394_before \u2265 0.10 with Jan\u2013Mar cutoffs)": true
+    }
+  },
+  "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+    "G": {
+      "validity_accuracy_same_year": 0.9083333333333333,
+      "p_sat": {
+        "before/same": 0.06111111111111111,
+        "before/cross": 0.7388888888888889,
+        "after/same": 0.8777777777777778,
+        "after/cross": 0.9888888888888889
+      },
+      "delta_before": {
+        "estimate": 0.6777777777777777,
+        "ci95": [
+          0.6055555555555555,
+          0.7444444444444444
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.11111111111111112,
+        "ci95": [
+          -0.1611111111111111,
+          -0.06666666666666665
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.6,
+        "d031-120": 0.7,
+        "d121-300": 0.7333333333333333
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.6,
+        "enrollment": 0.65,
+        "research_funding": 0.7833333333333332
+      }
+    },
+    "US": {
+      "validity_accuracy_same_year": 0.875,
+      "p_sat": {
+        "before/same": 0.07777777777777778,
+        "before/cross": 0.6055555555555555,
+        "after/same": 0.8277777777777777,
+        "after/cross": 0.9888888888888889
+      },
+      "delta_before": {
+        "estimate": 0.5277777777777777,
+        "ci95": [
+          0.44999999999999996,
+          0.6
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.16111111111111112,
+        "ci95": [
+          -0.21666666666666667,
+          -0.10555555555555554
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.45,
+        "d031-120": 0.5333333333333333,
+        "d121-300": 0.6
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.3833333333333333,
+        "enrollment": 0.5499999999999999,
+        "research_funding": 0.6499999999999999
+      }
+    },
+    "ISO": {
+      "validity_accuracy_same_year": 0.8916666666666667,
+      "p_sat": {
+        "before/same": 0.03333333333333333,
+        "before/cross": 0.5444444444444444,
+        "after/same": 0.8166666666666667,
+        "after/cross": 0.7444444444444445
+      },
+      "delta_before": {
+        "estimate": 0.5111111111111112,
+        "ci95": [
+          0.4388888888888889,
+          0.5888888888888888
+        ]
+      },
+      "delta_after": {
+        "estimate": 0.07222222222222222,
+        "ci95": [
+          -0.011111111111111141,
+          0.15555555555555556
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.65,
+        "d031-120": 0.45,
+        "d121-300": 0.4333333333333334
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.3333333333333333,
+        "enrollment": 0.5166666666666667,
+        "research_funding": 0.6833333333333332
+      }
+    },
+    "C3_cutoff_jan_mar": {
+      "n_cross": 138,
+      "n_same": 16,
+      "p_sat_cross": 0.6811594202898551,
+      "p_sat_same": 0.0,
+      "delta_before": 0.6811594202898551,
+      "bin_d001_030": {
+        "n_cross": 60,
+        "n_same": 15,
+        "delta_before": 0.6
+      }
+    },
+    "year_only": {
+      "p_sat_by_offset": {
+        "-2": 0.0,
+        "-1": 0.0,
+        "1": 0.7111111111111111,
+        "2": 0.7777777777777778
+      },
+      "Y": 0.7444444444444445
+    },
+    "day_month_only": {
+      "day_only/before": 1.0,
+      "day_only/after": 0.6222222222222222,
+      "month_only/before": 1.0,
+      "month_only/after": 0.9555555555555556,
+      "day_only": 0.8111111111111111,
+      "month_only": 0.9777777777777777
+    },
+    "verdict": {
+      "V": true,
+      "H1": true,
+      "H2_asymmetry (\u0394_after < 0.10)": true,
+      "H3_year_only (Y < 0.50)": false,
+      "H4_format": {
+        "US": true,
+        "ISO": true
+      },
+      "H5_day_month (both \u2265 0.80)": true,
+      "C3 (\u0394_before \u2265 0.10 with Jan\u2013Mar cutoffs)": true
+    }
+  },
+  "ft_deberta-v3-xsmall_paired_s0": {
+    "G": {
+      "validity_accuracy_same_year": 0.5055555555555555,
+      "p_sat": {
+        "before/same": 0.9222222222222223,
+        "before/cross": 0.9555555555555556,
+        "after/same": 0.9333333333333333,
+        "after/cross": 0.9722222222222222
+      },
+      "delta_before": {
+        "estimate": 0.03333333333333336,
+        "ci95": [
+          -0.016666666666666642,
+          0.08333333333333333
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.03888888888888886,
+        "ci95": [
+          -0.0833333333333333,
+          3.469446951953614e-18
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": -0.016666666666666607,
+        "d031-120": 0.06666666666666665,
+        "d121-300": 0.050000000000000044
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.050000000000000044,
+        "enrollment": 0.03333333333333336,
+        "research_funding": 0.01666666666666668
+      }
+    },
+    "US": {
+      "validity_accuracy_same_year": 0.5,
+      "p_sat": {
+        "before/same": 0.95,
+        "before/cross": 0.9833333333333333,
+        "after/same": 0.95,
+        "after/cross": 1.0
+      },
+      "delta_before": {
+        "estimate": 0.03333333333333336,
+        "ci95": [
+          -0.0055555555555554985,
+          0.07222222222222219
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.05,
+        "ci95": [
+          -0.08888888888888886,
+          -0.022222222222222216
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.050000000000000044,
+        "d031-120": 0.01666666666666672,
+        "d121-300": 0.033333333333333326
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.0666666666666667,
+        "enrollment": 0.03333333333333336,
+        "research_funding": 0.0
+      }
+    },
+    "ISO": {
+      "validity_accuracy_same_year": 0.5083333333333333,
+      "p_sat": {
+        "before/same": 0.9444444444444444,
+        "before/cross": 1.0,
+        "after/same": 0.9611111111111111,
+        "after/cross": 1.0
+      },
+      "delta_before": {
+        "estimate": 0.05555555555555558,
+        "ci95": [
+          0.022222222222222254,
+          0.09444444444444444
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.03888888888888893,
+        "ci95": [
+          -0.06666666666666668,
+          -0.011111111111111144
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.050000000000000044,
+        "d031-120": 0.050000000000000044,
+        "d121-300": 0.06666666666666665
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.0666666666666667,
+        "enrollment": 0.0666666666666667,
+        "research_funding": 0.033333333333333326
+      }
+    },
+    "C3_cutoff_jan_mar": {
+      "n_cross": 138,
+      "n_same": 16,
+      "p_sat_cross": 0.9565217391304348,
+      "p_sat_same": 0.9375,
+      "delta_before": 0.01902173913043481,
+      "bin_d001_030": {
+        "n_cross": 60,
+        "n_same": 15,
+        "delta_before": 0.0
+      }
+    },
+    "year_only": {
+      "p_sat_by_offset": {
+        "-2": 0.9333333333333333,
+        "-1": 0.8888888888888888,
+        "1": 0.8888888888888888,
+        "2": 0.9555555555555556
+      },
+      "Y": 0.011111111111111183
+    },
+    "day_month_only": {
+      "day_only/before": 0.06666666666666667,
+      "day_only/after": 1.0,
+      "month_only/before": 0.06666666666666667,
+      "month_only/after": 0.9333333333333333,
+      "day_only": 0.5333333333333333,
+      "month_only": 0.5
+    },
+    "verdict": {
+      "V": false,
+      "H1": false,
+      "H2_asymmetry (\u0394_after < 0.10)": true,
+      "H3_year_only (Y < 0.50)": true,
+      "H4_format": {
+        "US": "uninterpretable (V fails)",
+        "ISO": "uninterpretable (V fails)"
+      },
+      "H5_day_month (both \u2265 0.80)": false,
+      "C3 (\u0394_before \u2265 0.10 with Jan\u2013Mar cutoffs)": false
+    }
+  },
+  "ft_deberta-v3-xsmall_unpaired_s0": {
+    "G": {
+      "validity_accuracy_same_year": 0.49444444444444446,
+      "p_sat": {
+        "before/same": 0.9888888888888889,
+        "before/cross": 0.9777777777777777,
+        "after/same": 0.9777777777777777,
+        "after/cross": 0.9777777777777777
+      },
+      "delta_before": {
+        "estimate": -0.011111111111111072,
+        "ci95": [
+          -0.038888888888888896,
+          0.011111111111111144
+        ]
+      },
+      "delta_after": {
+        "estimate": 3.642919299551295e-17,
+        "ci95": [
+          -0.02777777777777779,
+          0.03333333333333329
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.01666666666666672,
+        "d031-120": -0.033333333333333326,
+        "d121-300": -0.016666666666666607
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.0,
+        "enrollment": 0.0,
+        "research_funding": -0.03333333333333329
+      }
+    },
+    "US": {
+      "validity_accuracy_same_year": 0.49722222222222223,
+      "p_sat": {
+        "before/same": 1.0,
+        "before/cross": 0.9944444444444445,
+        "after/same": 0.9944444444444445,
+        "after/cross": 0.9944444444444445
+      },
+      "delta_before": {
+        "estimate": -0.005555555555555572,
+        "ci95": [
+          -0.01666666666666668,
+          0.0
+        ]
+      },
+      "delta_after": {
+        "estimate": 0.0,
+        "ci95": [
+          -0.01666666666666668,
+          0.01666666666666668
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.0,
+        "d031-120": -0.01666666666666672,
+        "d121-300": 0.0
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.0,
+        "enrollment": 0.0,
+        "research_funding": -0.01666666666666668
+      }
+    },
+    "ISO": {
+      "validity_accuracy_same_year": 0.49444444444444446,
+      "p_sat": {
+        "before/same": 0.9833333333333333,
+        "before/cross": 0.9722222222222222,
+        "after/same": 0.9722222222222222,
+        "after/cross": 0.9777777777777777
+      },
+      "delta_before": {
+        "estimate": -0.011111111111111072,
+        "ci95": [
+          -0.04444444444444443,
+          0.01666666666666668
+        ]
+      },
+      "delta_after": {
+        "estimate": -0.005555555555555572,
+        "ci95": [
+          -0.038888888888888896,
+          0.027777777777777752
+        ]
+      },
+      "delta_before_by_bin": {
+        "d001-030": 0.0,
+        "d031-120": -0.016666666666666607,
+        "d121-300": -0.016666666666666607
+      },
+      "delta_before_by_family": {
+        "vehicles": 0.0,
+        "enrollment": 0.0,
+        "research_funding": -0.03333333333333329
+      }
+    },
+    "C3_cutoff_jan_mar": {
+      "n_cross": 138,
+      "n_same": 16,
+      "p_sat_cross": 0.9927536231884058,
+      "p_sat_same": 1.0,
+      "delta_before": -0.007246376811594235,
+      "bin_d001_030": {
+        "n_cross": 60,
+        "n_same": 15,
+        "delta_before": 0.0
+      }
+    },
+    "year_only": {
+      "p_sat_by_offset": {
+        "-2": 1.0,
+        "-1": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "Y": 0.0
+    },
+    "day_month_only": {
+      "day_only/before": 0.0,
+      "day_only/after": 0.9777777777777777,
+      "month_only/before": 0.044444444444444446,
+      "month_only/after": 0.9555555555555556,
+      "day_only": 0.4888888888888889,
+      "month_only": 0.5
+    },
+    "verdict": {
+      "V": false,
+      "H1": false,
+      "H2_asymmetry (\u0394_after < 0.10)": true,
+      "H3_year_only (Y < 0.50)": true,
+      "H4_format": {
+        "US": "uninterpretable (V fails)",
+        "ISO": "uninterpretable (V fails)"
+      },
+      "H5_day_month (both \u2265 0.80)": false,
+      "C3 (\u0394_before \u2265 0.10 with Jan\u2013Mar cutoffs)": false
+    }
+  },
+  "decision": "NOT REPLICATED \u2014 direction closed"
+}

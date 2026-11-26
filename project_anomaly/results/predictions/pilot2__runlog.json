@@ -1,0 +1,37 @@
+{
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "items": "project_anomaly/results/negation_probes.jsonl",
+  "n": 2560,
+  "models": {
+    "ft_nli-deberta-v3-xsmall_paired_s0": {
+      "source": "checkpoints/ft_nli-deberta-v3-xsmall_paired_s0",
+      "revision": null,
+      "seconds": 100.8
+    },
+    "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+      "source": "checkpoints/ft_nli-deberta-v3-xsmall_unpaired_s0",
+      "revision": null,
+      "seconds": 116.7
+    },
+    "ft_deberta-v3-xsmall_paired_s0": {
+      "source": "checkpoints/ft_deberta-v3-xsmall_paired_s0",
+      "revision": null,
+      "seconds": 109.6
+    },
+    "ft_deberta-v3-xsmall_unpaired_s0": {
+      "source": "checkpoints/ft_deberta-v3-xsmall_unpaired_s0",
+      "revision": null,
+      "seconds": 112.1
+    },
+    "zs_deberta-v3-base-nli": {
+      "source": "cross-encoder/nli-deberta-v3-base",
+      "revision": "6c749ce3425cd33b46d187e45b92bbf96ee12ec7",
+      "seconds": 344.0
+    },
+    "zs_deberta-v3-base-mnli-fever-anli": {
+      "source": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+      "revision": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb",
+      "seconds": 306.4
+    }
+  }
+}

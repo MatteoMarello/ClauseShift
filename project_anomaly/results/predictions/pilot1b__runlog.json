@@ -1,0 +1,27 @@
+{
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "items": "project_anomaly/results/psychometric_probes.jsonl",
+  "n": 2340,
+  "models": {
+    "ft_nli-deberta-v3-xsmall_paired_s0": {
+      "source": "checkpoints/ft_nli-deberta-v3-xsmall_paired_s0",
+      "revision": null,
+      "seconds": 63.7
+    },
+    "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+      "source": "checkpoints/ft_nli-deberta-v3-xsmall_unpaired_s0",
+      "revision": null,
+      "seconds": 64.6
+    },
+    "ft_deberta-v3-xsmall_paired_s0": {
+      "source": "checkpoints/ft_deberta-v3-xsmall_paired_s0",
+      "revision": null,
+      "seconds": 61.1
+    },
+    "ft_deberta-v3-xsmall_unpaired_s0": {
+      "source": "checkpoints/ft_deberta-v3-xsmall_unpaired_s0",
+      "revision": null,
+      "seconds": 60.2
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "note": "Configuration of the Project Anomaly pilots (exploratory). See PILOT_PROTOCOL.md for hypotheses and criteria.",
+  "hardware": "4 CPU cores, no GPU",
+  "compute_budget_seconds": 7200,
+  "compute_used_seconds": 1558,
+  "models": {
+    "fine_tuned_local_checkpoints": ["ft_nli-deberta-v3-xsmall_paired_s0", "ft_nli-deberta-v3-xsmall_unpaired_s0",
+                                     "ft_deberta-v3-xsmall_paired_s0", "ft_deberta-v3-xsmall_unpaired_s0"],
+    "zero_shot_pinned_revisions_from": ["results/predictions/zeroshot_nli-deberta-v3-base/meta.json",
+                                        "results/predictions/zeroshot_DeBERTa-v3-base-mnli-fever-anli/meta.json"]
+  },
+  "pilot1": {"script": "scripts/make_boundary_probes.py", "seed": 20261127, "base_cases_per_family": 60,
+             "families": ["vehicles", "enrollment", "research_funding"], "positions": ["eq", "minus", "plus"],
+             "forms": ["same", "reorder", "words"], "bootstrap": 2000, "items": 1440},
+  "pilot1b": {"script": "scripts/make_psychometric_probes.py", "seed": 20261127, "same_base_cases_as": "pilot1",
+              "relative_offsets": [-0.5, -0.25, -0.1, -0.05, -0.02, 0.0, 0.02, 0.05, 0.1, 0.25, 0.5],
+              "unit_offsets": [-1, 1], "day_offsets": [-365, -90, -30, -7, -2, -1, 0, 1, 2, 7, 30, 90, 365],
+              "items": 2340},
+  "pilot2": {"script": "scripts/make_negation_probes.py", "source": "data/test.jsonl (regenerated specs, hashes checked)",
+             "items": 2560, "bootstrap": "cluster over pair_id, 2000"},
+  "heldout_lexical_test": {"script": "scripts/lexical_comparison_test.py", "inference": false,
+                           "runs": "nine registered NLI-init runs (paired, unpaired, op_holdout; seeds 0-2)"},
+  "pilot3": {"status": "not run: requires new fine-tuning, not authorised"}
+}
