@@ -1,0 +1,1300 @@
+{
+ "ft_deberta-v3-xsmall_paired_s0": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8104166666666667,
+  "test_agreement": 0.795703125,
+  "test_accuracy": 0.778125,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.796875,
+  "runner_up_test": 0.796875,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_deberta-v3-xsmall_paired_s1": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.6395833333333333,
+  "test_agreement": 0.59453125,
+  "test_accuracy": 0.59375,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "ignore",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "ignore"
+  },
+  "best_on_test_agreement": 0.606640625,
+  "runner_up_test": 0.606640625,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_deberta-v3-xsmall_paired_s2": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "any_category",
+   "xref": "ignore",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.7666666666666667,
+  "test_agreement": 0.68203125,
+  "test_accuracy": 0.744140625,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "ignore",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.771484375,
+  "runner_up_test": 0.771484375,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "any_category"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_deberta-v3-xsmall_unpaired_s0": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.790625,
+  "test_agreement": 0.76796875,
+  "test_accuracy": 0.75234375,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.76796875,
+  "runner_up_test": 0.76796875,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_deberta-v3-xsmall_unpaired_s1": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.7572916666666667,
+  "test_agreement": 0.74140625,
+  "test_accuracy": 0.73671875,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.74140625,
+  "runner_up_test": 0.74140625,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_deberta-v3-xsmall_unpaired_s2": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8072916666666666,
+  "test_agreement": 0.7734375,
+  "test_accuracy": 0.75625,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.7734375,
+  "runner_up_test": 0.7734375,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_op_holdout_s0": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "nonstrict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8677083333333333,
+  "test_agreement": 0.9359375,
+  "test_accuracy": 0.933984375,
+  "best_on_test": {
+   "threshold": "strict",
+   "date": "nonstrict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.9359375,
+  "runner_up_test": 0.9359375,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_op_holdout_s1": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.9177083333333333,
+  "test_agreement": 0.930078125,
+  "test_accuracy": 0.930078125,
+  "best_on_test": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.930078125,
+  "runner_up_test": 0.930078125,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_op_holdout_s2": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "nonstrict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8895833333333333,
+  "test_agreement": 0.937109375,
+  "test_accuracy": 0.934375,
+  "best_on_test": {
+   "threshold": "strict",
+   "date": "nonstrict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.937109375,
+  "runner_up_test": 0.937109375,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_paired_s0": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.81875,
+  "test_agreement": 0.88203125,
+  "test_accuracy": 0.88203125,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.884765625,
+  "runner_up_test": 0.884765625,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_paired_s1": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8489583333333334,
+  "test_agreement": 0.91796875,
+  "test_accuracy": 0.91796875,
+  "best_on_test": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.91796875,
+  "runner_up_test": 0.91796875,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_paired_s2": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.846875,
+  "test_agreement": 0.91171875,
+  "test_accuracy": 0.91171875,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.917578125,
+  "runner_up_test": 0.917578125,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8708333333333333,
+  "test_agreement": 0.89453125,
+  "test_accuracy": 0.896484375,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.8984375,
+  "runner_up_test": 0.8984375,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_unpaired_s1": {
+  "best_program": {
+   "threshold": "strict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8239583333333333,
+  "test_agreement": 0.887890625,
+  "test_accuracy": 0.887890625,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "read",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.890625,
+  "runner_up_test": 0.890625,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "strict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "ft_nli-deberta-v3-xsmall_unpaired_s2": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8416666666666667,
+  "test_agreement": 0.894921875,
+  "test_accuracy": 0.88828125,
+  "best_on_test": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.894921875,
+  "runner_up_test": 0.894921875,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "majority": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "strict",
+   "scope": "read",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "ignore"
+  },
+  "dev_agreement": 0.4864583333333333,
+  "test_agreement": 0.4546875,
+  "test_accuracy": 0.390234375,
+  "best_on_test": {
+   "threshold": "strict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "any_category",
+   "xref": "read",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.473828125,
+  "runner_up_test": 0.473828125,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "strict"
+   ],
+   "scope": [
+    "read"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore"
+   ],
+   "negation": [
+    "ignore"
+   ]
+  }
+ },
+ "tfidf_lr_document_hypothesis": {
+  "best_program": {
+   "threshold": "nonstrict",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "read",
+   "negation": "ignore"
+  },
+  "dev_agreement": 0.496875,
+  "test_agreement": 0.468359375,
+  "test_accuracy": 0.41328125,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "ignore"
+  },
+  "best_on_test_agreement": 0.489453125,
+  "runner_up_test": 0.489453125,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "nonstrict"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "ignore"
+   ]
+  }
+ },
+ "tfidf_lr_hypothesis_only": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "ignore"
+  },
+  "dev_agreement": 0.9291666666666667,
+  "test_agreement": 0.785546875,
+  "test_accuracy": 0.41484375,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "ignore"
+  },
+  "best_on_test_agreement": 0.785546875,
+  "runner_up_test": 0.785546875,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "ignore"
+   ]
+  }
+ },
+ "zeroshot_DeBERTa-v3-base-mnli-fever-anli": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "nonstrict",
+   "scope": "ignore",
+   "exception": "read",
+   "xref": "article_token",
+   "unknown": "read",
+   "negation": "read"
+  },
+  "dev_agreement": 0.5333333333333333,
+  "test_agreement": 0.645703125,
+  "test_accuracy": 0.53125,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.77890625,
+  "runner_up_test": 0.77890625,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "nonstrict"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "read"
+   ],
+   "xref": [
+    "article_token",
+    "read"
+   ],
+   "unknown": [
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "dev_agreement": 0.9729166666666667,
+  "test_agreement": 0.982421875,
+  "test_accuracy": 0.538671875,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.982421875,
+  "runner_up_test": 0.982421875,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "zeroshot_nli-deberta-v3-base": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "dev_agreement": 0.8083333333333333,
+  "test_agreement": 0.91875,
+  "test_accuracy": 0.503515625,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.91875,
+  "runner_up_test": 0.91875,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "zeroshot_nli-deberta-v3-base_factsinpremise": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "dev_agreement": 0.9395833333333333,
+  "test_agreement": 0.983203125,
+  "test_accuracy": 0.526171875,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.983203125,
+  "runner_up_test": 0.983203125,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "zeroshot_nli-deberta-v3-xsmall": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "dev_agreement": 0.521875,
+  "test_agreement": 0.590625,
+  "test_accuracy": 0.39921875,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.590625,
+  "runner_up_test": 0.590625,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "zeroshot_nli-deberta-v3-xsmall_factsinpremise": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "dev_agreement": 0.5489583333333333,
+  "test_agreement": 0.653125,
+  "test_accuracy": 0.4265625,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.653125,
+  "runner_up_test": 0.653125,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "zeroshot_roberta-large-mnli": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "dev_agreement": 0.5197916666666667,
+  "test_agreement": 0.518359375,
+  "test_accuracy": 0.378125,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.518359375,
+  "runner_up_test": 0.518359375,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "zeroshot_roberta-large-mnli_factsinpremise": {
+  "best_program": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "dev_agreement": 0.9677083333333333,
+  "test_agreement": 0.965625,
+  "test_accuracy": 0.50625,
+  "best_on_test": {
+   "threshold": "ignore",
+   "date": "ignore",
+   "scope": "ignore",
+   "exception": "ignore",
+   "xref": "ignore",
+   "unknown": "ignore",
+   "negation": "read"
+  },
+  "best_on_test_agreement": 0.965625,
+  "runner_up_test": 0.965625,
+  "dev_indistinguishable_options": {
+   "threshold": [
+    "ignore"
+   ],
+   "date": [
+    "ignore"
+   ],
+   "scope": [
+    "ignore"
+   ],
+   "exception": [
+    "ignore"
+   ],
+   "xref": [
+    "ignore"
+   ],
+   "unknown": [
+    "ignore",
+    "read"
+   ],
+   "negation": [
+    "read"
+   ]
+  }
+ },
+ "_identifiability_test": {
+  "threshold": {
+   "ignore": 392,
+   "nonstrict": 23
+  },
+  "date": {
+   "ignore": 480,
+   "nonstrict": 17
+  },
+  "scope": {
+   "ignore": 80
+  },
+  "exception": {
+   "ignore": 174,
+   "any_category": 479
+  },
+  "xref": {
+   "ignore": 80,
+   "article_token": 0
+  },
+  "unknown": {
+   "ignore": 458
+  },
+  "negation": {
+   "ignore": 80
+  }
+ }
+}

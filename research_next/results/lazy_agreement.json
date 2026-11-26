@@ -1,0 +1,132 @@
+{
+ "ft_deberta-v3-xsmall_paired_s0": {
+  "agreement": 0.55,
+  "kappa": 0.2877755229347962,
+  "accuracy": 0.778125
+ },
+ "ft_deberta-v3-xsmall_paired_s1": {
+  "agreement": 0.432421875,
+  "kappa": 0.07179532224449216,
+  "accuracy": 0.59375
+ },
+ "ft_deberta-v3-xsmall_paired_s2": {
+  "agreement": 0.614453125,
+  "kappa": 0.3920855052986089,
+  "accuracy": 0.744140625
+ },
+ "ft_deberta-v3-xsmall_unpaired_s0": {
+  "agreement": 0.55859375,
+  "kappa": 0.30051262211045565,
+  "accuracy": 0.75234375
+ },
+ "ft_deberta-v3-xsmall_unpaired_s1": {
+  "agreement": 0.508203125,
+  "kappa": 0.2202629444905716,
+  "accuracy": 0.73671875
+ },
+ "ft_deberta-v3-xsmall_unpaired_s2": {
+  "agreement": 0.57578125,
+  "kappa": 0.3264000139558009,
+  "accuracy": 0.75625
+ },
+ "ft_nli-deberta-v3-xsmall_op_holdout_s0": {
+  "agreement": 0.505859375,
+  "kappa": 0.21482179044101787,
+  "accuracy": 0.933984375
+ },
+ "ft_nli-deberta-v3-xsmall_op_holdout_s1": {
+  "agreement": 0.489453125,
+  "kappa": 0.18780621845573658,
+  "accuracy": 0.930078125
+ },
+ "ft_nli-deberta-v3-xsmall_op_holdout_s2": {
+  "agreement": 0.51171875,
+  "kappa": 0.22328570051984029,
+  "accuracy": 0.934375
+ },
+ "ft_nli-deberta-v3-xsmall_paired_s0": {
+  "agreement": 0.555078125,
+  "kappa": 0.2922247741718745,
+  "accuracy": 0.88203125
+ },
+ "ft_nli-deberta-v3-xsmall_paired_s1": {
+  "agreement": 0.534375,
+  "kappa": 0.2621968232722125,
+  "accuracy": 0.91796875
+ },
+ "ft_nli-deberta-v3-xsmall_paired_s2": {
+  "agreement": 0.50859375,
+  "kappa": 0.21967464313310622,
+  "accuracy": 0.91171875
+ },
+ "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+  "agreement": 0.55859375,
+  "kappa": 0.2989211412307463,
+  "accuracy": 0.896484375
+ },
+ "ft_nli-deberta-v3-xsmall_unpaired_s1": {
+  "agreement": 0.5140625,
+  "kappa": 0.22763427101290537,
+  "accuracy": 0.887890625
+ },
+ "ft_nli-deberta-v3-xsmall_unpaired_s2": {
+  "agreement": 0.56953125,
+  "kappa": 0.31459386494064734,
+  "accuracy": 0.88828125
+ },
+ "majority": {
+  "agreement": 0.450390625,
+  "kappa": 0.0,
+  "accuracy": 0.390234375
+ },
+ "tfidf_lr_document_hypothesis": {
+  "agreement": 0.476953125,
+  "kappa": 0.14094584072322297,
+  "accuracy": 0.41328125
+ },
+ "tfidf_lr_hypothesis_only": {
+  "agreement": 0.764453125,
+  "kappa": 0.5547032393400856,
+  "accuracy": 0.41484375
+ },
+ "zeroshot_DeBERTa-v3-base-mnli-fever-anli": {
+  "agreement": 0.77890625,
+  "kappa": 0.6325014634403683,
+  "accuracy": 0.53125
+ },
+ "zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise": {
+  "agreement": 0.982421875,
+  "kappa": 0.9683465177047929,
+  "accuracy": 0.538671875
+ },
+ "zeroshot_nli-deberta-v3-base": {
+  "agreement": 0.91875,
+  "kappa": 0.8593179159352683,
+  "accuracy": 0.503515625
+ },
+ "zeroshot_nli-deberta-v3-base_factsinpremise": {
+  "agreement": 0.983203125,
+  "kappa": 0.9697452837630182,
+  "accuracy": 0.526171875
+ },
+ "zeroshot_nli-deberta-v3-xsmall": {
+  "agreement": 0.590625,
+  "kappa": 0.4154945533769063,
+  "accuracy": 0.39921875
+ },
+ "zeroshot_nli-deberta-v3-xsmall_factsinpremise": {
+  "agreement": 0.653125,
+  "kappa": 0.4845104609038119,
+  "accuracy": 0.4265625
+ },
+ "zeroshot_roberta-large-mnli": {
+  "agreement": 0.518359375,
+  "kappa": 0.33125848776384886,
+  "accuracy": 0.378125
+ },
+ "zeroshot_roberta-large-mnli_factsinpremise": {
+  "agreement": 0.965625,
+  "kappa": 0.9368980377272873,
+  "accuracy": 0.50625
+ }
+}

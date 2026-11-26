@@ -62,6 +62,10 @@ def main() -> None:
     ap.add_argument("--max-length", type=int, default=320)
     ap.add_argument("--max-steps", type=int, default=None, help="smoke tests only")
     ap.add_argument("--tag", default="")
+    ap.add_argument("--out-root", default="results/predictions",
+                    help="where predictions are written (research_next pilots use their own directory)")
+    ap.add_argument("--save-dir", default=None,
+                    help="optional local directory for the selected weights (gitignored; never committed)")
     args = ap.parse_args()
 
     torch.set_num_threads(num_threads())
@@ -81,7 +85,7 @@ def main() -> None:
     train_items = select_training_items(load("train"), args.condition, args.seed, args.holdout)
     dev, test = load("dev"), load("test")
     system = f"ft_{args.model.split('/')[-1]}_{args.condition}_s{args.seed}{args.tag}"
-    out_dir = Path("results/predictions") / system
+    out_dir = Path(args.out_root) / system
     out_dir.mkdir(parents=True, exist_ok=True)
 
     steps_per_epoch = (len(train_items) + args.batch_size - 1) // args.batch_size
@@ -139,8 +143,11 @@ def main() -> None:
             preds = {i["id"]: max(p, key=p.get) for i, p in zip(items, probs)}
             records = []
             meta["evidence_test"] = evidence_hit_rate(tok, model, items, preds, records=records)
-            save_evidence_records(system, records)
-        save_predictions(system, split, items, probs, meta=meta)
+            save_evidence_records(system, records, root=args.out_root)
+        save_predictions(system, split, items, probs, meta=meta, root=Path(args.out_root))
+    if args.save_dir:
+        model.save_pretrained(Path(args.save_dir) / system)
+        tok.save_pretrained(Path(args.save_dir) / system)
     print("done", system, f"{time.time() - t0:.0f}s")
 
 

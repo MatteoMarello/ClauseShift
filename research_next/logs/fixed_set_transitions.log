@@ -1,0 +1,17 @@
+ft_deberta-v3-xsmall_paired_s0 {'obligation': {'agreement': 0.7657142857142857, 'n': 175}, 'non_decisive': {'agreement': 0.6834532374100719, 'n': 417}, 'decisive': {'agreement': 0.7959183673469388, 'n': 49}, 'hit_at_1_fixed_set': 0.9314285714285714, 'items': 175}
+ft_deberta-v3-xsmall_unpaired_s0 {'obligation': {'agreement': 0.8228571428571428, 'n': 175}, 'non_decisive': {'agreement': 0.6618705035971223, 'n': 417}, 'decisive': {'agreement': 0.6938775510204082, 'n': 49}, 'hit_at_1_fixed_set': 0.9314285714285714, 'items': 175}
+ft_nli-deberta-v3-xsmall_paired_s0 {'obligation': {'agreement': 0.9885714285714285, 'n': 175}, 'non_decisive': {'agreement': 0.8489208633093526, 'n': 417}, 'decisive': {'agreement': 0.8571428571428571, 'n': 49}, 'hit_at_1_fixed_set': 1.0, 'items': 175}
+ft_nli-deberta-v3-xsmall_unpaired_s0 {'obligation': {'agreement': 0.9714285714285714, 'n': 175}, 'non_decisive': {'agreement': 0.8513189448441247, 'n': 417}, 'decisive': {'agreement': 0.8979591836734694, 'n': 49}, 'hit_at_1_fixed_set': 1.0, 'items': 175}
+zeroshot_nli-deberta-v3-base {'obligation': {'agreement': 0.8114285714285714, 'n': 175}, 'non_decisive': {'agreement': 0.6738609112709832, 'n': 417}, 'decisive': {'agreement': 0.8163265306122449, 'n': 49}, 'hit_at_1_fixed_set': 0.9028571428571428, 'items': 175}
+zeroshot_DeBERTa-v3-base-mnli-fever-anli {'obligation': {'agreement': 0.9028571428571428, 'n': 175}, 'non_decisive': {'agreement': 0.6954436450839329, 'n': 417}, 'decisive': {'agreement': 0.8163265306122449, 'n': 49}, 'hit_at_1_fixed_set': 0.9657142857142857, 'items': 175}
+Fixed item set: 175 decided, well-posed flip-operator test items (25 per operator, no cross-reference), 641 sentence removals.
+
+| System | Obligation removed → insufficient | Decisive removed → expected change | Non-decisive removed → kept | hit@1 (same items) |
+|---|---|---|---|---|
+| lazy_reader | 1.000 (n=175) | 1.000 (n=49) | 0.715 (n=417) | 1.000 |
+| ft_deberta-v3-xsmall_paired_s0 | 0.766 (n=175) | 0.796 (n=49) | 0.683 (n=417) | 0.931 |
+| ft_deberta-v3-xsmall_unpaired_s0 | 0.823 (n=175) | 0.694 (n=49) | 0.662 (n=417) | 0.931 |
+| ft_nli-deberta-v3-xsmall_paired_s0 | 0.989 (n=175) | 0.857 (n=49) | 0.849 (n=417) | 1.000 |
+| ft_nli-deberta-v3-xsmall_unpaired_s0 | 0.971 (n=175) | 0.898 (n=49) | 0.851 (n=417) | 1.000 |
+| zeroshot_nli-deberta-v3-base | 0.811 (n=175) | 0.816 (n=49) | 0.674 (n=417) | 0.903 |
+| zeroshot_DeBERTa-v3-base-mnli-fever-anli | 0.903 (n=175) | 0.816 (n=49) | 0.695 (n=417) | 0.966 |

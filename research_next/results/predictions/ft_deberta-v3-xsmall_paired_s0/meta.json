@@ -1,0 +1,52 @@
+{
+  "model": "microsoft/deberta-v3-xsmall",
+  "revision": "4b419818330868dff6a60ad3e6b1c730f8b8c0c6",
+  "condition": "paired",
+  "seed": 0,
+  "holdout_operators": null,
+  "train_items": 2400,
+  "train_pairs_complete": 1200,
+  "epochs": 3,
+  "lr": 5e-05,
+  "batch_size": 16,
+  "max_length": 320,
+  "selected_epoch": 2,
+  "selected_dev_macro_f1": 0.8063782548401309,
+  "log": [
+    {
+      "epoch": 0,
+      "train_loss": 0.9717522863547007,
+      "dev_macro_f1": 0.7249014323732584,
+      "seconds": 259.9
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.48296456068754196,
+      "dev_macro_f1": 0.799994920007847,
+      "seconds": 525.6
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.3980198347568512,
+      "dev_macro_f1": 0.8063782548401309,
+      "seconds": 789.1
+    }
+  ],
+  "torch": "2.5.1+cpu",
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "smoke_test": false,
+  "evidence_test": {
+    "n": 300,
+    "eligible": 1375,
+    "hit_at_1": 0.91,
+    "top_sentence_role_counts": {
+      "article2": 12,
+      "obligation": 239,
+      "date": 9,
+      "threshold": 20,
+      "exception": 14,
+      "scope": 5,
+      "distractor": 1
+    }
+  }
+}

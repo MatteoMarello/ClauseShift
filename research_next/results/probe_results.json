@@ -1,0 +1,1370 @@
+{
+ "results": {
+  "lazy_reader": {
+   "vehicles": {
+    "acc_base": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_xref_other_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_inline_case": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_xref_other_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_inline_case": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_xref_other_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_inline_case": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 200
+    }
+   }
+  },
+  "ft_deberta-v3-xsmall_paired_s0": {
+   "vehicles": {
+    "acc_base": {
+     "point": 0.94,
+     "lo": 0.905,
+     "hi": 0.97,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.995,
+     "lo": 0.985,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.8,
+     "lo": 0.745,
+     "hi": 0.855,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.19148936170212766,
+     "lo": 0.13829787234042554,
+     "hi": 0.25,
+     "n": 188
+    },
+    "acc_xref_other_art1": {
+     "point": 0.085,
+     "lo": 0.04987500000000001,
+     "hi": 0.12512499999999932,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.9095744680851063,
+     "lo": 0.8670212765957447,
+     "hi": 0.9468085106382979,
+     "n": 188
+    },
+    "acc_inline_case": {
+     "point": 0.995,
+     "lo": 0.985,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.42,
+     "lo": 0.35,
+     "hi": 0.49,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.5585106382978723,
+     "lo": 0.48936170212765956,
+     "hi": 0.6276595744680851,
+     "n": 188
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 0.965,
+     "lo": 0.94,
+     "hi": 0.9851249999999993,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.995,
+     "lo": 0.985,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.89,
+     "lo": 0.845,
+     "hi": 0.93,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.07772020725388601,
+     "lo": 0.04145077720207254,
+     "hi": 0.11917098445595854,
+     "n": 193
+    },
+    "acc_xref_other_art1": {
+     "point": 0.505,
+     "lo": 0.435,
+     "hi": 0.575,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.47668393782383417,
+     "lo": 0.40932642487046633,
+     "hi": 0.5492227979274611,
+     "n": 193
+    },
+    "acc_inline_case": {
+     "point": 0.995,
+     "lo": 0.985,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.79,
+     "lo": 0.735,
+     "hi": 0.845,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.19170984455958548,
+     "lo": 0.13471502590673576,
+     "hi": 0.24870466321243523,
+     "n": 193
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 0.965,
+     "lo": 0.935,
+     "hi": 0.985,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.885,
+     "lo": 0.84,
+     "hi": 0.925,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.08290155440414508,
+     "lo": 0.046632124352331605,
+     "hi": 0.11930051813471432,
+     "n": 193
+    },
+    "acc_xref_other_art1": {
+     "point": 0.425,
+     "lo": 0.355,
+     "hi": 0.49,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.5595854922279793,
+     "lo": 0.48704663212435234,
+     "hi": 0.6321243523316062,
+     "n": 193
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.535,
+     "lo": 0.47,
+     "hi": 0.605,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.45595854922279794,
+     "lo": 0.38341968911917096,
+     "hi": 0.5284974093264249,
+     "n": 193
+    }
+   }
+  },
+  "ft_deberta-v3-xsmall_unpaired_s0": {
+   "vehicles": {
+    "acc_base": {
+     "point": 0.98,
+     "lo": 0.96,
+     "hi": 0.995,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.985,
+     "lo": 0.965,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.025,
+     "lo": 0.005,
+     "hi": 0.045,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.9744897959183674,
+     "lo": 0.9489795918367347,
+     "hi": 0.9948979591836735,
+     "n": 196
+    },
+    "acc_xref_other_art1": {
+     "point": 0.08,
+     "lo": 0.045,
+     "hi": 0.12,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.9183673469387755,
+     "lo": 0.8775510204081632,
+     "hi": 0.9540816326530612,
+     "n": 196
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.255,
+     "lo": 0.195,
+     "hi": 0.3151249999999993,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.7397959183673469,
+     "lo": 0.6785714285714286,
+     "hi": 0.8010204081632653,
+     "n": 196
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 0.98,
+     "lo": 0.96,
+     "hi": 0.995,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.965,
+     "lo": 0.935,
+     "hi": 0.99,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.05,
+     "lo": 0.02,
+     "hi": 0.085,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.9489795918367347,
+     "lo": 0.9132653061224489,
+     "hi": 0.9744897959183674,
+     "n": 196
+    },
+    "acc_xref_other_art1": {
+     "point": 0.62,
+     "lo": 0.555,
+     "hi": 0.685,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.3673469387755102,
+     "lo": 0.3010204081632653,
+     "hi": 0.4387755102040816,
+     "n": 196
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.89,
+     "lo": 0.845,
+     "hi": 0.93,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.09183673469387756,
+     "lo": 0.05612244897959184,
+     "hi": 0.1377551020408163,
+     "n": 196
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 0.99,
+     "lo": 0.975,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.885,
+     "lo": 0.84,
+     "hi": 0.925,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.145,
+     "lo": 0.1,
+     "hi": 0.195,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.8535353535353535,
+     "lo": 0.803030303030303,
+     "hi": 0.898989898989899,
+     "n": 198
+    },
+    "acc_xref_other_art1": {
+     "point": 0.63,
+     "lo": 0.565,
+     "hi": 0.695,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.36363636363636365,
+     "lo": 0.29292929292929293,
+     "hi": 0.43434343434343436,
+     "n": 198
+    },
+    "acc_inline_case": {
+     "point": 0.985,
+     "lo": 0.965,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.67,
+     "lo": 0.605,
+     "hi": 0.73,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.32323232323232326,
+     "lo": 0.25757575757575757,
+     "hi": 0.3888888888888889,
+     "n": 198
+    }
+   }
+  },
+  "ft_nli-deberta-v3-xsmall_paired_s0": {
+   "vehicles": {
+    "acc_base": {
+     "point": 0.81,
+     "lo": 0.755,
+     "hi": 0.865,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.93,
+     "lo": 0.895,
+     "hi": 0.965,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.018518518518518517,
+     "lo": 0.0,
+     "hi": 0.043209876543209874,
+     "n": 162
+    },
+    "acc_xref_other_art1": {
+     "point": 0.205,
+     "lo": 0.15,
+     "hi": 0.26,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.7530864197530864,
+     "lo": 0.691358024691358,
+     "hi": 0.8148148148148148,
+     "n": 162
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.37,
+     "lo": 0.305,
+     "hi": 0.44,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.5555555555555556,
+     "lo": 0.47530864197530864,
+     "hi": 0.6358024691358025,
+     "n": 162
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 0.975,
+     "lo": 0.95,
+     "hi": 0.995,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.995,
+     "lo": 0.985,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 195
+    },
+    "acc_xref_other_art1": {
+     "point": 0.49,
+     "lo": 0.42,
+     "hi": 0.5551249999999993,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.49743589743589745,
+     "lo": 0.4307692307692308,
+     "hi": 0.5641025641025641,
+     "n": 195
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.875,
+     "lo": 0.83,
+     "hi": 0.92,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.11282051282051282,
+     "lo": 0.07179487179487179,
+     "hi": 0.15897435897435896,
+     "n": 195
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 0.89,
+     "lo": 0.845,
+     "hi": 0.93,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.925,
+     "lo": 0.885,
+     "hi": 0.96,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.016853932584269662,
+     "lo": 0.0,
+     "hi": 0.03932584269662921,
+     "n": 178
+    },
+    "acc_xref_other_art1": {
+     "point": 0.37,
+     "lo": 0.305,
+     "hi": 0.435,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.5898876404494382,
+     "lo": 0.5168539325842697,
+     "hi": 0.6629213483146067,
+     "n": 178
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.6,
+     "lo": 0.535,
+     "hi": 0.67,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.3539325842696629,
+     "lo": 0.28651685393258425,
+     "hi": 0.42696629213483145,
+     "n": 178
+    }
+   }
+  },
+  "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+   "vehicles": {
+    "acc_base": {
+     "point": 0.93,
+     "lo": 0.895,
+     "hi": 0.965,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.995,
+     "lo": 0.985,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.965,
+     "lo": 0.94,
+     "hi": 0.99,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.016129032258064516,
+     "lo": 0.0,
+     "hi": 0.03763440860215054,
+     "n": 186
+    },
+    "acc_xref_other_art1": {
+     "point": 0.44,
+     "lo": 0.37,
+     "hi": 0.51,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.5268817204301075,
+     "lo": 0.45698924731182794,
+     "hi": 0.6021505376344086,
+     "n": 186
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.555,
+     "lo": 0.485,
+     "hi": 0.625,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.41397849462365593,
+     "lo": 0.34408602150537637,
+     "hi": 0.4838709677419355,
+     "n": 186
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 0.98,
+     "lo": 0.96,
+     "hi": 0.995,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.975,
+     "lo": 0.95,
+     "hi": 0.995,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.00510204081632653,
+     "lo": 0.0,
+     "hi": 0.015306122448979591,
+     "n": 196
+    },
+    "acc_xref_other_art1": {
+     "point": 0.66,
+     "lo": 0.595,
+     "hi": 0.725,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.32653061224489793,
+     "lo": 0.2602040816326531,
+     "hi": 0.39285714285714285,
+     "n": 196
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.865,
+     "lo": 0.815,
+     "hi": 0.91,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.12755102040816327,
+     "lo": 0.08163265306122448,
+     "hi": 0.17346938775510204,
+     "n": 196
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 0.97,
+     "lo": 0.945,
+     "hi": 0.99,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.99,
+     "lo": 0.975,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.985,
+     "lo": 0.965,
+     "hi": 1.0,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 194
+    },
+    "acc_xref_other_art1": {
+     "point": 0.73,
+     "lo": 0.67,
+     "hi": 0.79,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.24742268041237114,
+     "lo": 0.18556701030927836,
+     "hi": 0.30412371134020616,
+     "n": 194
+    },
+    "acc_inline_case": {
+     "point": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.77,
+     "lo": 0.71,
+     "hi": 0.83,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.20618556701030927,
+     "lo": 0.14948453608247422,
+     "hi": 0.26288659793814434,
+     "n": 194
+    }
+   }
+  },
+  "zeroshot_nli-deberta-v3-xsmall": {
+   "vehicles": {
+    "acc_base": {
+     "point": 0.435,
+     "lo": 0.37,
+     "hi": 0.5001249999999993,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.085,
+     "lo": 0.045,
+     "hi": 0.125,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.44,
+     "lo": 0.37,
+     "hi": 0.51,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.011494252873563218,
+     "lo": 0.0,
+     "hi": 0.034482758620689655,
+     "n": 87
+    },
+    "acc_xref_other_art1": {
+     "point": 0.4,
+     "lo": 0.33,
+     "hi": 0.47,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.08045977011494253,
+     "lo": 0.034482758620689655,
+     "hi": 0.14942528735632185,
+     "n": 87
+    },
+    "acc_inline_case": {
+     "point": 0.245,
+     "lo": 0.185,
+     "hi": 0.305,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.39,
+     "lo": 0.325,
+     "hi": 0.46,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.10344827586206896,
+     "lo": 0.04597701149425287,
+     "hi": 0.1724137931034483,
+     "n": 87
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 0.53,
+     "lo": 0.46,
+     "hi": 0.6,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.105,
+     "lo": 0.065,
+     "hi": 0.1451249999999993,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.51,
+     "lo": 0.439875,
+     "hi": 0.58,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.03773584905660377,
+     "lo": 0.009433962264150943,
+     "hi": 0.07547169811320754,
+     "n": 106
+    },
+    "acc_xref_other_art1": {
+     "point": 0.53,
+     "lo": 0.46,
+     "hi": 0.6,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 106
+    },
+    "acc_inline_case": {
+     "point": 0.23,
+     "lo": 0.175,
+     "hi": 0.29,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.53,
+     "lo": 0.46,
+     "hi": 0.6,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 106
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 0.5,
+     "lo": 0.43,
+     "hi": 0.565,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.16,
+     "lo": 0.115,
+     "hi": 0.21,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.5,
+     "lo": 0.425,
+     "hi": 0.57,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "acc_xref_other_art1": {
+     "point": 0.5,
+     "lo": 0.43,
+     "hi": 0.5701249999999992,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "acc_inline_case": {
+     "point": 0.35,
+     "lo": 0.29,
+     "hi": 0.4201249999999993,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.495,
+     "lo": 0.425,
+     "hi": 0.565,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.01,
+     "lo": 0.0,
+     "hi": 0.03,
+     "n": 100
+    }
+   }
+  },
+  "zeroshot_nli-deberta-v3-base": {
+   "vehicles": {
+    "acc_base": {
+     "point": 0.795,
+     "lo": 0.735,
+     "hi": 0.85,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.02,
+     "lo": 0.005,
+     "hi": 0.04,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.915,
+     "lo": 0.875,
+     "hi": 0.95,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.006289308176100629,
+     "lo": 0.0,
+     "hi": 0.018867924528301886,
+     "n": 159
+    },
+    "acc_xref_other_art1": {
+     "point": 0.78,
+     "lo": 0.72,
+     "hi": 0.84,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.03773584905660377,
+     "lo": 0.012578616352201259,
+     "hi": 0.06918238993710692,
+     "n": 159
+    },
+    "acc_inline_case": {
+     "point": 0.145,
+     "lo": 0.1,
+     "hi": 0.195,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.75,
+     "lo": 0.69,
+     "hi": 0.81,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.06289308176100629,
+     "lo": 0.031446540880503145,
+     "hi": 0.10062893081761007,
+     "n": 159
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 0.94,
+     "lo": 0.905,
+     "hi": 0.97,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.015,
+     "lo": 0.0,
+     "hi": 0.035,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.98,
+     "lo": 0.96,
+     "hi": 0.995,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.005319148936170213,
+     "lo": 0.0,
+     "hi": 0.015957446808510637,
+     "n": 188
+    },
+    "acc_xref_other_art1": {
+     "point": 0.935,
+     "lo": 0.9,
+     "hi": 0.965,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.02127659574468085,
+     "lo": 0.005319148936170213,
+     "hi": 0.0425531914893617,
+     "n": 188
+    },
+    "acc_inline_case": {
+     "point": 0.115,
+     "lo": 0.075,
+     "hi": 0.165,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.94,
+     "lo": 0.905,
+     "hi": 0.97,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.02127659574468085,
+     "lo": 0.005319148936170213,
+     "hi": 0.0425531914893617,
+     "n": 188
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 0.795,
+     "lo": 0.735,
+     "hi": 0.85,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.035,
+     "lo": 0.01,
+     "hi": 0.06,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.905,
+     "lo": 0.86,
+     "hi": 0.94,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.006289308176100629,
+     "lo": 0.0,
+     "hi": 0.018867924528301886,
+     "n": 159
+    },
+    "acc_xref_other_art1": {
+     "point": 0.765,
+     "lo": 0.7048749999999999,
+     "hi": 0.825,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.0440251572327044,
+     "lo": 0.012578616352201259,
+     "hi": 0.0756289308176092,
+     "n": 159
+    },
+    "acc_inline_case": {
+     "point": 0.125,
+     "lo": 0.08,
+     "hi": 0.17,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.77,
+     "lo": 0.715,
+     "hi": 0.825,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.0440251572327044,
+     "lo": 0.012578616352201259,
+     "hi": 0.07547169811320754,
+     "n": 159
+    }
+   }
+  },
+  "zeroshot_DeBERTa-v3-base-mnli-fever-anli": {
+   "vehicles": {
+    "acc_base": {
+     "point": 0.445,
+     "lo": 0.38,
+     "hi": 0.515,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.53,
+     "lo": 0.46,
+     "hi": 0.6,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.425,
+     "lo": 0.355,
+     "hi": 0.49,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.06741573033707865,
+     "lo": 0.02247191011235955,
+     "hi": 0.12359550561797752,
+     "n": 89
+    },
+    "acc_xref_other_art1": {
+     "point": 0.425,
+     "lo": 0.36,
+     "hi": 0.495,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.0449438202247191,
+     "lo": 0.011235955056179775,
+     "hi": 0.0898876404494382,
+     "n": 89
+    },
+    "acc_inline_case": {
+     "point": 0.57,
+     "lo": 0.5,
+     "hi": 0.635,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.435,
+     "lo": 0.365,
+     "hi": 0.51,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.033707865168539325,
+     "lo": 0.0,
+     "hi": 0.07865168539325842,
+     "n": 89
+    }
+   },
+   "enrollment": {
+    "acc_base": {
+     "point": 0.795,
+     "lo": 0.74,
+     "hi": 0.85,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.37,
+     "lo": 0.305,
+     "hi": 0.435,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.535,
+     "lo": 0.465,
+     "hi": 0.6001249999999992,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.3522012578616352,
+     "lo": 0.27672955974842767,
+     "hi": 0.4276729559748428,
+     "n": 159
+    },
+    "acc_xref_other_art1": {
+     "point": 0.725,
+     "lo": 0.66,
+     "hi": 0.785,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.1069182389937107,
+     "lo": 0.06289308176100629,
+     "hi": 0.15723270440251572,
+     "n": 159
+    },
+    "acc_inline_case": {
+     "point": 0.54,
+     "lo": 0.47,
+     "hi": 0.605,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.71,
+     "lo": 0.645,
+     "hi": 0.77,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.13836477987421383,
+     "lo": 0.0880503144654088,
+     "hi": 0.1949685534591195,
+     "n": 159
+    }
+   },
+   "research_funding": {
+    "acc_base": {
+     "point": 0.735,
+     "lo": 0.675,
+     "hi": 0.795,
+     "n": 200
+    },
+    "acc_xref_case_art1": {
+     "point": 0.38,
+     "lo": 0.315,
+     "hi": 0.445,
+     "n": 200
+    },
+    "acc_xref_case_art2": {
+     "point": 0.57,
+     "lo": 0.5,
+     "hi": 0.64,
+     "n": 200
+    },
+    "falseflip_xref_case_art2": {
+     "point": 0.2585034013605442,
+     "lo": 0.19047619047619047,
+     "hi": 0.32653061224489793,
+     "n": 147
+    },
+    "acc_xref_other_art1": {
+     "point": 0.735,
+     "lo": 0.675,
+     "hi": 0.795,
+     "n": 200
+    },
+    "falseflip_xref_other_art1": {
+     "point": 0.027210884353741496,
+     "lo": 0.006802721088435374,
+     "hi": 0.05442176870748299,
+     "n": 147
+    },
+    "acc_inline_case": {
+     "point": 0.61,
+     "lo": 0.54,
+     "hi": 0.68,
+     "n": 200
+    },
+    "acc_inline_other": {
+     "point": 0.73,
+     "lo": 0.665,
+     "hi": 0.79,
+     "n": 200
+    },
+    "falseflip_inline_other": {
+     "point": 0.034013605442176874,
+     "lo": 0.006802721088435374,
+     "hi": 0.06802721088435375,
+     "n": 147
+    }
+   }
+  }
+ },
+ "reproduction_test_agreement": {
+  "ft_deberta-v3-xsmall_paired_s0": 1.0,
+  "ft_deberta-v3-xsmall_unpaired_s0": 1.0,
+  "ft_nli-deberta-v3-xsmall_paired_s0": 1.0,
+  "ft_nli-deberta-v3-xsmall_unpaired_s0": 1.0
+ }
+}

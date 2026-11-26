@@ -1,0 +1,141 @@
+{
+ "decisive_removals": 49,
+ "reference_joint": 1.0,
+ "reference_single": 1.0,
+ "lazy_joint": 0.0,
+ "lazy_single": 1.0,
+ "programs_tied_with_reference_on_joint": 24,
+ "programs_scoring_1.0_on_single_input": 432,
+ "top10_joint": [
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "ignore",
+    "unknown": "ignore",
+    "negation": "ignore"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "ignore",
+    "unknown": "ignore",
+    "negation": "read"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "ignore",
+    "unknown": "read",
+    "negation": "ignore"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "ignore",
+    "unknown": "read",
+    "negation": "read"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "article_token",
+    "unknown": "ignore",
+    "negation": "ignore"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "article_token",
+    "unknown": "ignore",
+    "negation": "read"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "article_token",
+    "unknown": "read",
+    "negation": "ignore"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "article_token",
+    "unknown": "read",
+    "negation": "read"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "read",
+    "unknown": "ignore",
+    "negation": "ignore"
+   }
+  },
+  {
+   "joint": 1.0,
+   "single": 1.0,
+   "program": {
+    "threshold": "nonstrict",
+    "date": "strict",
+    "scope": "read",
+    "exception": "read",
+    "xref": "read",
+    "unknown": "ignore",
+    "negation": "read"
+   }
+  }
+ ]
+}

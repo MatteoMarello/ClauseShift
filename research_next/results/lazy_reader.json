@@ -1,0 +1,31 @@
+{
+ "accuracy": 0.52890625,
+ "pair_accuracy": 0.31015625,
+ "flip_accuracy": 0.3,
+ "flip_accuracy_by_operator": {
+  "condition_unknown": 0.0,
+  "date_cross": 0.0,
+  "exception_add": 0.0,
+  "negation": 1.0,
+  "scope_restrict": 0.0,
+  "threshold_cross": 0.0,
+  "topic_swap": 1.0,
+  "xref_redirect": 0.0
+ },
+ "evidence_sample": 300,
+ "eligible": 1194,
+ "hit_at_1": 1.0,
+ "top_sentence_roles": {
+  "obligation": 300
+ },
+ "counterfactual_removal": {
+  "obligation": {
+   "agreement": 1.0,
+   "n": 281
+  },
+  "non_decisive": {
+   "agreement": 1.0,
+   "n": 709
+  }
+ }
+}
