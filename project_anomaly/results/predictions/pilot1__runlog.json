@@ -1,0 +1,27 @@
+{
+  "hardware": "CPU, Intel(R) Xeon(R) Processor @ 2.10GHz, 4 threads",
+  "items": "project_anomaly/results/boundary_probes.jsonl",
+  "n": 1440,
+  "models": {
+    "ft_nli-deberta-v3-xsmall_paired_s0": {
+      "source": "checkpoints/ft_nli-deberta-v3-xsmall_paired_s0",
+      "revision": null,
+      "seconds": 68.5
+    },
+    "ft_nli-deberta-v3-xsmall_unpaired_s0": {
+      "source": "checkpoints/ft_nli-deberta-v3-xsmall_unpaired_s0",
+      "revision": null,
+      "seconds": 48.7
+    },
+    "ft_deberta-v3-xsmall_paired_s0": {
+      "source": "checkpoints/ft_deberta-v3-xsmall_paired_s0",
+      "revision": null,
+      "seconds": 50.3
+    },
+    "ft_deberta-v3-xsmall_unpaired_s0": {
+      "source": "checkpoints/ft_deberta-v3-xsmall_unpaired_s0",
+      "revision": null,
+      "seconds": 51.4
+    }
+  }
+}
