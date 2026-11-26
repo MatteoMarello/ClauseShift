@@ -1,0 +1,46 @@
+{
+ "n_lazy_right": 1354,
+ "n_condition_dependent": 1206,
+ "models": {
+  "zeroshot_nli-deberta-v3-xsmall": {
+   "accuracy": 0.39921875,
+   "lazy_right": 0.5974889217134417,
+   "condition_dependent": 0.17661691542288557
+  },
+  "zeroshot_nli-deberta-v3-xsmall_factsinpremise": {
+   "accuracy": 0.4265625,
+   "lazy_right": 0.672821270310192,
+   "condition_dependent": 0.15008291873963517
+  },
+  "zeroshot_nli-deberta-v3-base": {
+   "accuracy": 0.503515625,
+   "lazy_right": 0.9209748892171344,
+   "condition_dependent": 0.03482587064676617
+  },
+  "zeroshot_nli-deberta-v3-base_factsinpremise": {
+   "accuracy": 0.526171875,
+   "lazy_right": 0.983751846381093,
+   "condition_dependent": 0.012437810945273632
+  },
+  "zeroshot_DeBERTa-v3-base-mnli-fever-anli": {
+   "accuracy": 0.53125,
+   "lazy_right": 0.8330871491875923,
+   "condition_dependent": 0.19237147595356552
+  },
+  "zeroshot_DeBERTa-v3-base-mnli-fever-anli_factsinpremise": {
+   "accuracy": 0.538671875,
+   "lazy_right": 0.9926144756277696,
+   "condition_dependent": 0.02902155887230514
+  },
+  "zeroshot_roberta-large-mnli": {
+   "accuracy": 0.378125,
+   "lazy_right": 0.5199409158050221,
+   "condition_dependent": 0.21890547263681592
+  },
+  "zeroshot_roberta-large-mnli_factsinpremise": {
+   "accuracy": 0.50625,
+   "lazy_right": 0.9460856720827179,
+   "condition_dependent": 0.012437810945273632
+  }
+ }
+}
