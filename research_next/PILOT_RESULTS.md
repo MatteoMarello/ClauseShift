@@ -148,8 +148,10 @@ credited for "getting the transition right". The v1 table is kept in `results/FI
 | NLI-init, paired s0 | 0.897 | 0.886 | **0.776** | 0.803 | 1.000 |
 | NLI-init, unpaired s0 | 0.851 | 0.823 | **0.653** | 0.787 | 1.000 |
 
-Joint decisive-transition accuracy orders the systems as their flip-pair accuracy does (0.00 for the lazy reader up to
-0.78), while hit@1 is 0.90–1.00 for all of them, including the lazy reader. n = 49 decisive removals per system, so the
+Joint decisive-transition accuracy broadly follows flip-pair accuracy (fine-tuned NLI-init > generic-init > zero-shot),
+with one telling exception: flip-pair accuracy ranks the lazy reader (0.300) level with the best zero-shot model
+(0.304), while the joint transition test places it last (0.000). hit@1 is 0.90–1.00 for all systems, including the
+lazy reader. n = 49 decisive removals per system, so the
 intervals are wide (not computed in this pilot).
 
 **General lesson (the most transferable result of the pilots).** Every evaluation criterion we tried that looks at a
