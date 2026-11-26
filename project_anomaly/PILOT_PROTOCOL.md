@@ -73,3 +73,39 @@ best program jumps by ≥ 0.15 between consecutive evaluations; no "phase transi
 
 All outcomes are reported, including failed predictions and uninterpretable forms. No pilot is repeated to obtain a
 different result. Any change to this protocol after a pilot has run is listed in PILOT_RESULTS.md as a deviation.
+
+## Addendum (written after Pilot 1 had run, before Pilot 1b; declared post hoc)
+
+**Pilot 3 is not run.** It requires a new fine-tuning run, and the standing instruction is "no new fine-tuning without
+authorisation". Its code path (re-running the registered recipe with periodic evaluation) is left as a proposal that
+needs explicit approval. The third pilot slot is used instead by an inference-only follow-up of Pilot 1, chosen
+*after* seeing Pilot 1, and therefore exploratory in a stronger sense than Pilots 1–2.
+
+### Pilot 1b — the comparison as a psychophysical observer (post hoc)
+
+Motivation from Pilot 1: errors at the boundary are not caused by string identity; instead, accuracy at one unit
+*below* the cutoff is as low as at the cutoff (thresholds), and for dates errors sit one day *above* the cutoff.
+This suggests a comparison with limited resolution and a bias, which psychophysics describes with a psychometric
+function: the probability of the "satisfied" reading as a function of the signed distance Δ between case value and
+cutoff, summarised by its point of subjective equality (PSE, where the curve crosses 0.5) and its resolution.
+
+**Items** (`scripts/make_psychometric_probes.py`): the Pilot 1 base cases (same documents, same seeds), `same` form
+only. Signed distances: thresholds Δ = r × cutoff for r ∈ {−0.5, −0.25, −0.1, −0.05, −0.02, 0, +0.02, +0.05, +0.1,
++0.25, +0.5}, rounded to the family's unit and at least one unit away from the cutoff when r ≠ 0, plus Δ = ±1 unit;
+dates Δ ∈ {−365, −90, −30, −7, −2, −1, 0, +1, +2, +7, +30, +90, +365} days. Labels from `gold_label`. Same four
+checkpoints.
+
+**Quantity.** "Satisfied reading" = the prediction equals the label the item would have if the condition held.
+P_sat(Δ) per model, family and condition type, with bootstrap CIs over base cases. Resolution on each side = the
+smallest |Δ| from which P_sat stays ≤ 0.1 (below) or ≥ 0.9 (above) at all larger distances on that side.
+
+**Predictions fixed now.**
+- P1b-1 (resolution, not identity): for NLI-init models P_sat is monotone in Δ on both sides, and the below-cutoff
+  resolution for thresholds is larger than one unit.
+- P1b-2 (late bias for dates): for NLI-init models the date PSE lies strictly above 0 (P_sat(+1 day) < 0.5 and
+  P_sat(+7 days) < P_sat(+365 days)).
+- P1b-3 (relative scale, Weber-like): for thresholds, P_sat at the same *relative* distance differs by less between
+  enrollment (small integers) and research_funding (large amounts) than P_sat at the same *absolute* number of units
+  (±1 unit). Tested descriptively; with 30 base cases per family it is a pointer, not a test.
+- Generic-init models: P_sat ≈ 1 at every Δ (they ignore the condition), as Pilot 1 suggests; if not, the Pilot 1
+  reading of these models is wrong.
