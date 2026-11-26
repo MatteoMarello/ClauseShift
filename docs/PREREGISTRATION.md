@@ -83,6 +83,12 @@ Synthetic, template-generated English text; four categories and a handful of con
 from a specification rather than annotated; zero-shot models were trained on MNLI-style data whose neutral class
 does not exactly match "insufficient evidence".
 
+## Annotation status update
+
+A [blinded LLM audit](../review/clauseshift_llm_audit.md) matched 112/112 generator labels across 56 pairs
+(Cohen's κ = 1.000) and flagged two potentially ambiguous items. Independent human validation is pending.
+The original human-review sheet is available in `review/annotation_sheet.csv`.
+
 ## Deviations and additions after registration
 
 Recorded on 2026-11-25, before any fine-tuned model was evaluated on test. The sections above are unchanged.

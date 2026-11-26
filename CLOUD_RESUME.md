@@ -13,6 +13,7 @@
 | No-NLI-pre-training ablation, paired + unpaired, seeds 0–2 | done | `results/predictions/ft_deberta-v3-xsmall_*` |
 | Extended analysis, figures | done | `results/EXTENDED_ANALYSIS.md`, `results/figures/fig*.png` |
 | Report, README, study guide | done | `docs/REPORT.md`, `README.md`, `docs/STUDY_GUIDE.md` |
+| [Independent LLM audit](review/clauseshift_llm_audit.md) | **completed** | 112/112 labels matched, two wording flags |
 | Human annotation of `review/annotation_sheet.csv` | **not done** (requires a human annotator) | — |
 
 The status column of this table is updated by hand when a step finishes; the per-run commits in `git log` are the

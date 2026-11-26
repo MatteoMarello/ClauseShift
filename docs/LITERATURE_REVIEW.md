@@ -48,8 +48,8 @@ What ClauseShift adds is narrower and methodological:
    design.
 
 Limitations that bound these claims: the text is template-generated and fictional, so results show what models do
-on controlled rule language, not on real contracts; labels are generator-derived until the human review is
-complete; the encoder experiments run on CPU-sized models.
+on controlled synthetic rule language. Labels follow the generator specification. A [blinded LLM audit](../review/clauseshift_llm_audit.md)
+checked 112 items. Independent human review is pending. The encoder experiments use CPU-sized models.
 
 ## References
 
