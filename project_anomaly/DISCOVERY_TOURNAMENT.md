@@ -108,3 +108,10 @@ rather than a discovery.
 
 C4, C14 and C15 are pursued as zero-cost analyses alongside. C5/C13 and C11 are recorded as next steps that need
 authorisation for additional training.
+
+## Outcome (added after the pilots)
+
+C1 was falsified (Pilot 1). C2 gave neither predicted pattern (Pilot 2). C3 was not run (needs training). The
+inference-only follow-up Pilot 1b (post hoc, declared) and the held-out test led to a new candidate not in the list
+above — year blindness after training on date edits (A12) — which is the only direction recommended for a check.
+See `PILOT_RESULTS.md` and `RESEARCH_DECISION.md`.
