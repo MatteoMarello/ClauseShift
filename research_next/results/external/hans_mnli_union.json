@@ -1,0 +1,9 @@
+{
+ "items": 9815,
+ "LO_predicts_entailment (full overlap)": 236,
+ "LO_vs_ALL_E_distinguishing_items": 9579,
+ "full_overlap_and_non_entailment (LO wrong)": 27,
+ "no_full_overlap_and_entailment (LO wrong)": 3270,
+ "LO_agreement_with_gold_binary": 0.6640855832908813,
+ "ALL_E_agreement_with_gold_binary": 0.3544574630667346
+}

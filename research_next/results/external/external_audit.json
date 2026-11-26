@@ -1,0 +1,425 @@
+{
+ "HANS": {
+  "n_items": 30000,
+  "coverage": {
+   "LO": {
+    "overall": 0.5,
+    "by_group": {
+     "constituent": 0.5,
+     "lexical_overlap": 0.5,
+     "subsequence": 0.5
+    }
+   },
+   "SUB": {
+    "overall": 0.5,
+    "by_group": {
+     "constituent": 0.5,
+     "lexical_overlap": 0.5,
+     "subsequence": 0.5
+    }
+   },
+   "CONST": {
+    "overall": 0.5333333333333333,
+    "by_group": {
+     "constituent": 0.5,
+     "lexical_overlap": 0.5,
+     "subsequence": 0.6
+    }
+   },
+   "ALL_E": {
+    "overall": 0.5,
+    "by_group": {
+     "constituent": 0.5,
+     "lexical_overlap": 0.5,
+     "subsequence": 0.5
+    }
+   },
+   "ALL_N": {
+    "overall": 0.5,
+    "by_group": {
+     "constituent": 0.5,
+     "lexical_overlap": 0.5,
+     "subsequence": 0.5
+    }
+   }
+  },
+  "pairwise": {
+   "GOLD|GOLD": 0,
+   "GOLD|LO": 15000,
+   "GOLD|SUB": 15000,
+   "GOLD|CONST": 16000,
+   "GOLD|ALL_E": 15000,
+   "GOLD|ALL_N": 15000,
+   "LO|GOLD": 15000,
+   "LO|LO": 0,
+   "LO|SUB": 10000,
+   "LO|CONST": 19000,
+   "LO|ALL_E": 0,
+   "LO|ALL_N": 30000,
+   "SUB|GOLD": 15000,
+   "SUB|LO": 10000,
+   "SUB|SUB": 0,
+   "SUB|CONST": 9000,
+   "SUB|ALL_E": 10000,
+   "SUB|ALL_N": 20000,
+   "CONST|GOLD": 16000,
+   "CONST|LO": 19000,
+   "CONST|SUB": 9000,
+   "CONST|CONST": 0,
+   "CONST|ALL_E": 19000,
+   "CONST|ALL_N": 11000,
+   "ALL_E|GOLD": 15000,
+   "ALL_E|LO": 0,
+   "ALL_E|SUB": 10000,
+   "ALL_E|CONST": 19000,
+   "ALL_E|ALL_E": 0,
+   "ALL_E|ALL_N": 30000,
+   "ALL_N|GOLD": 15000,
+   "ALL_N|LO": 30000,
+   "ALL_N|SUB": 20000,
+   "ALL_N|CONST": 11000,
+   "ALL_N|ALL_E": 30000,
+   "ALL_N|ALL_N": 0
+  },
+  "indistinguishable_pairs": [
+   [
+    "LO",
+    "ALL_E"
+   ]
+  ],
+  "min_discriminating_set_size": 3,
+  "n_signatures": 6,
+  "min_discriminating_examples": [
+   "ex0",
+   "ex13000",
+   "ex15000"
+  ],
+  "models": {
+   "BERT": {
+    "agreement": {
+     "GOLD": 0.5479666666666667,
+     "LO": 0.9267,
+     "SUB": 0.6659,
+     "CONST": 0.3809,
+     "ALL_E": 0.9267,
+     "ALL_N": 0.0733
+    },
+    "best": [
+     "LO",
+     "ALL_E"
+    ]
+   },
+   "ESIM": {
+    "agreement": {
+     "GOLD": 0.5001333333333333,
+     "LO": 0.9882,
+     "SUB": 0.6641333333333334,
+     "CONST": 0.3691333333333333,
+     "ALL_E": 0.9882,
+     "ALL_N": 0.0118
+    },
+    "best": [
+     "LO",
+     "ALL_E"
+    ]
+   },
+   "DecompAttn": {
+    "agreement": {
+     "GOLD": 0.5027333333333334,
+     "LO": 0.9810666666666666,
+     "SUB": 0.6540666666666667,
+     "CONST": 0.361,
+     "ALL_E": 0.9810666666666666,
+     "ALL_N": 0.018933333333333333
+    },
+    "best": [
+     "LO",
+     "ALL_E"
+    ]
+   },
+   "SPINN": {
+    "agreement": {
+     "GOLD": 0.5051333333333333,
+     "LO": 0.9432666666666667,
+     "SUB": 0.6311333333333333,
+     "CONST": 0.36346666666666666,
+     "ALL_E": 0.9432666666666667,
+     "ALL_N": 0.05673333333333333
+    },
+    "best": [
+     "LO",
+     "ALL_E"
+    ]
+   }
+  },
+  "definition_check_entailment_rate_on_own_subset": {
+   "LO": 1.0,
+   "SUB": 1.0,
+   "CONST": 1.0
+  }
+ },
+ "ScoNe": {
+  "n_items": 1200,
+  "coverage": {
+   "RULE": {
+    "overall": 0.0,
+    "by_group": {
+     "no_negation": 0.0,
+     "one_not_scoped": 0.0,
+     "one_scoped": 0.0,
+     "one_scoped_one_not_scoped": 0.0,
+     "two_not_scoped": 0.0,
+     "two_scoped": 0.0
+    }
+   },
+   "IGNORE": {
+    "overall": 0.3333333333333333,
+    "by_group": {
+     "no_negation": 0.0,
+     "one_not_scoped": 0.0,
+     "one_scoped": 1.0,
+     "one_scoped_one_not_scoped": 1.0,
+     "two_not_scoped": 0.0,
+     "two_scoped": 0.0
+    }
+   },
+   "PRESENCE": {
+    "overall": 0.5,
+    "by_group": {
+     "no_negation": 0.0,
+     "one_not_scoped": 1.0,
+     "one_scoped": 0.0,
+     "one_scoped_one_not_scoped": 0.0,
+     "two_not_scoped": 1.0,
+     "two_scoped": 1.0
+    }
+   },
+   "PARITY_ALL": {
+    "overall": 0.3333333333333333,
+    "by_group": {
+     "no_negation": 0.0,
+     "one_not_scoped": 1.0,
+     "one_scoped": 0.0,
+     "one_scoped_one_not_scoped": 1.0,
+     "two_not_scoped": 0.0,
+     "two_scoped": 0.0
+    }
+   },
+   "ANY_SCOPE": {
+    "overall": 0.16666666666666666,
+    "by_group": {
+     "no_negation": 0.0,
+     "one_not_scoped": 0.0,
+     "one_scoped": 0.0,
+     "one_scoped_one_not_scoped": 0.0,
+     "two_not_scoped": 0.0,
+     "two_scoped": 1.0
+    }
+   },
+   "ONE_SCOPE": {
+    "overall": 0.0,
+    "by_group": {
+     "no_negation": 0.0,
+     "one_not_scoped": 0.0,
+     "one_scoped": 0.0,
+     "one_scoped_one_not_scoped": 0.0,
+     "two_not_scoped": 0.0,
+     "two_scoped": 0.0
+    }
+   },
+   "ALL_E": {
+    "overall": 0.5,
+    "by_group": {
+     "no_negation": 0.5,
+     "one_not_scoped": 0.5,
+     "one_scoped": 0.5,
+     "one_scoped_one_not_scoped": 0.5,
+     "two_not_scoped": 0.5,
+     "two_scoped": 0.5
+    }
+   },
+   "ALL_N": {
+    "overall": 0.5,
+    "by_group": {
+     "no_negation": 0.5,
+     "one_not_scoped": 0.5,
+     "one_scoped": 0.5,
+     "one_scoped_one_not_scoped": 0.5,
+     "two_not_scoped": 0.5,
+     "two_scoped": 0.5
+    }
+   }
+  },
+  "pairwise": {
+   "GOLD|GOLD": 0,
+   "GOLD|RULE": 0,
+   "GOLD|IGNORE": 400,
+   "GOLD|PRESENCE": 600,
+   "GOLD|PARITY_ALL": 400,
+   "GOLD|ANY_SCOPE": 200,
+   "GOLD|ONE_SCOPE": 0,
+   "GOLD|ALL_E": 600,
+   "GOLD|ALL_N": 600,
+   "RULE|GOLD": 0,
+   "RULE|RULE": 0,
+   "RULE|IGNORE": 400,
+   "RULE|PRESENCE": 600,
+   "RULE|PARITY_ALL": 400,
+   "RULE|ANY_SCOPE": 200,
+   "RULE|ONE_SCOPE": 0,
+   "RULE|ALL_E": 600,
+   "RULE|ALL_N": 600,
+   "IGNORE|GOLD": 400,
+   "IGNORE|RULE": 400,
+   "IGNORE|IGNORE": 0,
+   "IGNORE|PRESENCE": 1000,
+   "IGNORE|PARITY_ALL": 400,
+   "IGNORE|ANY_SCOPE": 600,
+   "IGNORE|ONE_SCOPE": 400,
+   "IGNORE|ALL_E": 600,
+   "IGNORE|ALL_N": 600,
+   "PRESENCE|GOLD": 600,
+   "PRESENCE|RULE": 600,
+   "PRESENCE|IGNORE": 1000,
+   "PRESENCE|PRESENCE": 0,
+   "PRESENCE|PARITY_ALL": 600,
+   "PRESENCE|ANY_SCOPE": 400,
+   "PRESENCE|ONE_SCOPE": 600,
+   "PRESENCE|ALL_E": 600,
+   "PRESENCE|ALL_N": 600,
+   "PARITY_ALL|GOLD": 400,
+   "PARITY_ALL|RULE": 400,
+   "PARITY_ALL|IGNORE": 400,
+   "PARITY_ALL|PRESENCE": 600,
+   "PARITY_ALL|PARITY_ALL": 0,
+   "PARITY_ALL|ANY_SCOPE": 600,
+   "PARITY_ALL|ONE_SCOPE": 400,
+   "PARITY_ALL|ALL_E": 600,
+   "PARITY_ALL|ALL_N": 600,
+   "ANY_SCOPE|GOLD": 200,
+   "ANY_SCOPE|RULE": 200,
+   "ANY_SCOPE|IGNORE": 600,
+   "ANY_SCOPE|PRESENCE": 400,
+   "ANY_SCOPE|PARITY_ALL": 600,
+   "ANY_SCOPE|ANY_SCOPE": 0,
+   "ANY_SCOPE|ONE_SCOPE": 200,
+   "ANY_SCOPE|ALL_E": 600,
+   "ANY_SCOPE|ALL_N": 600,
+   "ONE_SCOPE|GOLD": 0,
+   "ONE_SCOPE|RULE": 0,
+   "ONE_SCOPE|IGNORE": 400,
+   "ONE_SCOPE|PRESENCE": 600,
+   "ONE_SCOPE|PARITY_ALL": 400,
+   "ONE_SCOPE|ANY_SCOPE": 200,
+   "ONE_SCOPE|ONE_SCOPE": 0,
+   "ONE_SCOPE|ALL_E": 600,
+   "ONE_SCOPE|ALL_N": 600,
+   "ALL_E|GOLD": 600,
+   "ALL_E|RULE": 600,
+   "ALL_E|IGNORE": 600,
+   "ALL_E|PRESENCE": 600,
+   "ALL_E|PARITY_ALL": 600,
+   "ALL_E|ANY_SCOPE": 600,
+   "ALL_E|ONE_SCOPE": 600,
+   "ALL_E|ALL_E": 0,
+   "ALL_E|ALL_N": 1200,
+   "ALL_N|GOLD": 600,
+   "ALL_N|RULE": 600,
+   "ALL_N|IGNORE": 600,
+   "ALL_N|PRESENCE": 600,
+   "ALL_N|PARITY_ALL": 600,
+   "ALL_N|ANY_SCOPE": 600,
+   "ALL_N|ONE_SCOPE": 600,
+   "ALL_N|ALL_E": 1200,
+   "ALL_N|ALL_N": 0
+  },
+  "indistinguishable_pairs": [
+   [
+    "GOLD",
+    "RULE"
+   ],
+   [
+    "GOLD",
+    "ONE_SCOPE"
+   ],
+   [
+    "RULE",
+    "ONE_SCOPE"
+   ]
+  ],
+  "min_discriminating_set_size": 3,
+  "n_signatures": 12,
+  "min_discriminating_examples": [
+   "one_not_scoped:0",
+   "one_scoped_one_not_scoped:0",
+   "two_scoped:1"
+  ],
+  "models": {
+   "nli-deberta-v3-xsmall": {
+    "agreement": {
+     "GOLD": 0.6433333333333333,
+     "RULE": 0.6433333333333333,
+     "IGNORE": 0.9683333333333334,
+     "PRESENCE": 0.18166666666666667,
+     "PARITY_ALL": 0.645,
+     "ANY_SCOPE": 0.4866666666666667,
+     "ONE_SCOPE": 0.6433333333333333,
+     "ALL_E": 0.48333333333333334,
+     "ALL_N": 0.5166666666666667
+    },
+    "best": [
+     "IGNORE"
+    ]
+   },
+   "nli-deberta-v3-base": {
+    "agreement": {
+     "GOLD": 0.6591666666666667,
+     "RULE": 0.6591666666666667,
+     "IGNORE": 0.9775,
+     "PRESENCE": 0.18416666666666667,
+     "PARITY_ALL": 0.6558333333333334,
+     "ANY_SCOPE": 0.49916666666666665,
+     "ONE_SCOPE": 0.6591666666666667,
+     "ALL_E": 0.5041666666666667,
+     "ALL_N": 0.49583333333333335
+    },
+    "best": [
+     "IGNORE"
+    ]
+   },
+   "DeBERTa-v3-base-mnli-fever-anli": {
+    "agreement": {
+     "GOLD": 0.6366666666666667,
+     "RULE": 0.6366666666666667,
+     "IGNORE": 0.9216666666666666,
+     "PRESENCE": 0.21833333333333332,
+     "PARITY_ALL": 0.6366666666666667,
+     "ANY_SCOPE": 0.49166666666666664,
+     "ONE_SCOPE": 0.6366666666666667,
+     "ALL_E": 0.47,
+     "ALL_N": 0.53
+    },
+    "best": [
+     "IGNORE"
+    ]
+   },
+   "roberta-large-mnli": {
+    "agreement": {
+     "GOLD": 0.6608333333333334,
+     "RULE": 0.6608333333333334,
+     "IGNORE": 0.9675,
+     "PRESENCE": 0.18916666666666668,
+     "PARITY_ALL": 0.6541666666666667,
+     "ANY_SCOPE": 0.5041666666666667,
+     "ONE_SCOPE": 0.6608333333333334,
+     "ALL_E": 0.5308333333333334,
+     "ALL_N": 0.4691666666666667
+    },
+    "best": [
+     "IGNORE"
+    ]
+   }
+  },
+  "rule_vs_gold_mismatches": 0
+ }
+}
