@@ -8,7 +8,13 @@ Start with [`DECISION_MEMO.md`](DECISION_MEMO.md).
 
 | File | Content |
 |---|---|
-| `DECISION_MEMO.md` | Recommended direction, evidence for and against, needs, CONDITIONAL GO |
+| `DECISION_MEMO.md` | v2: contribution split A/B/C/D, CONDITIONAL GO (reframed), decisions for the author |
+| `NOVELTY_VERIFICATION.md` | Full-text check: the method's components exist in mutation analysis and strategy classification |
+| `FORMALIZATION.md` | Separation matrix, equivalence classes, hitting sets, sample-size bound, limits of behavioural identification |
+| `EXTERNAL_AUDIT_PLAN.md`, `EXTERNAL_AUDIT_RESULTS.md` | Identifiability audit of HANS and ScoNe (heuristics fixed before computation) |
+| `PROTOCOL_REVIEW.md`, `EXPERIMENT_PROTOCOL_v2.md` | Independent review of the v1 protocol; revised draft (not frozen) |
+| `FAMILY_DESIGN_EXERCISE.md` | Guided exercise and blank template for writing the new families (validator in `scripts/`) |
+| `ANNOTATOR_RECRUITMENT.md` | Recruitment text, consent, blind procedure; packet and scoring scripts in `scripts/` |
 | `LITERATURE_REVIEW.md`, `RELATED_WORK_MATRIX.md` | Literature with explicit reading status |
 | `SCIENTIFIC_AUDIT.md` | Audit of the existing results (confounds, artefacts, metric problems) |
 | `RESEARCH_QUESTIONS.md` | Five falsifiable questions and their evidence |
