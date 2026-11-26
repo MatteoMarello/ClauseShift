@@ -85,3 +85,20 @@ def test_symmetrised_decoding_never_changes_consistent_items():
     s = stats(rows)          # stats() asserts Proposition 4 internally
     gain = s["sym_acc_orig"].mean() - s["acc_orig"].mean()
     assert abs(gain) <= 1 - s["consistent"].mean() + 1e-12
+
+
+def test_year_probes_are_balanced_and_correctly_labelled():
+    import json
+    from collections import Counter
+    rows = [json.loads(line) for line in open(ROOT / "project_anomaly/results/year_probes.jsonl")]
+    assert len(rows) == 2520
+    main = [r for r in rows if r["block"] == "main" and r["format"] == "G"]
+    cells = Counter((r["direction"], r["year_rel"], r["bin"], r["label"]) for r in main)
+    assert set(cells.values()) == {30}
+    for r in rows:
+        assert r["truth_after"] == (r["case_date"] > r["cutoff"])            # ISO strings order like dates
+        assert (r["label"] == r["sat_label"]) == r["truth_after"]
+        if r["block"] == "main":
+            same = r["case_date"][:4] == r["cutoff"][:4]
+            assert same == (r["year_rel"] == "same")
+            assert (r["md_after"] == r["truth_after"]) == same               # cross-year cells are month-day misleading

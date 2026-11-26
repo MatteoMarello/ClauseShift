@@ -3,7 +3,11 @@
 Exploratory search for a small, surprising and well-supported result in ClauseShift, on a separate branch.
 Nothing here changes the registered study, `data/`, or `research_next/`. All results are exploratory.
 
-**Outcome in one paragraph.** Our own hypothesis — that boundary errors come from the value being a verbatim copy of
+> **Update (2026-11-26): direction closed.** The authorised replication of the year-blindness observation did not
+> meet its frozen decision rule (`YEAR_PROBE_PROTOCOL.md`, `YEAR_PROBE_RESULTS.md`). No further work is planned in
+> this folder; the main research direction remains identifiability-aware evaluation (`research_next/`, PR #3).
+
+**Outcome in one paragraph (before the replication).** Our own hypothesis — that boundary errors come from the value being a verbatim copy of
 the cutoff — is false. Psychometric probes show instead that the models' comparisons are non-monotone and that
 generic-init models ignore isolated threshold and date conditions altogether. Following the probes, we found that
 fine-tuned models trained with date edits fail on dates in an earlier year but later in the calendar than the cutoff
@@ -22,6 +26,7 @@ and confounded with training-set size; a small preregistered training check is p
 | `ADVERSARIAL_REVIEW.md` | Objections and what would settle them |
 | `RESEARCH_DECISION.md` | The ten questions; CONDITIONAL GO for one check |
 | `AUTHOR_STUDY_GUIDE.md` | Exercises, tasks and open questions for the researcher |
+| `YEAR_PROBE_PROTOCOL.md`, `YEAR_PROBE_RESULTS.md` | Frozen replication protocol, results and closure |
 | `scripts/`, `results/`, `figures/`, `configs/` | Code, raw predictions and tables (tests in `tests/test_project_anomaly.py`) |
 
 Reproduce (CPU, ≈ 30 minutes; the four fine-tuned checkpoints are not in the repository and must be re-trained with
@@ -39,6 +44,10 @@ python project_anomaly/scripts/run_models.py project_anomaly/results/psychometri
 python project_anomaly/scripts/analyze_pilot1b.py
 python project_anomaly/scripts/lexical_comparison_test.py
 python project_anomaly/scripts/year_blindness.py
+python project_anomaly/scripts/check_critical_labels.py
+python project_anomaly/scripts/make_year_probes.py
+python project_anomaly/scripts/run_models.py project_anomaly/results/year_probes.jsonl yearprobe
+python project_anomaly/scripts/analyze_year_probes.py
 ```
 
 AI-assisted work: produced by an AI coding assistant under the researcher's direction; no human annotations or

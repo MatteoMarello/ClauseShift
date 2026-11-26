@@ -1,5 +1,9 @@
 # Research decision — Project Anomaly
 
+> **Superseded (2026-11-26).** The authorised year-blindness replication did not meet its frozen decision rule
+> (validity failed for one of the two checkpoints), so the direction is **closed** and no training protocol is
+> prepared. See `YEAR_PROBE_RESULTS.md`. The text below is kept unchanged as the record of the earlier decision.
+
 Short answer: our own favourite idea ("copy is not compare") is **false**. The pilots turned up one observation
 that is worth checking with a small, preregistered training experiment: **models fine-tuned on minimal pairs whose
 date edits move the cutoff by days to months become blind to the year.** This is exploratory and has a clear

@@ -103,6 +103,8 @@ saw date edits. Competing explanations: (a) edits that move dates by 1–120 day
 under-learned (Joshi & He 2022 mechanism); (b) training-set size (4,200 vs 2,400 items); (c) operator mix. Distinguishing
 experiment: retrain with date edits spanning years, and without date edits at matched size (needs approval).
 Relevance to A11: part of the hold-out models' date advantage sits in this cell.
+**Status: closed.** The frozen replication (`YEAR_PROBE_RESULTS.md`) did not meet its decision rule; the probes also
+show the models are not blind to the year when month and day are equal.
 
 **A13. Lattice vs probe disagreement for generic-init models.** Pilot 1b: these models read an isolated threshold or
 date condition as satisfied at every distance ("ignore"); the lattice (`research_next`) selected "non-strict" on dev.
